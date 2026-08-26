@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+.dark {
+  --background: #0d1117;
+  --foreground: #f8fafc;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Continuous Non-Stop Wave Keyframe Animations */
+@keyframes waveMoveOne {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1.12);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+@keyframes waveMoveTwo {
+  0% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.88);
+  }
+  100% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+}
+
+.animate-wave-slow {
+  animation: waveMoveOne 22s linear infinite;
+}
+
+.animate-wave-medium {
+  animation: waveMoveTwo 16s ease-in-out infinite;
+}
+
+.animate-wave-fast {
+  animation: waveMoveOne 11s ease-in-out infinite;
+}
+
+/* Cloud Drift Animations */
+@keyframes cloudDriftSlow {
+  0% { transform: translateX(-15%); }
+  100% { transform: translateX(115%); }
+}
+
+@keyframes cloudDriftFast {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(125%); }
+}
+
+/* Star Twinkle Animation */
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Shooting Star / Falling Star Animation */
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-35deg);
+    opacity: 0;
+    width: 0px;
+  }
+  15% {
+    opacity: 1;
+    width: 140px;
+  }
+  60% {
+    opacity: 1;
+    width: 80px;
+  }
+  100% {
+    transform: translateX(-450px) translateY(320px) rotate(-35deg);
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+/* Sun Pulse & Ray Glow */
+@keyframes sunGlow {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Window Glow Pulsing */
+@keyframes windowPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.95; }
+}
+
+.animate-cloud-drift-slow {
+  animation: cloudDriftSlow 48s linear infinite;
+}
+
+.animate-cloud-drift-fast {
+  animation: cloudDriftFast 32s linear infinite;
+}
+
+.animate-star-twinkle {
+  animation: starTwinkle 3s ease-in-out infinite;
+}
+
+.animate-shooting-star-1 {
+  animation: shootingStar 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite 1.5s;
+}
+
+.animate-shooting-star-2 {
+  animation: shootingStar 4.5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite 5.5s;
+}
+
+.animate-shooting-star-3 {
+  animation: shootingStar 3.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite 9.5s;
+}
+
+.animate-sun-glow {
+  animation: sunGlow 6s ease-in-out infinite;
+}
+
+.animate-window-pulse {
+  animation: windowPulse 3.5s ease-in-out infinite;
+}
+
