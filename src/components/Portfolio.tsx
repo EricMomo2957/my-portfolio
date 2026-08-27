@@ -22,7 +22,7 @@ export default function Portfolio() {
       category: "Full-Stack & Backend",
       tags: ["Node.js", "Express", "PostgreSQL"], 
       desc: "Cooperative loan application, approval & financial amortization management system with PostgreSQL ledger engines.", 
-      image: "/images/github-preview.png", 
+      image: "/images/uccoop.png", 
       githubUrl: "https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System" 
     },
     { 

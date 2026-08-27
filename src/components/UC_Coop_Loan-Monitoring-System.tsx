@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { 
   ChevronLeft, 
   Code2, 
@@ -90,6 +91,27 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
               {tech}
             </span>
           ))}
+        </div>
+      </div>
+
+      {/* Featured Interface Image Banner */}
+      <div className="relative w-full h-64 sm:h-80 md:h-[420px] rounded-3xl overflow-hidden border dark:border-white/10 border-slate-200/80 shadow-2xl group dark:bg-slate-900 bg-slate-100">
+        <Image
+          src="/images/uccoop.png"
+          alt="UC COOP Loan Monitoring System & Coop Sync Dashboard"
+          fill
+          sizes="(max-width: 1200px) 100vw, 1100px"
+          className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+          priority
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-60 pointer-events-none" />
+        <div className="absolute bottom-4 left-6 right-6 flex justify-between items-center text-white text-xs sm:text-sm font-medium drop-shadow-md">
+          <span className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+            <span className="w-2 h-2 rounded-full bg-[#2ecc71] animate-pulse" /> Live Portal Preview
+          </span>
+          <span className="hidden sm:inline bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 text-slate-300">
+            CoopSync Member & Loan Portal
+          </span>
         </div>
       </div>
 

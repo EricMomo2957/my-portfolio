@@ -15,7 +15,7 @@ export default function Resume() {
         "Focused on using automation to improve daily operations, making it easy for the client to get accurate, up-to-date financial information and transaction reports whenever they need them.",
         "Co-designed and built the database using PostgreSQL to centralize member records, move loan processes online, and cut down on manual paperwork and errors."
       ],
-      image: "/images/github-preview.png",
+      image: "/images/uccoop.png",
       isLatest: true,
     },
     {

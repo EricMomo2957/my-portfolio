@@ -13,7 +13,7 @@ export default function Blog() {
       date: "May 2025",
       readTime: "5 min read",
       summary: "How KATD Solutions built the backend API for the UC METC Campus loan monitoring system, handling flat-rate and diminishing interest computations accurately.",
-      image: "/images/github-preview.png",
+      image: "/images/uccoop.png",
       tags: ["Node.js", "Express", "PostgreSQL", "Financial Math"]
     },
     {
