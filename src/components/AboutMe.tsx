@@ -76,7 +76,7 @@ export default function AboutMe() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
         {/* Left Column: Portrait Card */}
-        <div className="lg:col-span-5 sticky top-24">
+        <div className="lg:col-span-5 lg:sticky lg:top-24">
           <div className="relative w-full aspect-3/4 rounded-3xl overflow-hidden border-2 dark:border-white/10 border-slate-200/80 shadow-2xl dark:bg-[#161b22] bg-white p-2">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image 
@@ -95,8 +95,8 @@ export default function AboutMe() {
             <span className="flex items-center gap-1.5 dark:bg-white/5 bg-slate-200/60 px-3 py-1.5 rounded-lg border dark:border-white/5 border-slate-200">
               <MapPin size={13} className="text-[#2ecc71]" /> Cebu City, PH
             </span>
-            <a href="mailto:momoe2957@gmail.com" className="flex items-center gap-1.5 dark:bg-white/5 bg-slate-200/60 px-3 py-1.5 rounded-lg border dark:border-white/5 border-slate-200 hover:text-[#2ecc71] transition-colors">
-              <Mail size={13} className="text-[#2ecc71]" /> momoe2957@gmail.com
+            <a href="mailto:momoe2957@gmail.com" className="flex items-center gap-1.5 dark:bg-white/5 bg-slate-200/60 px-3 py-1.5 rounded-lg border dark:border-white/5 border-slate-200 hover:text-[#2ecc71] transition-colors max-w-full truncate">
+              <Mail size={13} className="text-[#2ecc71] shrink-0" /> <span className="truncate">momoe2957@gmail.com</span>
             </a>
             <span className="flex items-center gap-1.5 dark:bg-white/5 bg-slate-200/60 px-3 py-1.5 rounded-lg border dark:border-white/5 border-slate-200">
               <Phone size={13} className="text-[#2ecc71]" /> +63 935 273 7624
@@ -161,7 +161,7 @@ export default function AboutMe() {
               <a 
                 href="/Eric_Dominic_Momo_Cover_Letter.pdf" 
                 download="Eric_Dominic_Momo_Cover_Letter.pdf"
-                className="inline-flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 font-bold px-5 py-2.5 rounded-full text-xs transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 font-bold px-5 py-2.5 rounded-full text-xs transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer shrink-0 text-center"
               >
                 <Download size={15} /> Download Cover Letter (.pdf)
               </a>

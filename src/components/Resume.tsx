@@ -119,8 +119,8 @@ export default function Resume() {
               </div>
 
               {/* Project Card Image Preview */}
-              <div className="relative group/img shrink-0 self-start lg:mt-2">
-                <div className={`relative h-44 w-72 rounded-xl overflow-hidden border transition-all duration-700 shadow-lg ${
+              <div className="relative group/img shrink-0 w-full sm:w-auto self-start lg:mt-2">
+                <div className={`relative h-48 sm:h-44 w-full sm:w-72 rounded-xl overflow-hidden border transition-all duration-700 shadow-lg ${
                   exp.isLatest ? "border-[#2ecc71]/40 ring-4 ring-[#2ecc71]/10" : "dark:border-white/10 border-slate-200 dark:grayscale group-hover:grayscale-0"
                 }`}>
                   <Image

@@ -76,8 +76,8 @@ export default function Contact() {
     <section className="p-6 md:p-10 max-w-6xl mx-auto space-y-12 relative">
       {/* Copy Toast Notification Banner */}
       {copiedField && (
-        <div className="fixed bottom-8 right-8 z-50 bg-[#2ecc71] text-slate-950 px-6 py-3.5 rounded-2xl font-black text-xs shadow-2xl flex items-center gap-2.5 animate-in slide-in-from-bottom-5 duration-300 border border-slate-950/10">
-          <Check size={16} />
+        <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-8 sm:bottom-8 z-50 bg-[#2ecc71] text-slate-950 px-5 py-3 rounded-2xl font-black text-xs shadow-2xl flex items-center justify-center gap-2.5 animate-in slide-in-from-bottom-5 duration-300 border border-slate-950/10 text-center">
+          <Check size={16} className="shrink-0" />
           <span>Copied {copiedField === "email" ? "momoe2957@gmail.com" : "+63 935 273 7624"} to clipboard!</span>
         </div>
       )}
@@ -170,7 +170,7 @@ export default function Contact() {
           
           <form 
             onSubmit={handleSubmit}
-            className="relative dark:bg-[#161b22] bg-white p-8 lg:p-10 rounded-3xl border dark:border-white/10 border-slate-200/80 shadow-2xl space-y-6"
+            className="relative dark:bg-[#161b22] bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border dark:border-white/10 border-slate-200/80 shadow-2xl space-y-6"
           >
             <div className="flex items-center gap-2 border-b dark:border-white/5 border-slate-100 pb-4">
               <MessageSquare className="text-[#2ecc71]" size={20} />
@@ -192,7 +192,7 @@ export default function Contact() {
                   value={formData.name || ""}
                   onChange={handleChange}
                   placeholder="John Doe" 
-                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none" 
+                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none" 
                   required
                 />
               </div>
@@ -204,7 +204,7 @@ export default function Contact() {
                   value={formData.email || ""}
                   onChange={handleChange}
                   placeholder="john@example.com" 
-                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none" 
+                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none" 
                   required
                 />
               </div>

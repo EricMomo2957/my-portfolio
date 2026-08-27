@@ -519,7 +519,7 @@ function TabButton({ id, label, active, onClick }: { id: "overview_features" | "
   return (
     <button 
       onClick={() => onClick(id)}
-      className={`px-5 py-3 text-xs md:text-sm font-bold transition-all border-b-2 whitespace-nowrap cursor-pointer ${
+      className={`px-4 sm:px-5 py-3 text-xs md:text-sm font-bold transition-all border-b-2 whitespace-nowrap shrink-0 cursor-pointer ${
         isActive 
           ? "border-[#2ecc71] text-[#2ecc71]" 
           : "border-transparent dark:text-slate-400 text-slate-500 hover:text-slate-900 dark:hover:text-slate-200"
