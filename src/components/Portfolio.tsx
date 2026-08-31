@@ -32,7 +32,8 @@ export default function Portfolio() {
       tags: ["React 19", "Node.js", "MySQL"], 
       desc: "Digital OJT attendance logging, task assignments & fleet workflow management platform.", 
       image: "/images/mentorlog.png", 
-      githubUrl: "https://github.com/EricMomo2957/MentorLog" 
+      githubUrl: "https://github.com/EricMomo2957/MentorLog",
+      liveUrl: "https://mentor-log-two.vercel.app/"
     },
     { 
       title: "ChronoNav", 
@@ -103,16 +104,38 @@ export default function Portfolio() {
                 className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
               />
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+              {p.liveUrl && (
+                <div className="absolute top-3 right-3 z-10">
+                  <a 
+                    href={p.liveUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center gap-1.5 px-3 py-1 bg-[#2ecc71] text-slate-950 text-xs font-extrabold rounded-full shadow-lg hover:bg-[#27ae60] hover:scale-105 transition-all"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-950 animate-ping" />
+                    Live Demo
+                  </a>
+                </div>
+              )}
             </div>
 
             <div className="p-6 space-y-4 flex flex-col grow">
               <div className="flex justify-between items-start">
                 <h3 className="text-xl font-bold dark:text-white text-slate-900 group-hover:text-[#2ecc71] transition-colors">{p.title}</h3>
-                <div className="flex gap-3 dark:text-slate-400 text-slate-500" onClick={(e) => e.stopPropagation()}>
+                <div className="flex items-center gap-3 dark:text-slate-400 text-slate-500" onClick={(e) => e.stopPropagation()}>
                   <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" title="View GitHub Source">
                     <FaGithub size={18} className="dark:hover:text-[#2ecc71] hover:text-[#2ecc71] transition-colors" />
                   </a>
-                  <span title="View Details"><ExternalLink size={18} className="dark:hover:text-[#2ecc71] hover:text-[#2ecc71] transition-colors" /></span>
+                  {p.liveUrl ? (
+                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" title="Open Live Deployment">
+                      <ExternalLink size={18} className="text-[#2ecc71] hover:scale-115 transition-transform" />
+                    </a>
+                  ) : (
+                    <span title="View Details">
+                      <ExternalLink size={18} className="dark:hover:text-[#2ecc71] hover:text-[#2ecc71] transition-colors" />
+                    </span>
+                  )}
                 </div>
               </div>
               <p className="dark:text-slate-400 text-slate-600 text-sm leading-relaxed grow">{p.desc}</p>
