@@ -1,6 +1,7 @@
 "use client";
 
-import { Download, FileText, Sparkles, CheckCircle2 } from "lucide-react";
+import { Download, FileText, Sparkles, CheckCircle2, Globe, ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 
 export default function Resume() {
@@ -30,6 +31,8 @@ export default function Resume() {
       ],
       image: "/images/mentorlog.png",
       isLatest: false,
+      liveUrl: "https://mentor-log-two.vercel.app/",
+      githubUrl: "https://github.com/EricMomo2957/MentorLog"
     },
     {
       title: "Capstone Lead Developer",
@@ -116,6 +119,31 @@ export default function Resume() {
                     </li>
                   ))}
                 </ul>
+
+                {(exp.liveUrl || exp.githubUrl) && (
+                  <div className="flex flex-wrap items-center gap-3 pt-3">
+                    {exp.liveUrl && (
+                      <a
+                        href={exp.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#2ecc71] text-slate-950 text-xs font-bold hover:bg-[#27ae60] hover:scale-105 transition-all shadow-md"
+                      >
+                        <Globe size={13} /> Live Demo <ExternalLink size={11} />
+                      </a>
+                    )}
+                    {exp.githubUrl && (
+                      <a
+                        href={exp.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full dark:bg-white/10 bg-slate-100 dark:text-slate-200 text-slate-700 text-xs font-semibold hover:border-[#2ecc71]/40 border dark:border-white/10 border-slate-200 hover:text-[#2ecc71] transition-all"
+                      >
+                        <FaGithub size={13} /> Repository <ExternalLink size={11} />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Project Card Image Preview */}
