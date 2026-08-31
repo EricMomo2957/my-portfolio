@@ -52,11 +52,19 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
         </button>
 
         <div className="flex flex-wrap items-center gap-3">
+          <a 
+            href="https://mentor-log-two.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-1.5 rounded-full text-xs font-extrabold transition-all shadow-lg shadow-[#2ecc71]/25 hover:scale-105 cursor-pointer"
+          >
+            <Globe size={14} /> Live Demo <ExternalLink size={12} />
+          </a>
           <span className="px-3 py-1 rounded-full border border-[#2ecc71]/40 bg-[#2ecc71]/10 text-[#2ecc71] text-xs font-bold uppercase tracking-wider">
             React 19 + Node.js + TypeScript
           </span>
           <span className="px-3 py-1 rounded-full border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-100 dark:text-slate-400 text-slate-600 text-xs font-bold uppercase tracking-wider">
-            Status: Production Ready
+            Status: Live & Deployed
           </span>
           <a 
             href="https://github.com/EricMomo2957/MentorLog" 
@@ -94,7 +102,7 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
       </div>
 
       {/* Featured Interface Image Banner */}
-      <div className="relative w-full h-64 sm:h-80 md:h-[420px] rounded-3xl overflow-hidden border dark:border-white/10 border-slate-200/80 shadow-2xl group dark:bg-slate-900 bg-slate-100">
+      <div className="relative w-full h-64 sm:h-80 md:h-[440px] rounded-3xl overflow-hidden border dark:border-white/10 border-slate-200/80 shadow-2xl group dark:bg-slate-900 bg-slate-100">
         <Image
           src="/images/mentorlog.png"
           alt="MentorLog Web App Interface"
@@ -103,7 +111,26 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
           className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/20 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+        
+        {/* Floating Live Deployment CTA Overlay */}
+        <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-slate-950/80 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/15 shadow-xl">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#2ecc71] animate-pulse" />
+              <p className="text-white font-bold text-sm sm:text-base">Live Web Application</p>
+            </div>
+            <p className="text-xs text-slate-300 font-mono mt-0.5 break-all">https://mentor-log-two.vercel.app/</p>
+          </div>
+          <a
+            href="https://mentor-log-two.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all shadow-lg hover:scale-105 cursor-pointer shrink-0"
+          >
+            <Globe size={15} /> Launch Live App <ExternalLink size={13} />
+          </a>
+        </div>
       </div>
 
       {/* Stat Cards Grid */}
@@ -468,14 +495,24 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
                 <h4 className="text-xl font-bold dark:text-white text-slate-900">Eric Dominic Momo</h4>
                 <p className="text-xs text-[#2ecc71] font-semibold mt-1">Lead Full-Stack Developer & Systems Architect</p>
               </div>
-              <a 
-                href="https://github.com/EricMomo2957" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#161b22] hover:bg-[#21262d] text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all border border-white/10 shadow-sm hover:border-[#2ecc71]/50 cursor-pointer"
-              >
-                <FaGithub size={18} /> @EricMomo2957 <ExternalLink size={14} />
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <a 
+                  href="https://mentor-log-two.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-2.5 rounded-xl text-sm font-bold transition-all shadow-sm hover:scale-105 cursor-pointer"
+                >
+                  <Globe size={16} /> Live Demo <ExternalLink size={14} />
+                </a>
+                <a 
+                  href="https://github.com/EricMomo2957" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-[#161b22] hover:bg-[#21262d] text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all border border-white/10 shadow-sm hover:border-[#2ecc71]/50 cursor-pointer"
+                >
+                  <FaGithub size={18} /> @EricMomo2957 <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
