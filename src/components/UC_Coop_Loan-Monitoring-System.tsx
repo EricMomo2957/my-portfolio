@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { 
-  ChevronLeft, 
+import {
+  ChevronLeft,
   Globe,
-  ShieldCheck, 
+  ShieldCheck,
   ExternalLink,
   Terminal,
   FolderTree,
@@ -39,18 +39,18 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
     <div className="p-6 md:p-10 space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-6xl mx-auto">
       {/* Header Bar */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b dark:border-white/10 border-slate-200 pb-6">
-        <button 
-          onClick={onBack} 
+        <button
+          onClick={onBack}
           className="group flex items-center gap-2 dark:text-slate-400 text-slate-600 hover:text-[#2ecc71] transition-all duration-300 cursor-pointer"
         >
-          <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> 
+          <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
           <span className="font-semibold">Back to Projects</span>
         </button>
 
         <div className="flex flex-wrap items-center gap-3">
-          <a 
-            href="https://uc-coop-loan-monitoring.up.railway.app/" 
-            target="_blank" 
+          <a
+            href="https://uc-coop-loan-monitoring.up.railway.app/"
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-1.5 rounded-full text-xs font-extrabold transition-all shadow-lg shadow-[#2ecc71]/25 hover:scale-105 cursor-pointer"
           >
@@ -62,9 +62,9 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
           <span className="px-3 py-1 rounded-full border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-100 dark:text-slate-400 text-slate-600 text-xs font-bold uppercase tracking-wider">
             Status: Live on Railway
           </span>
-          <a 
-            href="https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System" 
-            target="_blank" 
+          <a
+            href="https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System"
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#161b22] hover:bg-[#21262d] text-white px-4 py-1.5 rounded-full text-xs font-bold transition-all border border-white/10 shadow-sm hover:border-[#2ecc71]/50 cursor-pointer"
           >
@@ -109,7 +109,7 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
         />
         <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-60 pointer-events-none" />
         <div className="absolute bottom-4 left-6 right-6 flex justify-between items-center text-white text-xs sm:text-sm font-medium drop-shadow-md">
-          <a 
+          <a
             href="https://uc-coop-loan-monitoring.up.railway.app/"
             target="_blank"
             rel="noopener noreferrer"
@@ -125,25 +125,25 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
 
       {/* Stat Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <TechStatCard 
-          icon={<FaNodeJs size={22} className="text-emerald-500" />} 
-          title="Runtime & Server" 
-          detail="Node.js v20+ ES Modules & Express" 
+        <TechStatCard
+          icon={<FaNodeJs size={22} className="text-emerald-500" />}
+          title="Runtime & Server"
+          detail="Node.js v20+ ES Modules & Express"
         />
-        <TechStatCard 
-          icon={<SiPostgresql size={22} className="text-sky-400" />} 
-          title="Database Pool" 
-          detail="PostgreSQL (Pg Pool, 13 Tables)" 
+        <TechStatCard
+          icon={<SiPostgresql size={22} className="text-sky-400" />}
+          title="Database Pool"
+          detail="PostgreSQL (Pg Pool, 13 Tables)"
         />
-        <TechStatCard 
-          icon={<CreditCard size={20} className="text-[#2ecc71]" />} 
-          title="Math Engine" 
-          detail="Flat-Rate & Diminishing Balance" 
+        <TechStatCard
+          icon={<CreditCard size={20} className="text-[#2ecc71]" />}
+          title="Math Engine"
+          detail="Flat-Rate & Diminishing Balance"
         />
-        <TechStatCard 
-          icon={<FileSpreadsheet size={20} className="text-amber-400" />} 
-          title="Report Exporter" 
-          detail="OpenXML Excel Analytical Sheets" 
+        <TechStatCard
+          icon={<FileSpreadsheet size={20} className="text-amber-400" />}
+          title="Report Exporter"
+          detail="OpenXML Excel Analytical Sheets"
         />
       </div>
 
@@ -164,32 +164,32 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
               <CreditCard className="text-[#2ecc71]" size={26} /> Financial Engine Capabilities
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <FeatureCard 
+              <FeatureCard
                 icon={<CreditCard className="text-[#2ecc71]" size={24} />}
                 title="Calculation Core Engine"
                 desc="Implements financial math for Flat-Rate & Diminishing Balance interest schedules with custom payment frequency support."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<Building2 className="text-blue-400" size={24} />}
                 title="Coop Member Ledgers"
                 desc="Manages Share Capital, Fixed Deposits, and Investment ledgers with audited transaction logs and balance tracking."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<FileCheck className="text-amber-400" size={24} />}
                 title="Loan Lifecycle Engine"
                 desc="Manages loan products, applicant eligibility screening, approval routing, disbursements, and installment collections."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<TrendingUp className="text-purple-400" size={24} />}
                 title="Billing & Delinquency Aging"
                 desc="Executes automated billing run queues, computes overdue penalties, and generates delinquency aging reports."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<FileSpreadsheet className="text-emerald-400" size={24} />}
                 title="Excel Report Compiler"
                 desc="Leverages ExcelJS to compile binary OpenXML analytical spreadsheets for cooperative financial audits."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<ShieldCheck className="text-rose-400" size={24} />}
                 title="Role Security & Guards"
                 desc="Guards endpoints with JWT extraction, password bcrypt hashing, Helmet protection, and rate-limiting middleware."
@@ -304,23 +304,16 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
             </h3>
 
             <div className="space-y-4">
-              <CodeSnippetStep 
-                step="1" 
-                title="Database Setup (PostgreSQL)" 
+              <CodeSnippetStep
+                step="1"
+                title="Database Setup (PostgreSQL)"
                 code="# Connect to psql console:&#10;sudo -u postgres psql&#10;&#10;# Create database:&#10;CREATE DATABASE uc_coop_loans;&#10;&#10;# Import schema & seeds:&#10;cat db/schema.sql | sudo -u postgres psql -d uc_coop_loans&#10;cat db/seeds.sql | sudo -u postgres psql -d uc_coop_loans"
                 onCopy={(c) => copyToClipboard(c, "db-setup")}
                 copied={copiedCmd === "db-setup"}
               />
-              <CodeSnippetStep 
-                step="2" 
-                title="Environment Configurations (.env)" 
-                code="cp .env.example .env&#10;&#10;# Populate backend/.env:&#10;PORT=5000&#10;NODE_ENV=development&#10;DB_USER=postgres&#10;DB_PASSWORD=your_postgres_password&#10;DB_HOST=localhost&#10;DB_PORT=5432&#10;DB_NAME=uc_coop_loans&#10;JWT_SECRET=choose_a_long_random_string_here&#10;JWT_EXPIRES_IN=7d"
-                onCopy={(c) => copyToClipboard(c, "env-setup")}
-                copied={copiedCmd === "env-setup"}
-              />
-              <CodeSnippetStep 
-                step="3" 
-                title="Server Installation & Execution" 
+              <CodeSnippetStep
+                step="3"
+                title="Server Installation & Execution"
                 code="# Install dependencies:&#10;npm install&#10;&#10;# Start development server:&#10;npm run dev&#10;&#10;# Server online at: http://localhost:5000"
                 onCopy={(c) => copyToClipboard(c, "server-run")}
                 copied={copiedCmd === "server-run"}
@@ -336,9 +329,9 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
             <p className="text-sm dark:text-slate-300 text-slate-600 leading-relaxed">
               For full request body payloads, URL parameters, required roles, and query filter examples, read the complete Walkthrough Guide in the GitHub repository.
             </p>
-            <a 
-              href="https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System/blob/main/.gemini/antigravity/brain/8ea0a3f3-a220-45a9-9bbc-79b75a66a2b9/artifacts/walkthrough.md" 
-              target="_blank" 
+            <a
+              href="https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System/blob/main/.gemini/antigravity/brain/8ea0a3f3-a220-45a9-9bbc-79b75a66a2b9/artifacts/walkthrough.md"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer mt-1"
             >
@@ -418,7 +411,7 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
           </div>
 
           {/* Connection & Terminal Commands Table */}
-          <CheatSheetTable 
+          <CheatSheetTable
             title="Terminal & Connection Commands"
             icon={<Terminal size={18} className="text-[#2ecc71]" />}
             rows={[
@@ -432,7 +425,7 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
           />
 
           {/* Database Commands Table */}
-          <CheatSheetTable 
+          <CheatSheetTable
             title="Database Commands"
             icon={<Database size={18} className="text-sky-400" />}
             rows={[
@@ -445,7 +438,7 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
           />
 
           {/* Table & Schema Commands Table */}
-          <CheatSheetTable 
+          <CheatSheetTable
             title="Table & Schema Meta-Commands"
             icon={<FolderTree size={18} className="text-amber-400" />}
             rows={[
@@ -457,7 +450,7 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
           />
 
           {/* Running SQL Files & User Roles Table */}
-          <CheatSheetTable 
+          <CheatSheetTable
             title="Running SQL Files & User Permissions"
             icon={<UserCheck size={18} className="text-purple-400" />}
             rows={[
@@ -507,7 +500,7 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
                 </tbody>
               </table>
             </div>
-            
+
             <div className="p-4 dark:bg-white/5 bg-slate-100 rounded-xl text-xs dark:text-slate-300 text-slate-600 space-y-2 border dark:border-white/5 border-slate-200">
               <p className="font-bold text-[#2ecc71]">💡 Important psql Syntax Notes:</p>
               <ul className="list-disc list-inside space-y-1">
@@ -525,13 +518,12 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
 function TabButton({ id, label, active, onClick }: { id: "overview_features" | "stack_arch" | "setup_api" | "postgres_cheatsheet", label: string, active: string, onClick: (id: "overview_features" | "stack_arch" | "setup_api" | "postgres_cheatsheet") => void }) {
   const isActive = active === id;
   return (
-    <button 
+    <button
       onClick={() => onClick(id)}
-      className={`px-4 sm:px-5 py-3 text-xs md:text-sm font-bold transition-all border-b-2 whitespace-nowrap shrink-0 cursor-pointer ${
-        isActive 
-          ? "border-[#2ecc71] text-[#2ecc71]" 
-          : "border-transparent dark:text-slate-400 text-slate-500 hover:text-slate-900 dark:hover:text-slate-200"
-      }`}
+      className={`px-4 sm:px-5 py-3 text-xs md:text-sm font-bold transition-all border-b-2 whitespace-nowrap shrink-0 cursor-pointer ${isActive
+        ? "border-[#2ecc71] text-[#2ecc71]"
+        : "border-transparent dark:text-slate-400 text-slate-500 hover:text-slate-900 dark:hover:text-slate-200"
+        }`}
     >
       {label}
     </button>
@@ -574,8 +566,8 @@ function CodeSnippetStep({ step, title, code, onCopy, copied }: { step: string, 
           <span className="w-5 h-5 rounded-full bg-[#2ecc71]/20 flex items-center justify-center text-xs font-bold text-[#2ecc71]">{step}</span>
           {title}
         </span>
-        <button 
-          onClick={() => onCopy(code)} 
+        <button
+          onClick={() => onCopy(code)}
           className="text-xs dark:text-slate-400 text-slate-500 hover:text-[#2ecc71] flex items-center gap-1 cursor-pointer transition-colors"
         >
           {copied ? <Check size={14} className="text-[#2ecc71]" /> : <Copy size={14} />}
