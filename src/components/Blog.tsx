@@ -9,7 +9,7 @@ export default function Blog() {
     {
       title: "Building a Cooperative Loan Amortization Engine with Node.js & PostgreSQL",
       category: "Backend Architecture",
-      date: "May 2025",
+      date: "May 2026",
       readTime: "5 min read",
       summary: "How KATD Solutions built the backend API for the UC METC Campus loan monitoring system, handling flat-rate and diminishing interest computations accurately.",
       image: "/images/uccoop.png",

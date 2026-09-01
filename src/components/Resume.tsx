@@ -9,7 +9,7 @@ export default function Resume() {
     {
       title: "Full-Stack & Backend Engineer",
       company: "UC Coop Loan Monitoring System",
-      date: "May 2025 – Present",
+      date: "May 2026 – Sept 2026",
       desc: "Built the backend API and financial computation engine for the cooperative loan and financial management platform (KATD Solutions Freelance Team for UC METC Campus).",
       details: [
         "Worked with another developer to build the backend API from scratch using Node.js and Express to handle math formulas for monthly payments, making loan processing and tracking much faster.",

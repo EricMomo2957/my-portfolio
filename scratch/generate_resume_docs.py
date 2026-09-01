@@ -76,7 +76,7 @@ def generate_resume_word():
     
     # Project 1
     p_p1 = doc.add_paragraph()
-    r_p1_t = p_p1.add_run("Loan Monitoring and Financial Management System | May 2025 – Present\n")
+    r_p1_t = p_p1.add_run("Loan Monitoring and Financial Management System | May 2026 – Sept 2026\n")
     r_p1_t.bold = True
     r_p1_t.font.name = 'Times New Roman'
     r_p1_t.font.size = Pt(11)
@@ -280,7 +280,7 @@ def generate_resume_pdf():
     # Professional Projects & Experience
     story.append(Paragraph("PROFESSIONAL PROJECTS & EXPERIENCE", heading_style))
     
-    story.append(Paragraph("<b>Loan Monitoring and Financial Management System</b> | May 2025 – Present", body_left))
+    story.append(Paragraph("<b>Loan Monitoring and Financial Management System</b> | May 2026 – Sept 2026", body_left))
     story.append(Paragraph("<i>KATD SOLUTIONS (4-Member Freelance Team) | Client: UC METC Campus, Cebu City</i>", body_left))
     bullets1 = [
         "• Worked with another developer to build the backend API from scratch using Node.js and Express to handle math formulas for monthly payments, making loan processing and tracking much faster.",
