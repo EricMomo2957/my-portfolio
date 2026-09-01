@@ -3,9 +3,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { 
   ChevronLeft, 
-  Code2, 
-  Cpu, 
-  Globe, 
   ShieldCheck, 
   ExternalLink,
   Terminal,
@@ -14,21 +11,18 @@ import {
   Copy,
   Check,
   CreditCard,
-  Receipt,
   FileCheck,
   Building2,
   TrendingUp,
-  History,
   Database,
   Layers,
   Server,
   FileSpreadsheet,
-  KeyRound,
   BookOpen,
   UserCheck
 } from "lucide-react";
 import { FaGithub, FaNodeJs } from "react-icons/fa";
-import { SiPostgresql, SiExpress, SiJsonwebtokens } from "react-icons/si";
+import { SiPostgresql } from "react-icons/si";
 
 export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => void }) {
   const [activeTab, setActiveTab] = useState<"overview_features" | "stack_arch" | "setup_api" | "postgres_cheatsheet">("overview_features");
