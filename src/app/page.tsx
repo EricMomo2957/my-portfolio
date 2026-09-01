@@ -17,15 +17,18 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light") {
-      setIsDark(false);
-      document.documentElement.classList.remove("dark");
-    } else {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    }
+    const frame = requestAnimationFrame(() => {
+      setMounted(true);
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        setIsDark(false);
+        document.documentElement.classList.remove("dark");
+      } else {
+        setIsDark(true);
+        document.documentElement.classList.add("dark");
+      }
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const toggleDarkMode = () => {
