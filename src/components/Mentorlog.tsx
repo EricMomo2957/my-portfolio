@@ -3,8 +3,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { 
   ChevronLeft, 
-  Code2, 
-  Cpu, 
   Globe, 
   ShieldCheck, 
   ExternalLink,
@@ -20,14 +18,13 @@ import {
   GraduationCap,
   Shield,
   Layers,
-  Database,
   Server,
   FileText,
   KeyRound,
   User
 } from "lucide-react";
 import { FaGithub, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiExpress, SiMysql, SiTypescript, SiVite, SiTailwindcss, SiPhp } from "react-icons/si";
+import { SiMysql, SiPhp } from "react-icons/si";
 
 export default function Mentorlog({ onBack }: { onBack: () => void }) {
   const [activeTab, setActiveTab] = useState<"features" | "stack_arch" | "install_api" | "license_author">("features");
