@@ -8,17 +8,12 @@ interface CitySkylineBackgroundProps {
 
 export default function CitySkylineBackground({ isDark }: CitySkylineBackgroundProps) {
   const [mounted, setMounted] = useState(false);
-  const [isNightTime, setIsNightTime] = useState(true);
+  const isNightTime = typeof isDark === "boolean" ? isDark : true;
 
   useEffect(() => {
-    setMounted(true);
-    if (typeof isDark === "boolean") {
-      setIsNightTime(isDark);
-    } else {
-      const hour = new Date().getHours();
-      setIsNightTime(hour < 6 || hour >= 18);
-    }
-  }, [isDark]);
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   if (!mounted) return null;
 
