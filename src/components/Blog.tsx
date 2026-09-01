@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { BookOpen, Clock, ArrowRight, Sparkles, ExternalLink } from "lucide-react";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
