@@ -113,19 +113,19 @@ export default function AboutMe() {
               My Journey <span className="text-[#2ecc71]"></span>
             </h1>
 
-            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg">
+            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg text-justify [text-align-last:left]">
               Ever since I wrote my first line of code at the <strong className="dark:text-white text-slate-900 font-bold">University of Cebu – Main Campus</strong>, I’ve been fascinated by how logical architecture and creative design converge. As a fresh <strong className="dark:text-white text-slate-900 font-bold">BSIT graduate</strong>, my passion lies in transforming real-world business bottlenecks into sleek, responsive, and intuitive web solutions.
             </p>
 
-            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg">
+            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg text-justify [text-align-last:left]">
               My engineering journey took off when I teamed up with three fellow developers to establish <strong className="dark:text-white text-slate-900 font-bold">KATD SOLUTIONS</strong>. Together, we engineered a full-fledged <strong className="dark:text-white text-slate-900 font-bold">Loan Monitoring and Financial Management System</strong> for the UC METC Campus. Working on the backend API using <strong className="text-[#2ecc71]">Node.js, Express, and PostgreSQL</strong>, I translated complex cooperative financial formulas into automated calculation routines for monthly amortizations and investment ledgers.
             </p>
 
-            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg">
+            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg text-justify [text-align-last:left]">
               During my internship at <strong className="dark:text-white text-slate-900 font-bold">CoreLogic Consulting & System, Inc.</strong>, I merged backend logic with frontend aesthetics. I built client landing pages with <strong className="text-[#2ecc71]">WordPress & Elementor</strong>, produced visual graphic assets in Canva and Photoshop, and single-handedly built <strong className="dark:text-white text-slate-900 font-bold">MentorLog</strong>—an in-house attendance log platform actively deployed to automate student OJT tracking.
             </p>
 
-            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg">
+            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg text-justify [text-align-last:left]">
               Stepping up as <strong className="text-[#2ecc71]">Lead Developer</strong> for our Capstone project, <strong className="dark:text-white text-slate-900 font-bold">ChronoNav</strong>, I orchestrated our team&apos;s Git/GitHub repository, crafted interface prototypes in Figma, and integrated OCR schedule extraction technology. Today, whether as an <strong className="text-[#2ecc71]">Associate Web Developer, Design Associate, or IT Systems Specialist</strong>, I bring clean code, proactive problem-solving, and a creative drive to every team I join.
             </p>
           </div>
@@ -136,11 +136,11 @@ export default function AboutMe() {
               Experience & Education 🎓
             </h2>
 
-            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg">
+            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg text-justify [text-align-last:left]">
               I hold a <strong className="dark:text-white text-slate-900 font-bold">Bachelor of Science in Information Technology (Graduation: June 2026)</strong> from the University of Cebu – Main Campus and am a <strong className="text-[#2ecc71]">Cisco Certified Network Associate (CCNAv7)</strong> with credentials in *Switching, Routing, and Wireless Essentials* and *Introduction to Networks*.
             </p>
 
-            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg">
+            <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg text-justify [text-align-last:left]">
               My technical background spans full-stack software development (<strong className="dark:text-slate-200 text-slate-800">Node.js, Express, PostgreSQL, MySQL, PHP, React, Vue.js</strong>), UI/UX wireframing (<strong className="dark:text-slate-200 text-slate-800">Figma, Canva, Photoshop</strong>), AI logic workflows (<strong className="dark:text-slate-200 text-slate-800">Flowise AI Chatbots</strong>), and IT support.
             </p>
           </div>
@@ -258,7 +258,7 @@ export default function AboutMe() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {softSkills.map((soft) => (
-            <div key={soft.title} className="dark:bg-[#161b22] bg-white p-5 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md hover:border-[#2ecc71]/40 transition-all space-y-2">
+            <div key={soft.title} className="dark:bg-[#0b1611] bg-white p-5 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md hover:border-[#2ecc71]/40 transition-all space-y-2">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 dark:bg-white/5 bg-slate-100 rounded-xl">
                   {soft.icon}
@@ -274,7 +274,7 @@ export default function AboutMe() {
       {/* EDUCATION & CERTIFICATIONS GRID */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Education */}
-        <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
+        <div className="dark:bg-[#0b1611] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
           <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
             <GraduationCap className="text-[#2ecc71]" size={22} /> Education
           </h3>
@@ -289,7 +289,7 @@ export default function AboutMe() {
         </div>
 
         {/* Certifications */}
-        <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
+        <div className="dark:bg-[#0b1611] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
           <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
             <Award className="text-amber-400" size={22} /> Certifications
           </h3>
