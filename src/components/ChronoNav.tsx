@@ -12,7 +12,6 @@ import {
   Users,
   Eye,
   Lock,
-  Download,
   Copy,
   Check
 } from "lucide-react";
