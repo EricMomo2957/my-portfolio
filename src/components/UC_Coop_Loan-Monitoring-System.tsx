@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { 
   ChevronLeft, 
+  Globe,
   ShieldCheck, 
   ExternalLink,
   Terminal,
@@ -47,11 +48,19 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
         </button>
 
         <div className="flex flex-wrap items-center gap-3">
+          <a 
+            href="https://uc-coop-loan-monitoring.up.railway.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-1.5 rounded-full text-xs font-extrabold transition-all shadow-lg shadow-[#2ecc71]/25 hover:scale-105 cursor-pointer"
+          >
+            <Globe size={14} /> Live Demo <ExternalLink size={12} />
+          </a>
           <span className="px-3 py-1 rounded-full border border-[#2ecc71]/40 bg-[#2ecc71]/10 text-[#2ecc71] text-xs font-bold uppercase tracking-wider">
             Node.js (ES Modules) + PostgreSQL
           </span>
           <span className="px-3 py-1 rounded-full border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-100 dark:text-slate-400 text-slate-600 text-xs font-bold uppercase tracking-wider">
-            Phase 1 Backend API Engine
+            Status: Live on Railway
           </span>
           <a 
             href="https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System" 
@@ -100,9 +109,14 @@ export default function UCCoopLoanMonitoringSystem({ onBack }: { onBack: () => v
         />
         <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-60 pointer-events-none" />
         <div className="absolute bottom-4 left-6 right-6 flex justify-between items-center text-white text-xs sm:text-sm font-medium drop-shadow-md">
-          <span className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-            <span className="w-2 h-2 rounded-full bg-[#2ecc71] animate-pulse" /> Live Portal Preview
-          </span>
+          <a 
+            href="https://uc-coop-loan-monitoring.up.railway.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-black/70 hover:bg-[#2ecc71] hover:text-slate-950 transition-all backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 shadow-lg cursor-pointer"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#2ecc71] animate-pulse" /> Live Portal Preview <ExternalLink size={12} />
+          </a>
           <span className="hidden sm:inline bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 text-slate-300">
             CoopSync Member & Loan Portal
           </span>

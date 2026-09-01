@@ -18,6 +18,8 @@ export default function Resume() {
       ],
       image: "/images/uccoop.png",
       isLatest: true,
+      liveUrl: "https://uc-coop-loan-monitoring.up.railway.app/",
+      githubUrl: "https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System"
     },
     {
       title: "On-the-Job Trainee (IT Admin Assistant & Web Development)",

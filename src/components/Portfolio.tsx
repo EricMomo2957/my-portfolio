@@ -23,7 +23,8 @@ export default function Portfolio() {
       tags: ["Node.js", "Express", "PostgreSQL"], 
       desc: "Cooperative loan application, approval & financial amortization management system with PostgreSQL ledger engines.", 
       image: "/images/uccoop.png", 
-      githubUrl: "https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System" 
+      githubUrl: "https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System",
+      liveUrl: "https://uc-coop-loan-monitoring.up.railway.app/"
     },
     { 
       title: "Mentor Log", 
