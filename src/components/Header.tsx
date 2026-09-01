@@ -40,7 +40,7 @@ export default function Header({ activeView, setActiveView, isDark = true, toggl
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md dark:bg-[#0d1117]/90 bg-white/90 border-b dark:border-white/10 border-slate-200/80 transition-colors duration-300 shadow-sm">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md dark:bg-[#060e0a]/90 bg-white/90 border-b dark:border-white/10 border-slate-200/80 transition-colors duration-300 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <button 
@@ -114,7 +114,7 @@ export default function Header({ activeView, setActiveView, isDark = true, toggl
 
       {/* Mobile Drawer Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden dark:bg-[#161b22] bg-white border-b dark:border-white/10 border-slate-200 p-4 space-y-2 animate-in slide-in-from-top-4 duration-300">
+        <div className="lg:hidden dark:bg-[#081510] bg-white border-b dark:border-white/10 border-slate-200 p-4 space-y-2 animate-in slide-in-from-top-4 duration-300">
           {navItems.map((item) => {
             const isActive = activeView === item.target;
             return (

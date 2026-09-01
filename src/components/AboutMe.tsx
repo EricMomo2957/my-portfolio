@@ -77,7 +77,7 @@ export default function AboutMe() {
 
         {/* Left Column: Portrait Card */}
         <div className="lg:col-span-5 lg:sticky lg:top-24">
-          <div className="relative w-full aspect-3/4 rounded-3xl overflow-hidden border-2 dark:border-white/10 border-slate-200/80 shadow-2xl dark:bg-[#161b22] bg-white p-2">
+          <div className="relative w-full aspect-3/4 rounded-3xl overflow-hidden border-2 dark:border-white/10 border-slate-200/80 shadow-2xl dark:bg-[#0b1611] bg-white p-2">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/daddy_manhwa.jpg"
@@ -147,7 +147,7 @@ export default function AboutMe() {
 
           {/* Application / Cover Letter PDF Download Card */}
           <div className="pt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl dark:bg-[#161b22] bg-white border dark:border-white/10 border-slate-200/80 shadow-md">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl dark:bg-[#0b1611] bg-white border dark:border-white/10 border-slate-200/80 shadow-md">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 dark:bg-white/5 bg-emerald-50 rounded-xl text-[#2ecc71]">
                   <FileText size={20} />
@@ -179,7 +179,7 @@ export default function AboutMe() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Languages */}
-          <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-3">
+          <div className="dark:bg-[#0b1611] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-3">
             <h3 className="font-bold dark:text-white text-slate-900 text-lg flex items-center gap-2">
               <Code2 className="text-[#2ecc71]" size={20} /> Languages
             </h3>
@@ -193,7 +193,7 @@ export default function AboutMe() {
           </div>
 
           {/* Frameworks & Libraries */}
-          <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-3">
+          <div className="dark:bg-[#0b1611] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-3">
             <h3 className="font-bold dark:text-white text-slate-900 text-lg flex items-center gap-2">
               <Layers className="text-blue-400" size={20} /> Frameworks & Libraries
             </h3>
@@ -207,7 +207,7 @@ export default function AboutMe() {
           </div>
 
           {/* Tools & Platforms */}
-          <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-3">
+          <div className="dark:bg-[#0b1611] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-3">
             <h3 className="font-bold dark:text-white text-slate-900 text-lg flex items-center gap-2">
               <Wrench className="text-rose-400" size={20} /> Design & Development Tools
             </h3>
@@ -221,7 +221,7 @@ export default function AboutMe() {
           </div>
 
           {/* AI, Automation & Methodologies */}
-          <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
+          <div className="dark:bg-[#0b1611] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
             <div>
               <h3 className="font-bold dark:text-white text-slate-900 text-lg flex items-center gap-2 mb-2">
                 <Bot className="text-purple-400" size={20} /> AI & Automation

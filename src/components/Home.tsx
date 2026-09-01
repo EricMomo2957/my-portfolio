@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { ArrowRight, Send } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
-import CitySkylineBackground from "@/components/CitySkylineBackground";
 
 interface HomeProps {
   setActiveView: (view: string) => void;
@@ -11,14 +10,12 @@ interface HomeProps {
   toggleDarkMode?: () => void;
 }
 
-export default function HomeView({ setActiveView, isDark }: HomeProps) {
+export default function HomeView({ setActiveView }: HomeProps) {
   return (
     <div className="min-h-[calc(100vh-7.5rem)] dark:text-white text-slate-900 flex flex-col justify-between p-4 lg:p-6 max-w-6xl mx-auto my-0 relative">
-      {/* Real-time Day/Night City Skyline Animated Background */}
-      <CitySkylineBackground isDark={isDark} />
-
-      {/* Subtle Corner Glow Accent */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-[#2ecc71]/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient Deep Emerald Glow Accent */}
+      <div className="absolute top-10 left-10 w-96 h-96 bg-[#2ecc71]/10 dark:bg-[#10b981]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#10b981]/10 dark:bg-[#059669]/15 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Hero Banner */}
       <main className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto py-4 relative z-10">

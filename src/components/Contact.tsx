@@ -128,7 +128,7 @@ export default function Contact() {
                 href="https://github.com/EricMomo2957"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 dark:bg-[#161b22] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-[#2ecc71]/50 hover:text-[#2ecc71] transition-all shadow-sm cursor-pointer"
+                className="flex items-center gap-2 dark:bg-[#0b1611] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-[#2ecc71]/50 hover:text-[#2ecc71] transition-all shadow-sm cursor-pointer"
               >
                 <FaGithub size={16} /> GitHub (@EricMomo2957) <ExternalLink size={12} />
               </a>
@@ -136,7 +136,7 @@ export default function Contact() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 dark:bg-[#161b22] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-blue-400 hover:text-blue-400 transition-all shadow-sm cursor-pointer"
+                className="flex items-center gap-2 dark:bg-[#0b1611] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-blue-400 hover:text-blue-400 transition-all shadow-sm cursor-pointer"
               >
                 <FaLinkedin size={16} /> LinkedIn <ExternalLink size={12} />
               </a>
@@ -144,7 +144,7 @@ export default function Contact() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 dark:bg-[#161b22] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-sky-400 hover:text-sky-400 transition-all shadow-sm cursor-pointer"
+                className="flex items-center gap-2 dark:bg-[#0b1611] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-sky-400 hover:text-sky-400 transition-all shadow-sm cursor-pointer"
               >
                 <FaTwitter size={16} /> Twitter <ExternalLink size={12} />
               </a>
@@ -170,7 +170,7 @@ export default function Contact() {
 
           <form
             onSubmit={handleSubmit}
-            className="relative dark:bg-[#161b22] bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border dark:border-white/10 border-slate-200/80 shadow-2xl space-y-6"
+            className="relative dark:bg-[#0b1611] bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border dark:border-white/10 border-slate-200/80 shadow-2xl space-y-6"
           >
             <div className="flex items-center gap-2 border-b dark:border-white/5 border-slate-100 pb-4">
               <MessageSquare className="text-[#2ecc71]" size={20} />
@@ -192,7 +192,7 @@ export default function Contact() {
                   value={formData.name || ""}
                   onChange={handleChange}
                   placeholder="John Doe"
-                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
+                  className="w-full dark:bg-[#060e0a] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
                   required
                 />
               </div>
@@ -204,7 +204,7 @@ export default function Contact() {
                   value={formData.email || ""}
                   onChange={handleChange}
                   placeholder="john@example.com"
-                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
+                  className="w-full dark:bg-[#060e0a] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
                   required
                 />
               </div>
@@ -218,7 +218,7 @@ export default function Contact() {
                 value={formData.subject || ""}
                 onChange={handleChange}
                 placeholder="Design Associate Opportunity / Inquiry"
-                className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
+                className="w-full dark:bg-[#060e0a] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
               />
             </div>
 
@@ -230,7 +230,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Hi Dominic, I'd like to discuss an opportunity..."
                 rows={5}
-                className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none resize-none"
+                className="w-full dark:bg-[#060e0a] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none resize-none"
                 required
               />
             </div>

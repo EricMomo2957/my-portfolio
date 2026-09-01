@@ -93,7 +93,7 @@ export default function Portfolio() {
           <div
             key={p.id}
             onClick={() => setSelectedProject(p.id)}
-            className="group dark:bg-[#161b22]/90 bg-white border dark:border-white/10 border-slate-200/80 rounded-3xl overflow-hidden hover:border-[#2ecc71]/50 transition-all duration-500 cursor-pointer flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 relative"
+            className="group dark:bg-[#0b1611]/90 bg-white border dark:border-white/10 border-slate-200/80 rounded-3xl overflow-hidden hover:border-[#2ecc71]/50 transition-all duration-500 cursor-pointer flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 relative"
           >
             <div className="relative h-52 w-full overflow-hidden dark:bg-slate-900 bg-slate-100">
               <Image

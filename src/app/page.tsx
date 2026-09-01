@@ -57,7 +57,7 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <div className="dark flex flex-col min-h-screen bg-[#0d1117] relative overflow-hidden">
+      <div className="dark flex flex-col min-h-screen bg-[#060e0a] relative overflow-hidden">
         <CursorSpotlight />
         <WaveBackground />
         <Header activeView={activeView} setActiveView={setActiveView} isDark={true} toggleDarkMode={() => {}} />
@@ -69,7 +69,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen transition-colors duration-300 dark:bg-[#0d1117] dark:text-slate-300 bg-slate-100 text-slate-800 relative overflow-hidden">
+    <div className="flex flex-col min-h-screen transition-colors duration-300 dark:bg-[#060e0a] dark:text-emerald-50/90 bg-slate-50 text-slate-800 relative overflow-hidden">
       <CursorSpotlight />
       <WaveBackground />
       <ScrollToTop />
