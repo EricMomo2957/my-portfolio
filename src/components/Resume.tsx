@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, FileText, Sparkles, CheckCircle2, Globe, ExternalLink } from "lucide-react";
+import { Download, Sparkles, CheckCircle2, Globe, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 
