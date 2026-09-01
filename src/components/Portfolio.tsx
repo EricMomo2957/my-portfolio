@@ -16,39 +16,39 @@ export default function Portfolio() {
   const categories = ["All", "Full-Stack & Backend", "OJT & Systems", "Capstone & AI"];
 
   const projects = [
-    { 
-      title: "UC Coop Loan Monitoring System", 
-      id: "uccoop", 
+    {
+      title: "UC Coop Loan Monitoring System",
+      id: "uccoop",
       category: "Full-Stack & Backend",
-      tags: ["Node.js", "Express", "PostgreSQL"], 
-      desc: "Cooperative loan application, approval & financial amortization management system with PostgreSQL ledger engines.", 
-      image: "/images/uccoop.png", 
+      tags: ["Node.js", "Express", "PostgreSQL"],
+      desc: "Cooperative loan application, approval & financial amortization management system with PostgreSQL ledger engines.",
+      image: "/images/uccoop.png",
       githubUrl: "https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System",
       liveUrl: "https://uc-coop-loan-monitoring.up.railway.app/"
     },
-    { 
-      title: "Mentor Log", 
-      id: "mentor", 
+    {
+      title: "Mentor Log",
+      id: "mentor",
       category: "OJT & Systems",
-      tags: ["React 19", "Node.js", "MySQL"], 
-      desc: "Digital OJT attendance logging, task assignments & fleet workflow management platform.", 
-      image: "/images/mentorlog.png", 
+      tags: ["React 19", "Node.js", "MySQL"],
+      desc: "Digital OJT attendance logging, task assignments & fleet workflow management platform.",
+      image: "/images/mentorlog.png",
       githubUrl: "https://github.com/EricMomo2957/MentorLog",
       liveUrl: "https://mentor-log-two.vercel.app/"
     },
-    { 
-      title: "ChronoNav", 
-      id: "chrono", 
+    {
+      title: "ChronoNav",
+      id: "chrono",
       category: "Capstone & AI",
-      tags: ["PHP", "OCR", "Figma"], 
-      desc: "Campus navigation tool with automated study load OCR schedule extraction.", 
-      image: "/images/chrononav.png", 
-      githubUrl: "https://github.com/Vinzz290034/CHRONONAV_WEB_DOSS" 
+      tags: ["PHP", "OCR", "Figma"],
+      desc: "Campus navigation tool with automated study load OCR schedule extraction.",
+      image: "/images/chrononav.png",
+      githubUrl: "https://github.com/Vinzz290034/CHRONONAV_WEB_DOSS"
     }
   ];
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
+  const filteredProjects = activeCategory === "All"
+    ? projects
     : projects.filter(p => p.category === activeCategory || (activeCategory === "Full-Stack & Backend" && p.id === "mentor"));
 
   // Logic to show detail views
@@ -63,7 +63,7 @@ export default function Portfolio() {
         <div className="space-y-2">
           <div className="flex items-center gap-3">
             <div className="w-1.5 h-8 bg-[#2ecc71] rounded-full" />
-            <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-slate-900 tracking-tight">Featured Projects 🚀</h2>
+            <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-slate-900 tracking-tight">Featured Projects </h2>
           </div>
           <p className="dark:text-slate-400 text-slate-600 text-sm md:text-base max-w-xl">
             Click any project to inspect technical architecture, database schemas, and live repository source code.
@@ -76,11 +76,10 @@ export default function Portfolio() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer shrink-0 ${
-                activeCategory === cat
-                  ? "bg-[#2ecc71] text-slate-950 shadow-md"
-                  : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-white/10"
-              }`}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer shrink-0 ${activeCategory === cat
+                ? "bg-[#2ecc71] text-slate-950 shadow-md"
+                : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-white/10"
+                }`}
             >
               {cat}
             </button>
@@ -91,26 +90,26 @@ export default function Portfolio() {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((p) => (
-          <div 
-            key={p.id} 
+          <div
+            key={p.id}
             onClick={() => setSelectedProject(p.id)}
             className="group dark:bg-[#161b22]/90 bg-white border dark:border-white/10 border-slate-200/80 rounded-3xl overflow-hidden hover:border-[#2ecc71]/50 transition-all duration-500 cursor-pointer flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 relative"
           >
             <div className="relative h-52 w-full overflow-hidden dark:bg-slate-900 bg-slate-100">
-              <Image 
-                src={p.image} 
-                alt={p.title} 
-                fill 
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
+              <Image
+                src={p.image}
+                alt={p.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
               />
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
               {p.liveUrl && (
                 <div className="absolute top-3 right-3 z-10">
-                  <a 
-                    href={p.liveUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
                     className="flex items-center gap-1.5 px-3 py-1 bg-[#2ecc71] text-slate-950 text-xs font-extrabold rounded-full shadow-lg hover:bg-[#27ae60] hover:scale-105 transition-all"
                   >
@@ -140,7 +139,7 @@ export default function Portfolio() {
                 </div>
               </div>
               <p className="dark:text-slate-400 text-slate-600 text-sm leading-relaxed grow">{p.desc}</p>
-              
+
               <div className="flex items-center justify-between pt-3 border-t dark:border-white/5 border-slate-100">
                 <div className="flex flex-wrap gap-1.5">
                   {p.tags.map(tag => (

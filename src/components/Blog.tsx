@@ -53,7 +53,7 @@ export default function Blog() {
             <BookOpen size={13} /> Engineering Insights & Articles
           </div>
           <h2 className="text-3xl md:text-4xl font-black dark:text-white text-slate-900 tracking-tight">
-            Technical Case Studies & Feed 📰
+            Technical Case Studies & Feed
           </h2>
           <p className="dark:text-slate-400 text-slate-600 text-sm max-w-xl leading-relaxed">
             Case studies on full-stack architecture, backend financial calculations, and my experiences building software systems in Cebu City.
@@ -69,17 +69,17 @@ export default function Blog() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article, index) => (
-            <article 
+            <article
               key={index}
               className="group dark:bg-[#161b22]/90 bg-white border dark:border-white/10 border-slate-200/80 rounded-3xl overflow-hidden hover:border-[#2ecc71]/50 transition-all duration-500 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-1 cursor-pointer"
             >
               <div className="relative h-48 w-full overflow-hidden dark:bg-slate-900 bg-slate-100">
-                <Image 
-                  src={article.image} 
+                <Image
+                  src={article.image}
                   alt={article.title}
-                  fill 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 bg-slate-950/80 backdrop-blur-md rounded-full text-[10px] text-[#2ecc71] font-bold uppercase tracking-wider border border-[#2ecc71]/30">
                   {article.category}
@@ -119,7 +119,7 @@ export default function Blog() {
 
       {/* Social Media Cards Grid */}
       <div className="space-y-4 pt-6 border-t dark:border-white/10 border-slate-200/80">
-        <h3 className="text-xl font-bold dark:text-white text-slate-900">Official Social Profiles 🌐</h3>
+        <h3 className="text-xl font-bold dark:text-white text-slate-900">Official Social Profiles </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <a
             href="https://github.com/EricMomo2957"
