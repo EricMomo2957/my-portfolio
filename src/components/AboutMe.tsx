@@ -1,17 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { 
-  Code2, 
-  GraduationCap, 
-  Sparkles, 
-  Cpu, 
-  Award, 
-  Bot, 
-  Wrench, 
-  HeartHandshake, 
-  Lightbulb, 
-  Layers, 
+import {
+  Code2,
+  GraduationCap,
+  Sparkles,
+  Cpu,
+  Award,
+  Bot,
+  Wrench,
+  HeartHandshake,
+  Lightbulb,
+  Layers,
   BookOpen,
   Palette,
   FileText,
@@ -74,15 +74,15 @@ export default function AboutMe() {
     <section className="p-6 md:p-10 space-y-12 max-w-6xl mx-auto">
       {/* 2-Column "My Journey" Hero Layout matching sample photo design */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        
+
         {/* Left Column: Portrait Card */}
         <div className="lg:col-span-5 lg:sticky lg:top-24">
           <div className="relative w-full aspect-3/4 rounded-3xl overflow-hidden border-2 dark:border-white/10 border-slate-200/80 shadow-2xl dark:bg-[#161b22] bg-white p-2">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
-              <Image 
-                src="/images/daddy_manhwa.jpg" 
-                alt="Eric Dominic Momo" 
-                fill 
+              <Image
+                src="/images/daddy_manhwa.jpg"
+                alt="Eric Dominic Momo"
+                fill
                 sizes="(max-width: 1024px) 100vw, 420px"
                 className="object-cover hover:scale-105 transition-transform duration-700"
                 priority
@@ -106,11 +106,11 @@ export default function AboutMe() {
 
         {/* Right Column: Creative Narrative Journey & Experience */}
         <div className="lg:col-span-7 space-y-8">
-          
+
           {/* Section 1: My Journey (Creative Developer Narrative) */}
           <div className="space-y-5">
             <h1 className="text-4xl md:text-5xl font-black dark:text-white text-slate-900 tracking-tight">
-              My Journey <span className="text-[#2ecc71]">🚀</span>
+              My Journey <span className="text-[#2ecc71]"></span>
             </h1>
 
             <p className="dark:text-slate-300 text-slate-600 leading-relaxed text-base md:text-lg">
@@ -158,8 +158,8 @@ export default function AboutMe() {
                 </div>
               </div>
 
-              <a 
-                href="/Eric_Dominic_Momo_Cover_Letter.pdf" 
+              <a
+                href="/Eric_Dominic_Momo_Cover_Letter.pdf"
                 download="Eric_Dominic_Momo_Cover_Letter.pdf"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 font-bold px-5 py-2.5 rounded-full text-xs transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer shrink-0 text-center"
               >

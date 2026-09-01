@@ -86,7 +86,7 @@ export default function Contact() {
       <div className="space-y-2">
         <div className="flex items-center gap-3">
           <div className="w-1.5 h-8 bg-[#2ecc71] rounded-full" />
-          <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-slate-900 tracking-tight">Get In Touch 📬</h2>
+          <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-slate-900 tracking-tight">Get In Touch </h2>
         </div>
         <p className="dark:text-slate-400 text-slate-600 text-sm md:text-base max-w-xl leading-relaxed">
           Have a project in mind, a Design Associate opportunity, or just want to say hi? Feel free to reach out. I&apos;m always open to discussing new software engineering roles.
@@ -97,26 +97,26 @@ export default function Contact() {
         {/* Left Side: Direct Contact Details & Availability */}
         <div className="flex-1 space-y-8">
           <div className="grid grid-cols-1 gap-6">
-            <ContactItem 
-              icon={<Mail size={22} />} 
-              title="Email" 
-              value="momoe2957@gmail.com" 
+            <ContactItem
+              icon={<Mail size={22} />}
+              title="Email"
+              value="momoe2957@gmail.com"
               href="mailto:momoe2957@gmail.com"
               onCopy={() => handleCopy("momoe2957@gmail.com", "email")}
               copied={copiedField === "email"}
             />
-            <ContactItem 
-              icon={<Phone size={22} />} 
-              title="Phone" 
-              value="+63 935 273 7624" 
+            <ContactItem
+              icon={<Phone size={22} />}
+              title="Phone"
+              value="+63 935 273 7624"
               href="tel:+639352737624"
               onCopy={() => handleCopy("+639352737624", "phone")}
               copied={copiedField === "phone"}
             />
-            <ContactItem 
-              icon={<MapPin size={22} />} 
-              title="Location" 
-              value="Cebu City, Philippines" 
+            <ContactItem
+              icon={<MapPin size={22} />}
+              title="Location"
+              value="Cebu City, Philippines"
             />
           </div>
 
@@ -124,25 +124,25 @@ export default function Contact() {
           <div className="pt-6 border-t dark:border-white/10 border-slate-200 space-y-3">
             <p className="dark:text-slate-400 text-slate-500 text-[10px] font-bold uppercase tracking-widest">Connect Online</p>
             <div className="flex flex-wrap gap-3">
-              <a 
-                href="https://github.com/EricMomo2957" 
-                target="_blank" 
+              <a
+                href="https://github.com/EricMomo2957"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 dark:bg-[#161b22] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-[#2ecc71]/50 hover:text-[#2ecc71] transition-all shadow-sm cursor-pointer"
               >
                 <FaGithub size={16} /> GitHub (@EricMomo2957) <ExternalLink size={12} />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 dark:bg-[#161b22] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-blue-400 hover:text-blue-400 transition-all shadow-sm cursor-pointer"
               >
                 <FaLinkedin size={16} /> LinkedIn <ExternalLink size={12} />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
+              <a
+                href="https://twitter.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 dark:bg-[#161b22] bg-white border dark:border-white/10 border-slate-200/80 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-200 text-slate-800 hover:border-sky-400 hover:text-sky-400 transition-all shadow-sm cursor-pointer"
               >
@@ -163,12 +163,12 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        
+
         {/* Right Side: Message Form */}
         <div className="flex-[1.2] relative">
           <div className="absolute -inset-4 bg-[#2ecc71]/10 blur-3xl rounded-full opacity-50 pointer-events-none" />
-          
-          <form 
+
+          <form
             onSubmit={handleSubmit}
             className="relative dark:bg-[#161b22] bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border dark:border-white/10 border-slate-200/80 shadow-2xl space-y-6"
           >
@@ -186,25 +186,25 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold dark:text-slate-400 text-slate-500 uppercase ml-1">Your Name</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   name="name"
                   value={formData.name || ""}
                   onChange={handleChange}
-                  placeholder="John Doe" 
-                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none" 
+                  placeholder="John Doe"
+                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
                   required
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold dark:text-slate-400 text-slate-500 uppercase ml-1">Email Address</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   name="email"
                   value={formData.email || ""}
                   onChange={handleChange}
-                  placeholder="john@example.com" 
-                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none" 
+                  placeholder="john@example.com"
+                  className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-3.5 sm:p-4 text-base sm:text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
                   required
                 />
               </div>
@@ -212,30 +212,30 @@ export default function Contact() {
 
             <div className="space-y-2">
               <label className="text-xs font-bold dark:text-slate-400 text-slate-500 uppercase ml-1">Subject</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="subject"
                 value={formData.subject || ""}
                 onChange={handleChange}
-                placeholder="Design Associate Opportunity / Inquiry" 
-                className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none" 
+                placeholder="Design Associate Opportunity / Inquiry"
+                className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-xs font-bold dark:text-slate-400 text-slate-500 uppercase ml-1">Message</label>
-              <textarea 
+              <textarea
                 name="message"
                 value={formData.message || ""}
                 onChange={handleChange}
-                placeholder="Hi Dominic, I'd like to discuss an opportunity..." 
-                rows={5} 
-                className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none resize-none" 
+                placeholder="Hi Dominic, I'd like to discuss an opportunity..."
+                rows={5}
+                className="w-full dark:bg-[#0d1117] bg-slate-50 border dark:border-white/10 border-slate-200 rounded-xl p-4 text-sm dark:text-white text-slate-900 focus:border-[#2ecc71] focus:ring-2 focus:ring-[#2ecc71]/20 transition-all outline-none resize-none"
                 required
               />
             </div>
 
-            <button 
+            <button
               type="submit"
               disabled={isSubmitting}
               className="group w-full bg-[#2ecc71] text-slate-950 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#27ae60] transition-all active:scale-[0.98] shadow-lg shadow-[#2ecc71]/20 cursor-pointer disabled:opacity-50"
@@ -260,8 +260,8 @@ function ContactItem({ icon, title, value, href, onCopy, copied }: ContactItemPr
         <div>
           <p className="text-[10px] dark:text-slate-400 text-slate-500 font-extrabold uppercase tracking-widest mb-0.5">{title}</p>
           {href ? (
-            <a 
-              href={href} 
+            <a
+              href={href}
               className="dark:text-white text-slate-900 font-semibold text-sm md:text-base hover:text-[#2ecc71] transition-colors"
             >
               {value}
@@ -273,7 +273,7 @@ function ContactItem({ icon, title, value, href, onCopy, copied }: ContactItemPr
       </div>
 
       {onCopy && (
-        <button 
+        <button
           onClick={onCopy}
           title={`Copy ${title}`}
           className="p-2 dark:text-slate-400 text-slate-500 hover:text-[#2ecc71] transition-colors cursor-pointer"
