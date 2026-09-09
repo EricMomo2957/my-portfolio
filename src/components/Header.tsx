@@ -27,8 +27,7 @@ export default function Header({ activeView, setActiveView, isDark = true, toggl
   const navItems = [
     { label: "Home", target: "Home", icon: <HomeIcon size={16} /> },
     { label: "About", target: "About Me", icon: <User size={16} /> },
-    { label: "Projects", target: "Portfolio", icon: <Briefcase size={16} /> },
-    { label: "Resume", target: "Resume", icon: <FileText size={16} /> },
+    { label: "Projects & Resume", target: "Portfolio", icon: <Briefcase size={16} /> },
     { label: "Contact", target: "Contact", icon: <Mail size={16} /> }
   ];
 
@@ -61,7 +60,10 @@ export default function Header({ activeView, setActiveView, isDark = true, toggl
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-1 bg-slate-100 dark:bg-white/5 p-1.5 rounded-full border dark:border-white/10 border-slate-200/80">
           {navItems.map((item) => {
-            const isActive = activeView === item.target || (activeView === "About Me" && item.target === "About Me");
+            const isActive = 
+              activeView === item.target || 
+              (activeView === "About Me" && item.target === "About Me") ||
+              ((activeView === "Portfolio" || activeView === "Resume") && item.target === "Portfolio");
             return (
               <button
                 key={item.target}
@@ -114,7 +116,10 @@ export default function Header({ activeView, setActiveView, isDark = true, toggl
       {mobileMenuOpen && (
         <div className="lg:hidden dark:bg-[#081510] bg-white border-b dark:border-white/10 border-slate-200 p-4 space-y-2 animate-in slide-in-from-top-4 duration-300">
           {navItems.map((item) => {
-            const isActive = activeView === item.target;
+            const isActive = 
+              activeView === item.target || 
+              (activeView === "About Me" && item.target === "About Me") ||
+              ((activeView === "Portfolio" || activeView === "Resume") && item.target === "Portfolio");
             return (
               <button
                 key={item.target}

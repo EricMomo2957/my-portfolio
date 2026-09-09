@@ -22,6 +22,7 @@ interface SidebarProps {
 interface NavItemProps {
   icon: React.ReactNode;
   label: string;
+  target?: string;
   activeView: string;
   setActiveView: (view: string) => void;
 }
@@ -75,13 +76,8 @@ export default function Sidebar({ activeView, setActiveView, isDark = true, togg
           />
           <NavItem 
             icon={<FaBriefcase />} 
-            label="Portfolio" 
-            activeView={activeView} 
-            setActiveView={setActiveView} 
-          />
-          <NavItem 
-            icon={<FaFileAlt />} 
-            label="Resume" 
+            label="Projects & Resume" 
+            target="Portfolio"
             activeView={activeView} 
             setActiveView={setActiveView} 
           />
@@ -109,13 +105,8 @@ export default function Sidebar({ activeView, setActiveView, isDark = true, togg
             onClick={toggleDarkMode}
             className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl dark:bg-slate-800/80 bg-slate-100 dark:border-white/5 border-slate-200 border text-xs font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-all cursor-pointer shadow-xs"
           >
-            <span className="flex items-center gap-2">
-              {isDark ? <Moon size={14} className="text-amber-400" /> : <Sun size={14} className="text-amber-500" />}
-              <span className="normal-case font-bold">{isDark ? "Dark Mode" : "Light Mode"}</span>
-            </span>
-            <div className={`w-9 h-5 rounded-full p-0.5 transition-colors duration-300 flex items-center ${isDark ? "bg-[#2ecc71]" : "bg-slate-300"}`}>
-              <div className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 ${isDark ? "translate-x-4" : "translate-x-0"}`} />
-            </div>
+            <span>Theme: {isDark ? "Dark" : "Light"}</span>
+            <span className="text-[#2ecc71]">Toggle</span>
           </button>
         )}
       </div>
@@ -123,13 +114,14 @@ export default function Sidebar({ activeView, setActiveView, isDark = true, togg
   );
 }
 
-function NavItem({ icon, label, activeView, setActiveView }: NavItemProps) {
-  const isActive = activeView === label;
+function NavItem({ icon, label, target, activeView, setActiveView }: NavItemProps) {
+  const dest = target || label;
+  const isActive = activeView === dest || activeView === label || (dest === "Portfolio" && (activeView === "Portfolio" || activeView === "Resume"));
   
   return (
     <li>
       <button 
-        onClick={() => setActiveView(label)}
+        onClick={() => setActiveView(dest)}
         className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all font-medium text-[13px] cursor-pointer
           ${isActive 
             ? 'text-[#2ecc71] dark:bg-emerald-500/10 bg-emerald-50 font-bold border-l-4 border-[#2ecc71] shadow-xs' 
