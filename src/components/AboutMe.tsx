@@ -23,7 +23,10 @@ import {
   Zap,
   Terminal,
   Database,
-  ExternalLink
+  Building2,
+  Briefcase,
+  CheckCircle2,
+  ChevronRight
 } from "lucide-react";
 import { FaReact, FaNodeJs, FaPython, FaPhp, FaJava, FaGitAlt, FaFigma, FaWordpress, FaGithub } from "react-icons/fa";
 import { SiTypescript, SiPostgresql, SiMysql, SiCanva, SiBootstrap, SiTailwindcss } from "react-icons/si";
@@ -50,14 +53,14 @@ export default function AboutMe() {
     tools: [
       { name: "Figma", icon: <FaFigma size={14} className="text-rose-400" /> },
       { name: "Canva", icon: <SiCanva size={14} className="text-cyan-300" /> },
-      { name: "Photoshop & Photopea", icon: <Palette size={14} className="text-blue-400" /> },
+      { name: "Photoshop", icon: <Palette size={14} className="text-blue-400" /> },
       { name: "WordPress & Elementor", icon: <FaWordpress size={14} className="text-sky-400" /> },
       { name: "Git & GitHub", icon: <FaGitAlt size={14} className="text-amber-400" /> },
       { name: "VS Code & XAMPP", icon: <Wrench size={14} className="text-emerald-400" /> }
     ],
     aiAutomation: [
       { name: "Flowise AI (Logic Chatbots)", icon: <Bot size={14} className="text-purple-400" /> },
-      { name: "AI & Prompt Engineering", icon: <Cpu size={14} className="text-cyan-400" /> }
+      { name: "AI & Prompt Workflows", icon: <Cpu size={14} className="text-cyan-400" /> }
     ],
     methodologies: [
       "RESTful APIs",
@@ -69,189 +72,335 @@ export default function AboutMe() {
     ]
   };
 
-  const highlights = [
-    { label: "Degree", value: "BSIT", detail: "UC Main Campus '26", icon: <GraduationCap size={18} className="text-[#2ecc71]" /> },
-    { label: "Co-Founder", value: "KATD", detail: "Backend & Systems Lead", icon: <Terminal size={18} className="text-emerald-400" /> },
-    { label: "Certified", value: "CCNAv7", detail: "Cisco Routing & Switching", icon: <Award size={18} className="text-amber-400" /> },
-    { label: "Shipped", value: "3+ Apps", detail: "Production & In-House", icon: <Zap size={18} className="text-cyan-400" /> }
-  ];
-
   const softSkills = [
     {
       title: "Full-Lifecycle Execution",
-      desc: "From initial Figma wireframes and PostgreSQL schema design to building automated REST APIs and production deployment.",
-      icon: <Layers size={20} className="text-[#2ecc71]" />
+      desc: "From Figma wireframes and schema design to automated REST APIs and production deployment.",
+      icon: <Layers size={18} className="text-[#2ecc71]" />
     },
     {
       title: "Analytical Problem Solving",
-      desc: "Translating complex cooperative financial formulas and real-world bottlenecks into clean, efficient automated calculation routines.",
-      icon: <Lightbulb size={20} className="text-amber-400" />
+      desc: "Translating complex cooperative financial formulas and bottlenecks into automated calculation routines.",
+      icon: <Lightbulb size={18} className="text-amber-400" />
     },
     {
       title: "Design & Dev Synergy",
-      desc: "Bridging the gap between aesthetic visual assets and robust backend architecture for a seamless user experience.",
-      icon: <Palette size={20} className="text-rose-400" />
+      desc: "Bridging the gap between aesthetic visual assets and robust backend architecture.",
+      icon: <Palette size={18} className="text-rose-400" />
     },
     {
       title: "Team Collaboration & Git Lead",
-      desc: "Leading code reviews, maintaining repository branching standards, and facilitating clear cross-functional communication.",
-      icon: <HeartHandshake size={20} className="text-blue-400" />
+      desc: "Leading code reviews, maintaining repository standards, and facilitating clear cross-functional communication.",
+      icon: <HeartHandshake size={18} className="text-blue-400" />
     }
   ];
 
   return (
-    <section className="p-4 sm:p-6 md:p-10 max-w-6xl mx-auto space-y-12">
-      {/* 2-Column Hero & Narrative Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-        
-        {/* Left Column: Minimalist Profile Card */}
-        <div className="lg:col-span-5 lg:sticky lg:top-24 space-y-4">
-          <div className="rounded-3xl p-5 sm:p-6 dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 backdrop-blur-xl shadow-xl space-y-5 transition-all duration-300 hover:border-[#2ecc71]/30">
-            
-            {/* Image Container with Floating Status Pill */}
-            <div className="relative w-full aspect-4/5 rounded-2xl overflow-hidden border dark:border-white/10 border-slate-200/80 shadow-inner group">
-              <Image
-                src="/images/daddy_manhwa.jpg"
-                alt="Eric Dominic Momo"
-                fill
-                sizes="(max-width: 1024px) 100vw, 420px"
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                priority
-              />
-              
-              {/* Subtle Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+    <section className="p-4 sm:p-6 md:p-10 max-w-6xl mx-auto space-y-10 relative">
+      
+      {/* Background Subtle Tech Watermarks */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-[0.03] dark:opacity-[0.05] font-mono text-sm leading-none flex flex-wrap gap-12 p-8 justify-between">
+        <span>const</span>
+        <span>git</span>
+        <span>npm</span>
+        <span>{`{ ... }`}</span>
+        <span>=&gt;</span>
+        <span>import</span>
+        <span>interface</span>
+        <span>async/await</span>
+        <span>PostgreSQL</span>
+        <span>Node.js</span>
+        <span>React 19</span>
+        <span>status: 200</span>
+      </div>
 
-              {/* Status Badge */}
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium tracking-wide">
-                  <span className="w-2 h-2 rounded-full bg-[#2ecc71] animate-pulse" />
-                  Open to Opportunities
-                </span>
-                <span className="px-2.5 py-1 rounded-full bg-[#2ecc71]/90 text-slate-950 text-[10px] font-bold uppercase tracking-wider font-mono">
-                  BSIT &apos;26
-                </span>
-              </div>
+      {/* Main Centered Header */}
+      <div className="text-center space-y-3 relative z-10 max-w-2xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-black dark:text-white text-slate-900 tracking-tight">
+          About Me
+        </h1>
+        <p className="dark:text-slate-400 text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed">
+          Full-Stack Developer & Design Associate dedicated to creating intuitive, responsive web applications with clean, modern code.
+        </p>
+        
+        {/* Quick Action Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <a
+            href="/Eric_Dominic_Momo_Resume.pdf"
+            download="Eric_Dominic_Momo_Resume.pdf"
+            className="inline-flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 font-bold px-5 py-2 rounded-xl text-xs transition-all shadow-md shadow-[#2ecc71]/20 hover:scale-105 active:scale-95 cursor-pointer"
+          >
+            <Download size={14} /> Download Resume (.pdf)
+          </a>
+          <a
+            href="/Eric_Dominic_Momo_Cover_Letter.pdf"
+            download="Eric_Dominic_Momo_Cover_Letter.pdf"
+            className="inline-flex items-center gap-2 dark:bg-white/[0.04] bg-slate-100 hover:bg-slate-200 dark:hover:bg-white/10 dark:text-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold border dark:border-white/10 border-slate-200 transition-all cursor-pointer"
+          >
+            <FileText size={14} /> Cover Letter
+          </a>
+        </div>
+      </div>
+
+      {/* TOP GRID: 2-Card Bento Layout (Main Narrative vs Education & Status) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10 items-stretch">
+        
+        {/* Left Card: Design & Engineering Craft (8 cols) */}
+        <div className="lg:col-span-8 p-6 sm:p-8 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-6 hover:border-[#2ecc71]/30 transition-all">
+          
+          <div className="space-y-4">
+            {/* Terminal Eyebrow */}
+            <div className="flex items-center gap-2 font-mono text-xs font-bold text-cyan-400">
+              <span className="text-[#2ecc71]">&gt;_</span>
+              <span className="tracking-wider uppercase">DESIGN &amp; FULL-STACK CRAFT</span>
             </div>
 
-            {/* Profile Meta & Name */}
-            <div className="space-y-1.5 text-center sm:text-left">
-              <h2 className="text-2xl font-black dark:text-white text-slate-900 tracking-tight">
-                Eric Dominic Momo
-              </h2>
-              <p className="text-xs font-semibold text-[#2ecc71] uppercase tracking-wider font-mono">
-                Associate Web Developer & Design Associate
+            {/* Headline */}
+            <h2 className="text-2xl sm:text-3xl font-extrabold dark:text-white text-slate-900 tracking-tight leading-snug">
+              Design-First Aesthetics Coupled with Robust Backend Architecture
+            </h2>
+
+            {/* Intro Narrative */}
+            <p className="text-xs sm:text-sm leading-relaxed dark:text-slate-300 text-slate-600 text-justify [text-align-last:left]">
+              I am <strong className="dark:text-white text-slate-900 font-bold">Eric Dominic Momo</strong>, an Information Technology graduate specializing in full-stack development, responsive UI design, and automated database workflows. Ever since writing my first line of code at the <strong className="dark:text-white text-slate-900 font-bold">University of Cebu – Main Campus</strong>, I have merged technical backend logic with clean visual design.
+            </p>
+
+            {/* The Foundation: Direct to the Point Milestones */}
+            <div className="space-y-2.5 pt-2">
+              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#2ecc71]">
+                Core Engineering Milestones:
+              </h3>
+              
+              <div className="grid grid-cols-1 gap-2.5 text-xs dark:text-slate-300 text-slate-600">
+                {/* 1. KATD Solutions */}
+                <div className="p-3 rounded-xl dark:bg-white/[0.02] bg-slate-50 border dark:border-white/5 border-slate-200/80 space-y-1">
+                  <div className="flex items-center justify-between font-bold dark:text-white text-slate-900">
+                    <span className="flex items-center gap-1.5 text-emerald-400 font-mono">
+                      <Terminal size={14} /> KATD Solutions &amp; Loan System Backend
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">May – Sept 2026</span>
+                  </div>
+                  <p className="text-[11px] sm:text-xs leading-relaxed dark:text-slate-400 text-slate-600">
+                    Co-founded KATD Solutions; architected the backend API in <strong className="text-emerald-400">Node.js, Express &amp; PostgreSQL</strong> for the UC METC Campus loan monitoring system, automating Flat-Rate and Diminishing Balance interest schedules.
+                  </p>
+                </div>
+
+                {/* 2. CoreLogic & MentorLog */}
+                <div className="p-3 rounded-xl dark:bg-white/[0.02] bg-slate-50 border dark:border-white/5 border-slate-200/80 space-y-1">
+                  <div className="flex items-center justify-between font-bold dark:text-white text-slate-900">
+                    <span className="flex items-center gap-1.5 text-blue-400 font-mono">
+                      <Wrench size={14} /> CoreLogic Internship &amp; MentorLog
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">Feb – Apr 2026</span>
+                  </div>
+                  <p className="text-[11px] sm:text-xs leading-relaxed dark:text-slate-400 text-slate-600">
+                    Maintained client websites in <strong className="text-blue-400">WordPress &amp; Elementor</strong> and designed graphic assets in Canva/Photoshop, while independently developing <strong className="text-blue-400">MentorLog</strong> (React 19/MySQL) to automate OJT attendance tracking.
+                  </p>
+                </div>
+
+                {/* 3. ChronoNav */}
+                <div className="p-3 rounded-xl dark:bg-white/[0.02] bg-slate-50 border dark:border-white/5 border-slate-200/80 space-y-1">
+                  <div className="flex items-center justify-between font-bold dark:text-white text-slate-900">
+                    <span className="flex items-center gap-1.5 text-purple-400 font-mono">
+                      <Layers size={14} /> Capstone Leadership (ChronoNav)
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">Aug – Dec 2025</span>
+                  </div>
+                  <p className="text-[11px] sm:text-xs leading-relaxed dark:text-slate-400 text-slate-600">
+                    Served as Lead Developer orchestrating the team&apos;s Git/GitHub repository and integrated <strong className="text-purple-400">Tesseract OCR</strong> to convert printed student study load schedules into interactive campus navigation routes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom 3 Mini-Pill Badges */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t dark:border-white/5 border-slate-100">
+            <div className="p-3 rounded-2xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200 flex flex-col justify-center">
+              <div className="flex items-center gap-2 text-xs font-bold dark:text-white text-slate-900">
+                <Code2 size={15} className="text-[#2ecc71]" /> Full-Stack Dev
+              </div>
+              <span className="text-[11px] dark:text-slate-400 text-slate-500 font-mono mt-0.5">
+                Node.js, Express &amp; React
+              </span>
+            </div>
+
+            <div className="p-3 rounded-2xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200 flex flex-col justify-center">
+              <div className="flex items-center gap-2 text-xs font-bold dark:text-white text-slate-900">
+                <Palette size={15} className="text-rose-400" /> UI/UX &amp; Design
+              </div>
+              <span className="text-[11px] dark:text-slate-400 text-slate-500 font-mono mt-0.5">
+                Figma, Canva &amp; Photoshop
+              </span>
+            </div>
+
+            <div className="p-3 rounded-2xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200 flex flex-col justify-center">
+              <div className="flex items-center gap-2 text-xs font-bold dark:text-white text-slate-900">
+                <Database size={15} className="text-cyan-400" /> APIs &amp; DBs
+              </div>
+              <span className="text-[11px] dark:text-slate-400 text-slate-500 font-mono mt-0.5">
+                PostgreSQL, MySQL &amp; REST
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Right Card: Education & Current Status (4 cols) */}
+        <div className="lg:col-span-4 p-6 sm:p-8 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-6 hover:border-[#2ecc71]/30 transition-all">
+          
+          <div className="space-y-4">
+            {/* Education Eyebrow */}
+            <div className="flex items-center gap-2 font-mono text-xs font-bold text-purple-400">
+              <GraduationCap size={15} />
+              <span className="tracking-wider uppercase">EDUCATION</span>
+            </div>
+
+            {/* Degree Title */}
+            <div className="space-y-1">
+              <h3 className="text-xl sm:text-2xl font-extrabold dark:text-white text-slate-900 tracking-tight">
+                BS in Information Technology
+              </h3>
+              <p className="text-sm font-bold text-cyan-400">
+                University of Cebu – Main Campus
+              </p>
+              <p className="text-xs dark:text-slate-400 text-slate-500 font-mono">
+                Graduation: June 2026 • Cebu City, PH
               </p>
             </div>
 
-            {/* Quick Contact Chips */}
-            <div className="space-y-2 text-xs font-mono dark:text-slate-300 text-slate-600">
-              <div className="flex items-center gap-2.5 p-2.5 rounded-xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200">
-                <MapPin size={14} className="text-[#2ecc71] shrink-0" />
+            {/* Quick Contact & Location Chips */}
+            <div className="space-y-2 pt-2 text-xs font-mono dark:text-slate-300 text-slate-600">
+              <div className="flex items-center gap-2 p-2 rounded-xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200">
+                <MapPin size={13} className="text-[#2ecc71] shrink-0" />
                 <span className="truncate">Cebu City, 6000 Philippines</span>
               </div>
               <a
                 href="mailto:momoe2957@gmail.com"
-                className="flex items-center justify-between p-2.5 rounded-xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200 hover:border-[#2ecc71]/40 dark:hover:text-white hover:text-slate-900 transition-all group"
+                className="flex items-center justify-between p-2 rounded-xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200 hover:border-[#2ecc71]/40 dark:hover:text-white transition-all group"
               >
-                <div className="flex items-center gap-2.5 truncate">
-                  <Mail size={14} className="text-[#2ecc71] shrink-0" />
+                <div className="flex items-center gap-2 truncate">
+                  <Mail size={13} className="text-[#2ecc71] shrink-0" />
                   <span className="truncate">momoe2957@gmail.com</span>
                 </div>
-                <ArrowUpRight size={13} className="text-slate-400 group-hover:text-[#2ecc71] transition-colors shrink-0" />
+                <ArrowUpRight size={12} className="text-slate-400 group-hover:text-[#2ecc71] shrink-0" />
               </a>
-              <div className="flex items-center gap-2.5 p-2.5 rounded-xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200">
-                <Phone size={14} className="text-[#2ecc71] shrink-0" />
+              <div className="flex items-center gap-2 p-2 rounded-xl dark:bg-white/[0.03] bg-slate-100 border dark:border-white/5 border-slate-200">
+                <Phone size={13} className="text-[#2ecc71] shrink-0" />
                 <span>+63 935 273 7624</span>
               </div>
             </div>
-
-            {/* Download CTA Button */}
-            <div className="pt-2">
-              <a
-                href="/Eric_Dominic_Momo_Cover_Letter.pdf"
-                download="Eric_Dominic_Momo_Cover_Letter.pdf"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 font-bold py-2.5 px-4 rounded-xl text-xs transition-all shadow-md shadow-[#2ecc71]/20 hover:scale-[1.02] active:scale-95 cursor-pointer"
-              >
-                <Download size={14} /> Download Cover Letter (.pdf)
-              </a>
-            </div>
           </div>
+
+          {/* Current Status Box matching sample photo */}
+          <div className="p-4 rounded-2xl dark:bg-white/[0.03] bg-slate-50 border dark:border-white/10 border-slate-200/90 space-y-1.5">
+            <div className="flex items-center gap-2 text-xs font-bold text-cyan-400 font-mono">
+              <span className="w-2 h-2 rounded-full bg-[#2ecc71] animate-pulse" />
+              <span>Current Status</span>
+            </div>
+            <p className="text-xs dark:text-slate-300 text-slate-600 leading-relaxed">
+              Open for full-time IT roles, Associate Web Developer, Design Associate, and freelance full-stack projects.
+            </p>
+          </div>
+
         </div>
 
-        {/* Right Column: Narrative & Experience Story */}
-        <div className="lg:col-span-7 space-y-8">
-          
-          {/* Eyebrow & Main Title */}
+      </div>
+
+      {/* BOTTOM GRID: Experience & Accolades Cards */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10 items-stretch">
+        
+        {/* Bottom Left Card: Experience Highlights (6 cols) */}
+        <div className="lg:col-span-6 p-6 sm:p-7 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-5 hover:border-[#2ecc71]/30 transition-all flex flex-col justify-between">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border dark:border-white/10 border-slate-300 dark:bg-white/[0.04] bg-slate-100 text-xs font-semibold uppercase tracking-wider text-[#2ecc71]">
-              <Sparkles size={13} />
-              About Me & Professional Journey
-            </div>
-            
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black dark:text-white text-slate-900 tracking-tight leading-tight">
-              Bridging Architecture, Clean Code & Intuitive UI
-            </h1>
-          </div>
-
-          {/* Quick Highlight Metrics Bento */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {highlights.map((h, i) => (
-              <div
-                key={i}
-                className="p-3.5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-1 text-center sm:text-left transition-all hover:border-[#2ecc71]/30"
-              >
-                <div className="flex items-center justify-center sm:justify-start gap-1.5 mb-1">
-                  {h.icon}
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400">{h.label}</span>
-                </div>
-                <div className="text-base font-extrabold dark:text-white text-slate-900">{h.value}</div>
-                <div className="text-[10px] dark:text-slate-400 text-slate-500 font-medium truncate">{h.detail}</div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 font-mono text-xs font-bold text-blue-400">
+                <Briefcase size={15} />
+                <span className="tracking-wider uppercase">EXPERIENCE</span>
               </div>
-            ))}
-          </div>
-
-          {/* Story Content Blocks */}
-          <div className="space-y-5 text-sm sm:text-base leading-relaxed dark:text-slate-300 text-slate-600">
-            
-            <div className="p-5 rounded-2xl dark:bg-white/[0.02] bg-slate-100/60 border dark:border-white/5 border-slate-200/80 space-y-3">
-              <h3 className="text-base font-bold dark:text-white text-slate-900 flex items-center gap-2">
-                <Terminal size={16} className="text-[#2ecc71]" /> The Foundation
-              </h3>
-              <p className="text-justify [text-align-last:left]">
-                Ever since writing my first line of code at the <strong className="dark:text-white text-slate-900 font-bold">University of Cebu – Main Campus</strong>, I’ve been captivated by how structured logic and creative interface design unite. As a fresh <strong className="dark:text-white text-slate-900 font-bold">BSIT graduate (Class of 2026)</strong>, my focus is building scalable web solutions that streamline manual workflows into delightful digital experiences.
-              </p>
+              <span className="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-mono font-bold border border-blue-500/20">
+                2026
+              </span>
             </div>
 
-            <div className="p-5 rounded-2xl dark:bg-white/[0.02] bg-slate-100/60 border dark:border-white/5 border-slate-200/80 space-y-3">
-              <h3 className="text-base font-bold dark:text-white text-slate-900 flex items-center gap-2">
-                <Database size={16} className="text-emerald-400" /> KATD Solutions & Loan System Backend
-              </h3>
-              <p className="text-justify [text-align-last:left]">
-                My engineering journey accelerated when I co-founded <strong className="dark:text-white text-slate-900 font-bold">KATD SOLUTIONS</strong> with three colleagues. Together, we engineered an end-to-end <strong className="dark:text-white text-slate-900 font-bold">Cooperative Loan Monitoring & Financial Management Platform</strong> for the UC METC Campus. Working on the backend with <strong className="text-[#2ecc71] font-semibold">Node.js, Express, and PostgreSQL</strong>, I architected calculation routines for monthly amortizations, interest schedules, and centralized ledger records.
-              </p>
-            </div>
+            {/* Experience Items */}
+            <div className="space-y-4">
+              {/* Job 1 */}
+              <div className="space-y-1.5">
+                <h4 className="text-base font-bold dark:text-white text-slate-900">
+                  Full-Stack &amp; Backend Engineer
+                </h4>
+                <p className="text-xs font-mono text-[#2ecc71] font-semibold">
+                  KATD Solutions • UC Coop Loan System
+                </p>
+                <ul className="space-y-1 text-xs dark:text-slate-300 text-slate-600 pt-1">
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-[#2ecc71] font-bold">▸</span> Built loan amortization and cooperative financial calculation engines in Node.js/PostgreSQL.
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-[#2ecc71] font-bold">▸</span> Streamlined approval routing and compiled OpenXML Excel transaction audits.
+                  </li>
+                </ul>
+              </div>
 
-            <div className="p-5 rounded-2xl dark:bg-white/[0.02] bg-slate-100/60 border dark:border-white/5 border-slate-200/80 space-y-3">
-              <h3 className="text-base font-bold dark:text-white text-slate-900 flex items-center gap-2">
-                <Wrench size={16} className="text-cyan-400" /> CoreLogic Internship & MentorLog
-              </h3>
-              <p className="text-justify [text-align-last:left]">
-                During my internship at <strong className="dark:text-white text-slate-900 font-bold">CoreLogic Consulting & System, Inc.</strong>, I merged backend logic with client-facing web development. I maintained websites with <strong className="text-[#2ecc71] font-semibold">WordPress & Elementor</strong>, designed branding assets in Canva & Photoshop, and independently designed and built <strong className="dark:text-white text-slate-900 font-bold">MentorLog</strong>—an attendance management platform actively deployed to track trainee hours.
-              </p>
+              {/* Job 2 */}
+              <div className="space-y-1.5 pt-2 border-t dark:border-white/5 border-slate-100">
+                <h4 className="text-base font-bold dark:text-white text-slate-900">
+                  IT Admin Assistant &amp; Web Development Intern
+                </h4>
+                <p className="text-xs font-mono text-blue-400 font-semibold">
+                  CoreLogic Consulting &amp; System, Inc.
+                </p>
+                <ul className="space-y-1 text-xs dark:text-slate-300 text-slate-600 pt-1">
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-blue-400 font-bold">▸</span> Maintained client websites using WordPress/Elementor and produced graphic assets in Canva &amp; Photoshop.
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-blue-400 font-bold">▸</span> Independently engineered and deployed MentorLog for student intern tracking.
+                  </li>
+                </ul>
+              </div>
             </div>
-
-            <div className="p-5 rounded-2xl dark:bg-white/[0.02] bg-slate-100/60 border dark:border-white/5 border-slate-200/80 space-y-3">
-              <h3 className="text-base font-bold dark:text-white text-slate-900 flex items-center gap-2">
-                <Layers size={16} className="text-purple-400" /> Capstone Leadership (ChronoNav)
-              </h3>
-              <p className="text-justify [text-align-last:left]">
-                As <strong className="text-[#2ecc71] font-semibold">Lead Developer</strong> for our Capstone project, <strong className="dark:text-white text-slate-900 font-bold">ChronoNav</strong>, I directed our team&apos;s GitHub repository, designed UI prototypes in Figma, and integrated OCR schedule syncing to convert printed class loads into interactive navigation routes.
-              </p>
-            </div>
-
           </div>
         </div>
+
+        {/* Bottom Right Card: Key Accolades & Accreditations (6 cols) */}
+        <div className="lg:col-span-6 p-6 sm:p-7 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-4 hover:border-[#2ecc71]/30 transition-all flex flex-col justify-between">
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold text-[#2ecc71]">
+              <Award size={15} />
+              <span className="tracking-wider uppercase">KEY ACCOLADES &amp; ACCREDITATIONS</span>
+            </div>
+
+            {/* 4 Mini Highlight Cards matching screenshot layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <div className="p-3.5 rounded-2xl dark:bg-white/[0.03] bg-slate-50 border dark:border-white/5 border-slate-200/80 space-y-1">
+                <div className="text-sm font-extrabold text-amber-400">CCNAv7</div>
+                <div className="text-xs dark:text-slate-300 text-slate-700 font-medium">Cisco Certified (SRWE &amp; ITN)</div>
+                <div className="text-[10px] text-slate-400 font-mono">Routing &amp; Switching</div>
+              </div>
+
+              <div className="p-3.5 rounded-2xl dark:bg-white/[0.03] bg-slate-50 border dark:border-white/5 border-slate-200/80 space-y-1">
+                <div className="text-sm font-extrabold text-cyan-400">ChronoNav</div>
+                <div className="text-xs dark:text-slate-300 text-slate-700 font-medium">Capstone Lead Developer</div>
+                <div className="text-[10px] text-slate-400 font-mono">OCR Schedule Extraction</div>
+              </div>
+
+              <div className="p-3.5 rounded-2xl dark:bg-white/[0.03] bg-slate-50 border dark:border-white/5 border-slate-200/80 space-y-1">
+                <div className="text-sm font-extrabold text-[#2ecc71]">3+ Systems</div>
+                <div className="text-xs dark:text-slate-300 text-slate-700 font-medium">Production &amp; In-House</div>
+                <div className="text-[10px] text-slate-400 font-mono">Full-Stack Deployments</div>
+              </div>
+
+              <div className="p-3.5 rounded-2xl dark:bg-white/[0.03] bg-slate-50 border dark:border-white/5 border-slate-200/80 space-y-1">
+                <div className="text-sm font-extrabold text-purple-400">KATD Solutions</div>
+                <div className="text-xs dark:text-slate-300 text-slate-700 font-medium">Co-Founder &amp; Systems Lead</div>
+                <div className="text-[10px] text-slate-400 font-mono">Cooperative FinTech</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       {/* TECHNICAL ARSENAL SECTION */}
@@ -259,7 +408,7 @@ export default function AboutMe() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#2ecc71] font-bold mb-1">
-              <Code2 size={14} /> Skills & Tooling
+              <Code2 size={14} /> Skills &amp; Tooling
             </div>
             <h2 className="text-2xl sm:text-3xl font-black dark:text-white text-slate-900 tracking-tight">
               Technical Arsenal
@@ -291,7 +440,7 @@ export default function AboutMe() {
           {/* Frameworks & Backend */}
           <div className="p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-3.5 hover:border-[#2ecc71]/40 transition-all">
             <h3 className="font-bold dark:text-white text-slate-900 text-sm flex items-center gap-2">
-              <Layers className="text-cyan-400" size={16} /> Frameworks & Libraries
+              <Layers className="text-cyan-400" size={16} /> Frameworks &amp; Libraries
             </h3>
             <div className="flex flex-wrap gap-2">
               {technicalSkills.frameworks.map((skill) => (
@@ -308,7 +457,7 @@ export default function AboutMe() {
           {/* Design & Dev Tools */}
           <div className="p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-3.5 hover:border-[#2ecc71]/40 transition-all">
             <h3 className="font-bold dark:text-white text-slate-900 text-sm flex items-center gap-2">
-              <Wrench className="text-rose-400" size={16} /> Design & DevOps Tools
+              <Wrench className="text-rose-400" size={16} /> Design &amp; DevOps Tools
             </h3>
             <div className="flex flex-wrap gap-2">
               {technicalSkills.tools.map((skill) => (
@@ -325,7 +474,7 @@ export default function AboutMe() {
           {/* AI & Automation */}
           <div className="p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-3.5 hover:border-[#2ecc71]/40 transition-all">
             <h3 className="font-bold dark:text-white text-slate-900 text-sm flex items-center gap-2">
-              <Bot className="text-purple-400" size={16} /> AI & Automation
+              <Bot className="text-purple-400" size={16} /> AI &amp; Automation
             </h3>
             <div className="flex flex-wrap gap-2">
               {technicalSkills.aiAutomation.map((skill) => (
@@ -342,7 +491,7 @@ export default function AboutMe() {
           {/* Engineering Methodologies */}
           <div className="md:col-span-2 p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-3.5 hover:border-[#2ecc71]/40 transition-all">
             <h3 className="font-bold dark:text-white text-slate-900 text-sm flex items-center gap-2">
-              <ShieldCheck className="text-amber-400" size={16} /> Architectural Standards & Patterns
+              <ShieldCheck className="text-amber-400" size={16} /> Architectural Standards &amp; Patterns
             </h3>
             <div className="flex flex-wrap gap-2">
               {technicalSkills.methodologies.map((m) => (
@@ -389,74 +538,6 @@ export default function AboutMe() {
         </div>
       </div>
 
-      {/* EDUCATION & CERTIFICATIONS DUAL CARDS */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t dark:border-white/10 border-slate-200/80">
-        
-        {/* Education Card */}
-        <div className="p-6 rounded-3xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-4 hover:border-[#2ecc71]/40 transition-all">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <div className="p-2.5 rounded-2xl bg-[#2ecc71]/10 text-[#2ecc71] border border-[#2ecc71]/20">
-                <GraduationCap size={22} />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold dark:text-white text-slate-900">Academic Background</h3>
-                <span className="text-[11px] font-mono text-[#2ecc71]">Higher Education</span>
-              </div>
-            </div>
-            <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-[#2ecc71]/10 text-[#2ecc71] font-bold border border-[#2ecc71]/20">
-              Graduation: June 2026
-            </span>
-          </div>
-
-          <div className="space-y-1.5 pt-2 border-t dark:border-white/5 border-slate-200/60">
-            <h4 className="font-extrabold dark:text-white text-slate-900 text-base">
-              University of Cebu – Main Campus
-            </h4>
-            <p className="text-xs dark:text-slate-400 text-slate-500 font-mono">
-              Cebu City, 6000 Philippines
-            </p>
-            <p className="text-sm dark:text-slate-300 text-slate-700 font-medium pt-2">
-              Bachelor of Science in Information Technology (BSIT)
-            </p>
-          </div>
-        </div>
-
-        {/* Certifications Card */}
-        <div className="p-6 rounded-3xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-4 hover:border-[#2ecc71]/40 transition-all">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <div className="p-2.5 rounded-2xl bg-amber-400/10 text-amber-400 border border-amber-400/20">
-                <Award size={22} />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold dark:text-white text-slate-900">Certifications</h3>
-                <span className="text-[11px] font-mono text-amber-400">Industry Credentials</span>
-              </div>
-            </div>
-            <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-400 font-bold border border-amber-400/20">
-              Verified
-            </span>
-          </div>
-
-          <div className="space-y-2.5 pt-2 border-t dark:border-white/5 border-slate-200/60">
-            <h4 className="font-extrabold dark:text-white text-slate-900 text-sm">
-              Cisco Certified Network Associate (CCNAv7)
-            </h4>
-            <div className="space-y-2 text-xs dark:text-slate-300 text-slate-600">
-              <div className="flex items-center justify-between p-2 rounded-xl dark:bg-white/[0.02] bg-slate-100 border dark:border-white/5 border-slate-200">
-                <span className="font-medium">• Switching, Routing, and Wireless Essentials</span>
-                <span className="font-mono text-slate-400 text-[11px]">Jan 2025</span>
-              </div>
-              <div className="flex items-center justify-between p-2 rounded-xl dark:bg-white/[0.02] bg-slate-100 border dark:border-white/5 border-slate-200">
-                <span className="font-medium">• Introduction to Networks</span>
-                <span className="font-mono text-slate-400 text-[11px]">June 2024</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </section>
   );
 }
