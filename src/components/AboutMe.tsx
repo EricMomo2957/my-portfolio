@@ -665,38 +665,38 @@ export default function AboutMe() {
                 <p className="text-[11px] font-mono text-slate-400 mt-0.5">Full-Stack Frameworks, Languages &amp; Databases</p>
               </div>
               <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                12 Tools
+                16 Tools
               </span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <FaNodeJs size={18} className="text-[#339933]" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Node.js</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Backend Runtime</div>
-                </div>
-              </div>
-
-              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
                   <TbBrandCSharp size={18} className="text-[#239120]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">C# &amp; .NET</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">OOP &amp; Applications</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">C#</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">OOP &amp; Desktop/API</div>
                 </div>
               </div>
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <FaPython size={18} className="text-[#3776AB]" />
+                  <FaCss3Alt size={18} className="text-[#1572B6]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Python</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Data &amp; Scripting</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">CSS3</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Modern Stylesheets</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiJavascript size={18} className="text-[#F7DF1E]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">JavaScript</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Web Logic &amp; DOM</div>
                 </div>
               </div>
 
@@ -712,6 +712,16 @@ export default function AboutMe() {
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiHtml5 size={18} className="text-[#E34F26]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">HTML5</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Semantic Markup</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
                   <FaPhp size={18} className="text-[#777BB4]" />
                 </div>
                 <div className="min-w-0">
@@ -722,31 +732,41 @@ export default function AboutMe() {
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaPython size={18} className="text-[#3776AB]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Python</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Data &amp; Automation</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaNodeJs size={18} className="text-[#339933]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Node.js</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Backend Runtime</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiBootstrap size={18} className="text-[#7952B3]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Bootstrap</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Responsive UI Kit</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
                   <SiFlutter size={18} className="text-[#02569B]" />
                 </div>
                 <div className="min-w-0">
                   <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Flutter</div>
                   <div className="text-[10px] text-slate-400 font-mono truncate">Cross-Platform Apps</div>
-                </div>
-              </div>
-
-              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <FaReact size={18} className="text-cyan-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">React 19</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Modern UI Library</div>
-                </div>
-              </div>
-
-              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <SiTypescript size={18} className="text-blue-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">TypeScript / JS</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Strict Typed Logic</div>
                 </div>
               </div>
 
@@ -772,6 +792,26 @@ export default function AboutMe() {
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaReact size={18} className="text-cyan-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">React 19</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Modern UI Library</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiTypescript size={18} className="text-blue-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">TypeScript</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Strict Typing</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
                   <SiPostgresql size={18} className="text-cyan-400" />
                 </div>
                 <div className="min-w-0">
@@ -785,8 +825,8 @@ export default function AboutMe() {
                   <SiTailwindcss size={18} className="text-sky-400" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Tailwind / Bootstrap</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Responsive UI Styling</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Tailwind CSS</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Utility-First Styling</div>
                 </div>
               </div>
             </div>
