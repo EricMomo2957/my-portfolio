@@ -28,8 +28,24 @@ import {
   ChevronRight,
   Globe
 } from "lucide-react";
-import { FaReact, FaNodeJs, FaPython, FaPhp, FaJava, FaGitAlt, FaFigma, FaWordpress, FaGithub } from "react-icons/fa";
-import { SiTypescript, SiPostgresql, SiMysql, SiCanva, SiBootstrap, SiTailwindcss } from "react-icons/si";
+import { FaReact, FaNodeJs, FaPython, FaPhp, FaJava, FaGitAlt, FaFigma, FaWordpress, FaGithub, FaCss3Alt } from "react-icons/fa";
+import { SiTypescript, SiPostgresql, SiMysql, SiCanva, SiBootstrap, SiTailwindcss, SiJavascript, SiHtml5, SiFlutter, SiSqlite } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+
+  const techStackBadges = [
+    { name: "C#", icon: <TbBrandCSharp size={14} />, bg: "bg-[#239120]", text: "text-white" },
+    { name: "CSS3", icon: <FaCss3Alt size={14} />, bg: "bg-[#1572B6]", text: "text-white" },
+    { name: "JAVASCRIPT", icon: <SiJavascript size={14} />, bg: "bg-[#F7DF1E]", text: "text-black font-extrabold" },
+    { name: "JAVA", icon: <FaJava size={14} />, bg: "bg-[#ED8B00]", text: "text-white" },
+    { name: "HTML5", icon: <SiHtml5 size={14} />, bg: "bg-[#E34F26]", text: "text-white" },
+    { name: "PHP", icon: <FaPhp size={14} />, bg: "bg-[#777BB4]", text: "text-white" },
+    { name: "PYTHON", icon: <FaPython size={14} />, bg: "bg-[#3776AB]", text: "text-white" },
+    { name: "NODE.JS", icon: <FaNodeJs size={14} />, bg: "bg-[#339933]", text: "text-white" },
+    { name: "BOOTSTRAP", icon: <SiBootstrap size={14} />, bg: "bg-[#7952B3]", text: "text-white" },
+    { name: "FLUTTER", icon: <SiFlutter size={14} />, bg: "bg-[#02569B]", text: "text-white" },
+    { name: "MYSQL", icon: <SiMysql size={14} />, bg: "bg-[#4479A1]", text: "text-white" },
+    { name: "SQLITE", icon: <SiSqlite size={14} />, bg: "bg-[#003B57]", text: "text-white" }
+  ];
 
 export default function AboutMe() {
   const technicalSkills = {
@@ -419,6 +435,25 @@ export default function AboutMe() {
           </p>
         </div>
 
+        {/* Core Tech Stack Badges Strip Matching Reference */}
+        <div className="p-4 sm:p-5 rounded-2xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-lg space-y-3">
+          <div className="flex items-center gap-2 text-sm sm:text-base font-extrabold dark:text-white text-slate-900 tracking-tight">
+            <span className="text-base sm:text-lg">💻</span>
+            <span>Tech Stack:</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+            {techStackBadges.map((badge) => (
+              <div
+                key={badge.name}
+                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded font-mono text-xs sm:text-sm font-bold shadow-sm transition-all duration-200 hover:scale-105 hover:brightness-110 cursor-default select-none ${badge.bg} ${badge.text}`}
+              >
+                {badge.icon}
+                <span className="tracking-wider uppercase">{badge.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* 6-Card Grid Layout matching reference image */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
@@ -627,17 +662,17 @@ export default function AboutMe() {
             <div className="flex items-start justify-between gap-2">
               <div>
                 <h3 className="text-base font-extrabold dark:text-white text-slate-900">Tech Stack &amp; Cloud</h3>
-                <p className="text-[11px] font-mono text-slate-400 mt-0.5">Full-Stack Frameworks &amp; Datastores</p>
+                <p className="text-[11px] font-mono text-slate-400 mt-0.5">Full-Stack Frameworks, Languages &amp; Databases</p>
               </div>
               <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                10 Tools
+                12 Tools
               </span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <FaNodeJs size={18} className="text-emerald-400" />
+                  <FaNodeJs size={18} className="text-[#339933]" />
                 </div>
                 <div className="min-w-0">
                   <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Node.js</div>
@@ -647,31 +682,51 @@ export default function AboutMe() {
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <SiTailwindcss size={18} className="text-sky-400" />
+                  <TbBrandCSharp size={18} className="text-[#239120]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Tailwind CSS</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Utility Styling</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">C# &amp; .NET</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">OOP &amp; Applications</div>
                 </div>
               </div>
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <Terminal size={18} className="text-slate-300" />
+                  <FaPython size={18} className="text-[#3776AB]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Express.js</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">REST API Server</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Python</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Data &amp; Scripting</div>
                 </div>
               </div>
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <SiPostgresql size={18} className="text-cyan-400" />
+                  <FaJava size={18} className="text-[#ED8B00]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">PostgreSQL</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Relational DB &amp; PgPool</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Java</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">OOP Architecture</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaPhp size={18} className="text-[#777BB4]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">PHP</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Backend &amp; PSR-4</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiFlutter size={18} className="text-[#02569B]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Flutter</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Cross-Platform Apps</div>
                 </div>
               </div>
 
@@ -690,14 +745,14 @@ export default function AboutMe() {
                   <SiTypescript size={18} className="text-blue-400" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">TypeScript</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Strict Typing</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">TypeScript / JS</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Strict Typed Logic</div>
                 </div>
               </div>
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <SiMysql size={18} className="text-sky-400" />
+                  <SiMysql size={18} className="text-[#4479A1]" />
                 </div>
                 <div className="min-w-0">
                   <div className="text-xs font-bold dark:text-white text-slate-900 truncate">MySQL</div>
@@ -707,31 +762,31 @@ export default function AboutMe() {
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <FaPhp size={18} className="text-indigo-400" />
+                  <SiSqlite size={18} className="text-[#003B57]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">PHP</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Backend &amp; PSR-4</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">SQLite</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Embedded Database</div>
                 </div>
               </div>
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <Globe size={18} className="text-emerald-400" />
+                  <SiPostgresql size={18} className="text-cyan-400" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Railway</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Production PaaS</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">PostgreSQL</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Relational DB &amp; PgPool</div>
                 </div>
               </div>
 
               <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
                 <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <Globe size={18} className="text-cyan-400" />
+                  <SiTailwindcss size={18} className="text-sky-400" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Vercel</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Frontend Hosting</div>
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Tailwind / Bootstrap</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Responsive UI Styling</div>
                 </div>
               </div>
             </div>
