@@ -37,32 +37,26 @@ export default function AboutMe() {
   const servicesData = [
     {
       title: "Full-Stack Web Development",
-      category: "Core Expertise",
-      desc: "Dynamic, production-ready web applications built with Node.js, Next.js, and relational databases.",
+      category: "Web Development",
+      desc: "Custom, high-performance web applications, client portal systems, RESTful APIs, and secure database solutions built with React, Next.js, Node.js, and PHP.",
       icon: <Code2 size={20} className="text-cyan-400" />
     },
     {
-      title: "UI/UX & Frontend Engineering",
-      category: "Design First",
-      desc: "High-contrast, responsive interfaces engineered with Tailwind CSS, glassmorphism, and fluid animations.",
+      title: "Canva & Digital Graphic Design",
+      category: "Design & Branding",
+      desc: "Eye-catching marketing collaterals, social media assets, pitch decks, flyers, and business brand visuals crafted using Canva Pro, Figma, and Photoshop.",
       icon: <Palette size={20} className="text-purple-400" />
     },
     {
-      title: "AI & Chatbot Integrations",
-      category: "Emerging Tech",
-      desc: "Supercharge web workflows with Retrieval-Augmented Generation (RAG) and Gemini LLM integrations.",
+      title: "AI Automation & Smart Chatbots",
+      category: "AI Solutions",
+      desc: "Streamline business operations with custom logic-based chatbots, Flowise AI workflows, OCR document extraction, and smart AI integrations.",
       icon: <Bot size={20} className="text-amber-400" />
     },
     {
-      title: "QA & Technical Documentation",
-      category: "Quality Assurance",
-      desc: "Structured software testing, comprehensive API documentation, and clear system architecture guides.",
-      icon: <FileText size={20} className="text-sky-400" />
-    },
-    {
-      title: "Deployment & Network Setup",
-      category: "Infrastructure",
-      desc: "Automated CI/CD deployment to Vercel/Railway with secure routing based on Cisco CCNAv7 principles.",
+      title: "Cloud Deployment & Web Hosting",
+      category: "Cloud & Hosting",
+      desc: "Production-ready deployments on Vercel and Railway with custom domain binding, SSL encryption, and secure network infrastructure setup.",
       icon: <Network size={20} className="text-rose-400" />
     }
   ];
@@ -867,23 +861,23 @@ export default function AboutMe() {
         </div>
       </div>
 
-      {/* SERVICES & EXPERTISE SECTION */}
+      {/* SERVICES & CLIENT OFFERINGS SECTION */}
       <div className="space-y-8 pt-8 border-t dark:border-white/10 border-slate-200/80">
         <div className="text-center space-y-3 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border dark:border-purple-500/30 border-purple-200 dark:bg-purple-950/40 bg-purple-50 text-xs font-mono font-bold uppercase tracking-wider text-purple-400 shadow-sm">
             <Layers size={13} />
-            Capabilities
+            Services &amp; Offerings
           </div>
           <h2 className="text-3xl sm:text-4xl font-black dark:text-white text-slate-900 tracking-tight">
             Services &amp; Expertise
           </h2>
           <p className="text-xs sm:text-sm dark:text-slate-400 text-slate-600 leading-relaxed">
-            Specialized engineering across modern full-stack web applications, user interfaces, AI integrations, and cloud infrastructure.
+            Tailored digital solutions spanning full-stack web applications, Canva &amp; digital brand design, smart AI automation, and cloud deployment.
           </p>
         </div>
 
-        {/* Services Bento Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 4 Client Services Bento Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {servicesData.map((service) => (
             <div
               key={service.title}
