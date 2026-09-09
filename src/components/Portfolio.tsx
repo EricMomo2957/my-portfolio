@@ -25,12 +25,12 @@ import Mentorlog from "./Mentorlog";
 import UCCoopLoanMonitoringSystem from "./UC_Coop_Loan-Monitoring-System";
 
 interface PortfolioProps {
-  initialTab?: "all" | "projects" | "timeline";
+  initialTab?: "projects" | "timeline";
 }
 
-export default function Portfolio({ initialTab = "all" }: PortfolioProps) {
+export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"all" | "projects" | "timeline">(initialTab);
+  const [activeTab, setActiveTab] = useState<"projects" | "timeline">(initialTab === "timeline" ? "timeline" : "projects");
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
   const categories = ["All", "Full-Stack & Backend", "OJT & Systems", "Capstone & AI"];
@@ -144,16 +144,6 @@ export default function Portfolio({ initialTab = "all" }: PortfolioProps) {
         {/* Main View Switcher Tabs */}
         <div className="flex items-center gap-1.5 p-1 rounded-2xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 self-start">
           <button
-            onClick={() => setActiveTab("all")}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "all"
-                ? "bg-[#2ecc71] text-slate-950 shadow-md"
-                : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white"
-            }`}
-          >
-            Unified Hub
-          </button>
-          <button
             onClick={() => setActiveTab("projects")}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
               activeTab === "projects"
@@ -176,7 +166,7 @@ export default function Portfolio({ initialTab = "all" }: PortfolioProps) {
         </div>
 
         {/* Category Pills for Projects */}
-        {activeTab !== "timeline" && (
+        {activeTab === "projects" && (
           <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto">
             {categories.map((cat) => (
               <button
@@ -195,18 +185,9 @@ export default function Portfolio({ initialTab = "all" }: PortfolioProps) {
         )}
       </div>
 
-      {/* 1. PROJECT CARDS SECTION (Shown in 'all' or 'projects' tab) */}
-      {(activeTab === "all" || activeTab === "projects") && (
+      {/* 1. PROJECT CARDS SECTION */}
+      {activeTab === "projects" && (
         <div className="space-y-6">
-          {activeTab === "all" && (
-            <div className="flex items-center gap-3 pt-2">
-              <div className="w-1.5 h-6 bg-[#2ecc71] rounded-full" />
-              <h2 className="text-2xl font-bold dark:text-white text-slate-900 tracking-tight">
-                Featured System Projects
-              </h2>
-            </div>
-          )}
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((p) => (
               <div
@@ -308,9 +289,9 @@ export default function Portfolio({ initialTab = "all" }: PortfolioProps) {
         </div>
       )}
 
-      {/* 2. EXPERIENCE & RESUME TIMELINE SECTION (Shown in 'all' or 'timeline' tab) */}
-      {(activeTab === "all" || activeTab === "timeline") && (
-        <div className="space-y-6 pt-6 border-t dark:border-white/10 border-slate-200/80">
+      {/* 2. EXPERIENCE & RESUME TIMELINE SECTION */}
+      {activeTab === "timeline" && (
+        <div className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div className="flex items-center gap-3">
               <div className="w-1.5 h-6 bg-[#2ecc71] rounded-full" />
