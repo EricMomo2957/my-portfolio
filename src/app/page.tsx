@@ -5,7 +5,6 @@ import HomeView from "@/components/Home";
 import AboutMe from "@/components/AboutMe";
 import Portfolio from "@/components/Portfolio";
 import Resume from "@/components/Resume";
-import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import WaveBackground from "@/components/WaveBackground";
 import CursorSpotlight from "@/components/CursorSpotlight";
@@ -49,7 +48,6 @@ export default function Home() {
       case "Home": return <HomeView setActiveView={setActiveView} isDark={isDark} toggleDarkMode={toggleDarkMode} />;
       case "Portfolio": return <Portfolio />;
       case "Resume": return <Resume />;
-      case "Blog": return <Blog />;
       case "Contact": return <Contact />;
       default: return <AboutMe />;
     }

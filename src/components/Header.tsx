@@ -9,7 +9,6 @@ import {
   User, 
   Briefcase, 
   FileText, 
-  Rss, 
   Mail, 
   Home as HomeIcon,
   Send
@@ -30,7 +29,6 @@ export default function Header({ activeView, setActiveView, isDark = true, toggl
     { label: "About", target: "About Me", icon: <User size={16} /> },
     { label: "Projects", target: "Portfolio", icon: <Briefcase size={16} /> },
     { label: "Resume", target: "Resume", icon: <FileText size={16} /> },
-    { label: "Blog", target: "Blog", icon: <Rss size={16} /> },
     { label: "Contact", target: "Contact", icon: <Mail size={16} /> }
   ];
 

@@ -7,7 +7,6 @@ import {
   FaBriefcase, 
   FaEnvelope, 
   FaFileAlt, 
-  FaRss, 
   FaPaperPlane,
   FaHome 
 } from "react-icons/fa";
@@ -52,7 +51,6 @@ export default function Sidebar({ activeView, setActiveView, isDark = true, togg
           <SocialIcon icon={<FaTwitter className="text-xs" />} href="#" />
           <SocialIcon icon={<FaLinkedin className="text-xs" />} href="#" />
           <SocialIcon icon={<FaGithub className="text-xs" />} href="https://github.com/EricMomo2957" />
-          <SocialIcon icon={<FaRss className="text-xs" />} href="#" />
         </div>
       </div>
 
@@ -84,12 +82,6 @@ export default function Sidebar({ activeView, setActiveView, isDark = true, togg
           <NavItem 
             icon={<FaFileAlt />} 
             label="Resume" 
-            activeView={activeView} 
-            setActiveView={setActiveView} 
-          />
-          <NavItem 
-            icon={<FaRss />} 
-            label="Blog" 
             activeView={activeView} 
             setActiveView={setActiveView} 
           />
