@@ -25,7 +25,6 @@ import {
   Database,
   Building2,
   Briefcase,
-  CheckCircle2,
   ChevronRight,
   Globe
 } from "lucide-react";
@@ -424,426 +423,372 @@ export default function AboutMe() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           {/* Card 1: UI/UX Design */}
-          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-5 hover:border-[#2ecc71]/40 transition-all">
-            <div className="space-y-4">
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <h3 className="text-base font-extrabold dark:text-white text-slate-900">UI/UX Design</h3>
-                  <p className="text-[11px] font-mono text-slate-400 mt-0.5">Interface Architecture &amp; Wireframing</p>
-                </div>
-                <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                  3 Tools
-                </span>
+          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-4 hover:border-[#2ecc71]/40 transition-all">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h3 className="text-base font-extrabold dark:text-white text-slate-900">UI/UX Design</h3>
+                <p className="text-[11px] font-mono text-slate-400 mt-0.5">Interface Architecture &amp; Wireframing</p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <FaFigma size={18} className="text-rose-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Figma</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Wireframing &amp; Prototyping</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <SiCanva size={18} className="text-cyan-300" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Canva UI</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Layouts &amp; Mockups</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all sm:col-span-2">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Palette size={18} className="text-blue-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Wireframing &amp; Flows</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Component Systems &amp; UX Specs</div>
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
+                3 Tools
+              </span>
             </div>
 
-            <div className="pt-3 border-t dark:border-white/5 border-slate-100 flex items-center justify-between text-[11px] font-mono">
-              <span className="flex items-center gap-1.5 text-[#2ecc71] font-semibold">
-                <CheckCircle2 size={13} /> Active Workflow Ready
-              </span>
-              <span className="text-cyan-400 font-bold">Production Verified</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaFigma size={18} className="text-rose-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Figma</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Wireframing &amp; Prototyping</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiCanva size={18} className="text-cyan-300" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Canva UI</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Layouts &amp; Mockups</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all sm:col-span-2">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Palette size={18} className="text-blue-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Wireframing &amp; Flows</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Component Systems &amp; UX Specs</div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Card 2: Graphic Design */}
-          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-5 hover:border-[#2ecc71]/40 transition-all">
-            <div className="space-y-4">
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <h3 className="text-base font-extrabold dark:text-white text-slate-900">Graphic Design</h3>
-                  <p className="text-[11px] font-mono text-slate-400 mt-0.5">Vector Assets &amp; Brand Visuals</p>
-                </div>
-                <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                  4 Tools
-                </span>
+          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-4 hover:border-[#2ecc71]/40 transition-all">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h3 className="text-base font-extrabold dark:text-white text-slate-900">Graphic Design</h3>
+                <p className="text-[11px] font-mono text-slate-400 mt-0.5">Vector Assets &amp; Brand Visuals</p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <SiCanva size={18} className="text-cyan-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Canva Pro</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Layouts &amp; Social Assets</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <FileText size={18} className="text-amber-500" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">MS PowerPoint</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Pitch Decks &amp; Vectors</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Palette size={18} className="text-blue-500" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Photoshop</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Photo Retouch &amp; Graphics</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Palette size={18} className="text-emerald-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Photopea</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">In-Browser Graphics</div>
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
+                4 Tools
+              </span>
             </div>
 
-            <div className="pt-3 border-t dark:border-white/5 border-slate-100 flex items-center justify-between text-[11px] font-mono">
-              <span className="flex items-center gap-1.5 text-[#2ecc71] font-semibold">
-                <CheckCircle2 size={13} /> Active Workflow Ready
-              </span>
-              <span className="text-cyan-400 font-bold">Production Verified</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiCanva size={18} className="text-cyan-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Canva Pro</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Layouts &amp; Social Assets</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FileText size={18} className="text-amber-500" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">MS PowerPoint</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Pitch Decks &amp; Vectors</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Palette size={18} className="text-blue-500" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Photoshop</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Photo Retouch &amp; Graphics</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Palette size={18} className="text-emerald-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Photopea</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">In-Browser Graphics</div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Card 3: Video & Motion */}
-          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-5 hover:border-[#2ecc71]/40 transition-all">
-            <div className="space-y-4">
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <h3 className="text-base font-extrabold dark:text-white text-slate-900">Video &amp; Motion</h3>
-                  <p className="text-[11px] font-mono text-slate-400 mt-0.5">Motion Graphics &amp; Dynamic Cuts</p>
-                </div>
-                <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                  3 Tools
-                </span>
+          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-4 hover:border-[#2ecc71]/40 transition-all">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h3 className="text-base font-extrabold dark:text-white text-slate-900">Video &amp; Motion</h3>
+                <p className="text-[11px] font-mono text-slate-400 mt-0.5">Motion Graphics &amp; Dynamic Cuts</p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Sparkles size={18} className="text-emerald-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">CapCut</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Short-Form &amp; Keyframes</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <SiCanva size={18} className="text-cyan-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Canva Video</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Animated Typography</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all sm:col-span-2">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Palette size={18} className="text-rose-500" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Adobe Express</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Social Media &amp; Reels</div>
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
+                3 Tools
+              </span>
             </div>
 
-            <div className="pt-3 border-t dark:border-white/5 border-slate-100 flex items-center justify-between text-[11px] font-mono">
-              <span className="flex items-center gap-1.5 text-[#2ecc71] font-semibold">
-                <CheckCircle2 size={13} /> Active Workflow Ready
-              </span>
-              <span className="text-cyan-400 font-bold">Production Verified</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Sparkles size={18} className="text-emerald-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">CapCut</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Short-Form &amp; Keyframes</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiCanva size={18} className="text-cyan-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Canva Video</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Animated Typography</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all sm:col-span-2">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Palette size={18} className="text-rose-500" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Adobe Express</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Social Media &amp; Reels</div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Card 4: Web-App Development */}
-          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-5 hover:border-[#2ecc71]/40 transition-all">
-            <div className="space-y-4">
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <h3 className="text-base font-extrabold dark:text-white text-slate-900">Web-App Development</h3>
-                  <p className="text-[11px] font-mono text-slate-400 mt-0.5">IDEs, Version Control &amp; Editors</p>
-                </div>
-                <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                  4 Tools
-                </span>
+          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-4 hover:border-[#2ecc71]/40 transition-all">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h3 className="text-base font-extrabold dark:text-white text-slate-900">Web-App Development</h3>
+                <p className="text-[11px] font-mono text-slate-400 mt-0.5">IDEs, Version Control &amp; Editors</p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Code2 size={18} className="text-sky-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">VS Code</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Primary Dev Studio</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <FaGitAlt size={18} className="text-amber-500" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Git &amp; GitHub</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Branches &amp; CI/CD</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Wrench size={18} className="text-emerald-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">XAMPP Stack</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Apache &amp; MySQL Local</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Terminal size={18} className="text-rose-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Postman</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">API Testing &amp; Auth</div>
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
+                4 Tools
+              </span>
             </div>
 
-            <div className="pt-3 border-t dark:border-white/5 border-slate-100 flex items-center justify-between text-[11px] font-mono">
-              <span className="flex items-center gap-1.5 text-[#2ecc71] font-semibold">
-                <CheckCircle2 size={13} /> Active Workflow Ready
-              </span>
-              <span className="text-cyan-400 font-bold">Production Verified</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Code2 size={18} className="text-sky-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">VS Code</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Primary Dev Studio</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaGitAlt size={18} className="text-amber-500" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Git &amp; GitHub</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Branches &amp; CI/CD</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Wrench size={18} className="text-emerald-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">XAMPP Stack</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Apache &amp; MySQL Local</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Terminal size={18} className="text-rose-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Postman</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">API Testing &amp; Auth</div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Card 5: Tech Stack & Cloud */}
-          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-5 hover:border-[#2ecc71]/40 transition-all">
-            <div className="space-y-4">
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <h3 className="text-base font-extrabold dark:text-white text-slate-900">Tech Stack &amp; Cloud</h3>
-                  <p className="text-[11px] font-mono text-slate-400 mt-0.5">Full-Stack Frameworks &amp; Datastores</p>
-                </div>
-                <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                  10 Tools
-                </span>
+          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-4 hover:border-[#2ecc71]/40 transition-all">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h3 className="text-base font-extrabold dark:text-white text-slate-900">Tech Stack &amp; Cloud</h3>
+                <p className="text-[11px] font-mono text-slate-400 mt-0.5">Full-Stack Frameworks &amp; Datastores</p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <FaNodeJs size={18} className="text-emerald-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Node.js</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Backend Runtime</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <SiTailwindcss size={18} className="text-sky-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Tailwind CSS</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Utility Styling</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Terminal size={18} className="text-slate-300" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Express.js</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">REST API Server</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <SiPostgresql size={18} className="text-cyan-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">PostgreSQL</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Relational DB &amp; PgPool</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <FaReact size={18} className="text-cyan-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">React 19</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Modern UI Library</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <SiTypescript size={18} className="text-blue-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">TypeScript</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Strict Typing</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <SiMysql size={18} className="text-sky-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">MySQL</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Relational Database</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <FaPhp size={18} className="text-indigo-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">PHP</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Backend &amp; PSR-4</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Globe size={18} className="text-emerald-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Railway</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Production PaaS</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Globe size={18} className="text-cyan-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Vercel</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Frontend Hosting</div>
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
+                10 Tools
+              </span>
             </div>
 
-            <div className="pt-3 border-t dark:border-white/5 border-slate-100 flex items-center justify-between text-[11px] font-mono">
-              <span className="flex items-center gap-1.5 text-[#2ecc71] font-semibold">
-                <CheckCircle2 size={13} /> Active Workflow Ready
-              </span>
-              <span className="text-cyan-400 font-bold">Production Verified</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaNodeJs size={18} className="text-emerald-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Node.js</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Backend Runtime</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiTailwindcss size={18} className="text-sky-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Tailwind CSS</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Utility Styling</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Terminal size={18} className="text-slate-300" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Express.js</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">REST API Server</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiPostgresql size={18} className="text-cyan-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">PostgreSQL</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Relational DB &amp; PgPool</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaReact size={18} className="text-cyan-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">React 19</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Modern UI Library</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiTypescript size={18} className="text-blue-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">TypeScript</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Strict Typing</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <SiMysql size={18} className="text-sky-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">MySQL</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Relational Database</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <FaPhp size={18} className="text-indigo-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">PHP</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Backend &amp; PSR-4</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Globe size={18} className="text-emerald-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Railway</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Production PaaS</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Globe size={18} className="text-cyan-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Vercel</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Frontend Hosting</div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Card 6: AI, Automation & Methodologies */}
-          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-5 hover:border-[#2ecc71]/40 transition-all">
-            <div className="space-y-4">
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <h3 className="text-base font-extrabold dark:text-white text-slate-900">AI &amp; Automation</h3>
-                  <p className="text-[11px] font-mono text-slate-400 mt-0.5">Chatbot Logic, OCR &amp; Architecture</p>
-                </div>
-                <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                  4 Tools
-                </span>
+          <div className="p-5 sm:p-6 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-4 hover:border-[#2ecc71]/40 transition-all">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h3 className="text-base font-extrabold dark:text-white text-slate-900">AI &amp; Automation</h3>
+                <p className="text-[11px] font-mono text-slate-400 mt-0.5">Chatbot Logic, OCR &amp; Architecture</p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Bot size={18} className="text-purple-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Flowise AI</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Logic-Based Chatbots</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Cpu size={18} className="text-cyan-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Tesseract OCR</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Study Load Extraction</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <ShieldCheck size={18} className="text-amber-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">OOP &amp; MVC</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Structured Architecture</div>
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                    <Layers size={18} className="text-emerald-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold dark:text-white text-slate-900 truncate">SOLID Principles</div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">Scalable Clean Code</div>
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
+                4 Tools
+              </span>
             </div>
 
-            <div className="pt-3 border-t dark:border-white/5 border-slate-100 flex items-center justify-between text-[11px] font-mono">
-              <span className="flex items-center gap-1.5 text-[#2ecc71] font-semibold">
-                <CheckCircle2 size={13} /> Active Workflow Ready
-              </span>
-              <span className="text-cyan-400 font-bold">Production Verified</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Bot size={18} className="text-purple-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Flowise AI</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Logic-Based Chatbots</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Cpu size={18} className="text-cyan-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Tesseract OCR</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Study Load Extraction</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <ShieldCheck size={18} className="text-amber-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">OOP &amp; MVC</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Structured Architecture</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
+                  <Layers size={18} className="text-emerald-400" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">SOLID Principles</div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">Scalable Clean Code</div>
+                </div>
+              </div>
             </div>
           </div>
 
