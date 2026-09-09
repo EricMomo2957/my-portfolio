@@ -1,10 +1,11 @@
 "use client";
+
 import { useState } from "react";
 import Image from "next/image";
-import { 
-  ChevronLeft, 
-  Globe, 
-  ShieldCheck, 
+import {
+  ChevronLeft,
+  Globe,
+  ShieldCheck,
   ExternalLink,
   Terminal,
   FolderTree,
@@ -21,7 +22,9 @@ import {
   Server,
   FileText,
   KeyRound,
-  User
+  User,
+  Sparkles,
+  ArrowRight
 } from "lucide-react";
 import { FaGithub, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiMysql, SiPhp } from "react-icons/si";
@@ -36,62 +39,74 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
     setTimeout(() => setCopiedCmd(null), 2000);
   };
 
+  const tabs = [
+    { id: "features", label: "Key Features" },
+    { id: "stack_arch", label: "Stack & Architecture" },
+    { id: "install_api", label: "Setup & API Endpoints" },
+    { id: "license_author", label: "License & Author" }
+  ] as const;
+
   return (
-    <div className="p-6 md:p-10 space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-6xl mx-auto">
-      {/* Header Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b dark:border-white/10 border-slate-200 pb-6">
-        <button 
-          onClick={onBack} 
-          className="group flex items-center gap-2 dark:text-slate-400 text-slate-600 hover:text-[#2ecc71] transition-all duration-300 cursor-pointer"
+    <div className="p-4 sm:p-6 md:p-10 space-y-10 animate-in fade-in slide-in-from-bottom-3 duration-500 max-w-6xl mx-auto">
+      {/* Top Header Bar */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b dark:border-white/10 border-slate-200/80 pb-6">
+        <button
+          onClick={onBack}
+          className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 dark:text-slate-300 text-slate-700 hover:text-[#2ecc71] hover:border-[#2ecc71]/40 transition-all cursor-pointer text-xs font-bold"
         >
-          <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> 
-          <span className="font-semibold">Back to Projects</span>
+          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+          <span>Back to Projects & Experience</span>
         </button>
 
-        <div className="flex flex-wrap items-center gap-3">
-          <a 
-            href="https://mentor-log-two.vercel.app/" 
-            target="_blank" 
+        <div className="flex flex-wrap items-center gap-2.5">
+          <a
+            href="https://mentor-log-two.vercel.app/"
+            target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-1.5 rounded-full text-xs font-extrabold transition-all shadow-lg shadow-[#2ecc71]/25 hover:scale-105 cursor-pointer"
+            className="inline-flex items-center gap-1.5 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-1.5 rounded-xl text-xs font-extrabold transition-all shadow-md shadow-[#2ecc71]/20 hover:scale-105 active:scale-95 cursor-pointer"
           >
-            <Globe size={14} /> Live Demo <ExternalLink size={12} />
+            <Globe size={13} /> Live Demo <ExternalLink size={11} />
           </a>
-          <span className="px-3 py-1 rounded-full border border-[#2ecc71]/40 bg-[#2ecc71]/10 text-[#2ecc71] text-xs font-bold uppercase tracking-wider">
-            React 19 + Node.js + TypeScript
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl border border-[#2ecc71]/40 bg-[#2ecc71]/10 text-[#2ecc71] text-xs font-bold font-mono">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2ecc71] animate-pulse" /> React 19 + Node.js
           </span>
-          <span className="px-3 py-1 rounded-full border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-100 dark:text-slate-400 text-slate-600 text-xs font-bold uppercase tracking-wider">
-            Status: Live & Deployed
-          </span>
-          <a 
-            href="https://github.com/EricMomo2957/MentorLog" 
-            target="_blank" 
+          <a
+            href="https://github.com/EricMomo2957/MentorLog"
+            target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#161b22] hover:bg-[#21262d] text-white px-4 py-1.5 rounded-full text-xs font-bold transition-all border border-white/10 shadow-sm hover:border-[#2ecc71]/50 cursor-pointer"
+            className="inline-flex items-center gap-1.5 dark:bg-white/[0.04] bg-slate-100 hover:bg-slate-200 dark:hover:bg-white/10 dark:text-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 cursor-pointer"
           >
-            <FaGithub size={14} /> GitHub Repo <ExternalLink size={12} />
+            <FaGithub size={14} /> Repository <ExternalLink size={11} />
           </a>
         </div>
       </div>
 
       {/* Hero Header */}
       <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <h1 className="text-4xl md:text-5xl font-black dark:text-white text-slate-900 tracking-tight">
-            MentorLog <span className="text-[#2ecc71]">🎓</span>
-          </h1>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border dark:border-white/10 border-slate-300 dark:bg-white/[0.04] bg-slate-100 text-xs font-semibold uppercase tracking-wider text-[#2ecc71]">
+          <GraduationCap size={13} />
+          CoreLogic Consulting & System, Inc. • OJT Platform
         </div>
-        <p className="text-[#2ecc71] font-mono text-sm tracking-widest uppercase font-bold">
-          OJT Attendance & Task Management System
+
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black dark:text-white text-slate-900 tracking-tight leading-tight">
+          MentorLog
+        </h1>
+        
+        <p className="text-xs sm:text-sm text-[#2ecc71] font-mono tracking-wider uppercase font-bold">
+          Digital OJT Attendance, Task Tracking & Mentorship Management System
         </p>
-        <p className="text-base md:text-lg dark:text-slate-300 text-slate-600 max-w-4xl leading-relaxed">
-          MentorLog is a comprehensive, full-stack On-the-Job Training (OJT) Management Platform designed to streamline attendance logging, task assignments, document submissions, progress tracking, and communication between mentors, administrators, and student interns.
+        
+        <p className="text-sm sm:text-base dark:text-slate-300 text-slate-600 max-w-4xl leading-relaxed text-justify [text-align-last:left]">
+          MentorLog is a full-stack On-the-Job Training management platform built to replace paper sign-in sheets and manual paperwork. It features clock-in / clock-out attendance logging, task assignment pipelines, document submissions with OCR schedule upload, real-time analytics charts, and dual portal workflows for students and mentors.
         </p>
 
-        {/* Tech Badges Row */}
-        <div className="flex flex-wrap gap-2 pt-2">
+        {/* Tech Badges */}
+        <div className="flex flex-wrap gap-2 pt-1">
           {["React 19", "TypeScript", "Node.js", "Express.js", "MySQL", "Vite", "Tailwind CSS", "PHP Bridge"].map((tech) => (
-            <span key={tech} className="px-3 py-1 dark:bg-white/5 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-lg text-xs font-semibold dark:text-slate-300 text-slate-700">
+            <span
+              key={tech}
+              className="px-3 py-1 dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 rounded-xl text-xs font-medium dark:text-slate-300 text-slate-700 font-mono"
+            >
               {tech}
             </span>
           ))}
@@ -99,7 +114,7 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
       </div>
 
       {/* Featured Interface Image Banner */}
-      <div className="relative w-full h-64 sm:h-80 md:h-[440px] rounded-3xl overflow-hidden border dark:border-white/10 border-slate-200/80 shadow-2xl group dark:bg-slate-900 bg-slate-100">
+      <div className="relative w-full h-64 sm:h-80 md:h-[420px] rounded-3xl overflow-hidden border dark:border-white/10 border-slate-200 shadow-2xl group dark:bg-slate-900 bg-slate-100">
         <Image
           src="/images/mentorlog.png"
           alt="MentorLog Web App Interface"
@@ -108,42 +123,41 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
           className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/20 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
         
-        {/* Floating Live Deployment CTA Overlay */}
-        <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-slate-950/80 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/15 shadow-xl">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#2ecc71] animate-pulse" />
-              <p className="text-white font-bold text-sm sm:text-base">Live Web Application</p>
+        <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/15 shadow-xl">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#2ecc71] animate-pulse" />
+            <div>
+              <p className="text-white font-bold text-sm">MentorLog Production Application</p>
+              <p className="text-xs text-slate-300 font-mono">https://mentor-log-two.vercel.app/</p>
             </div>
-            <p className="text-xs text-slate-300 font-mono mt-0.5 break-all">https://mentor-log-two.vercel.app/</p>
           </div>
           <a
             href="https://mentor-log-two.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all shadow-lg hover:scale-105 cursor-pointer shrink-0"
+            className="inline-flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-2 rounded-xl text-xs font-extrabold transition-all shadow-md hover:scale-105 cursor-pointer shrink-0"
           >
-            <Globe size={15} /> Launch Live App <ExternalLink size={13} />
+            <Globe size={14} /> Open Live Web App <ExternalLink size={12} />
           </a>
         </div>
       </div>
 
-      {/* Stat Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* Metric / Stat Bento Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         <TechStatCard 
-          icon={<FaReact size={22} className="text-cyan-400" />} 
+          icon={<FaReact size={20} className="text-cyan-400" />} 
           title="Frontend Suite" 
           detail="React 19, TypeScript, Vite & Tailwind" 
         />
         <TechStatCard 
-          icon={<FaNodeJs size={22} className="text-emerald-500" />} 
-          title="Backend API" 
+          icon={<FaNodeJs size={20} className="text-emerald-400" />} 
+          title="Backend REST API" 
           detail="Node.js, Express & JWT Auth" 
         />
         <TechStatCard 
-          icon={<SiMysql size={24} className="text-sky-500" />} 
+          icon={<SiMysql size={20} className="text-sky-400" />} 
           title="Database & Bridge" 
           detail="MySQL2 + PHP Bridge Layer" 
         />
@@ -154,132 +168,140 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
         />
       </div>
 
-      {/* Navigation Tabs */}
-      <div className="flex border-b dark:border-white/10 border-slate-200 overflow-x-auto gap-2">
-        <TabButton id="features" label="🚀 Key Features" active={activeTab} onClick={setActiveTab} />
-        <TabButton id="stack_arch" label="🛠️ Stack & Structure" active={activeTab} onClick={setActiveTab} />
-        <TabButton id="install_api" label="⚙️ Setup & Endpoints" active={activeTab} onClick={setActiveTab} />
-        <TabButton id="license_author" label="📜 License & Author" active={activeTab} onClick={setActiveTab} />
+      {/* Modern Minimalist Tabs */}
+      <div className="flex items-center gap-1.5 p-1 rounded-2xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 overflow-x-auto">
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            onClick={() => setActiveTab(t.id)}
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer shrink-0 whitespace-nowrap ${
+              activeTab === t.id
+                ? "bg-[#2ecc71] text-slate-950 shadow-md"
+                : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white"
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
       </div>
 
-      {/* TAB CONTENT: KEY FEATURES */}
+      {/* TAB 1: KEY FEATURES */}
       {activeTab === "features" && (
-        <div className="space-y-10 animate-in fade-in duration-300">
+        <div className="space-y-8 animate-in fade-in duration-300">
           {/* Student Portal */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <GraduationCap className="text-[#2ecc71]" size={26} /> 👨‍🎓 Student Portal Features
+            <h3 className="text-xl sm:text-2xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
+              <GraduationCap className="text-[#2ecc71]" size={22} /> Student Intern Portal
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               <FeatureCard 
-                icon={<BarChart3 className="text-emerald-400" size={24} />}
+                icon={<BarChart3 className="text-emerald-400" size={20} />}
                 title="Dashboard Overview"
-                desc="Real-time metrics for completed tasks, total rendered OJT hours, upcoming deadlines, and announcement feeds."
+                desc="Real-time progress bars for rendered OJT hours, completed tasks, upcoming deadlines, and announcements."
               />
               <FeatureCard 
-                icon={<ClipboardList className="text-blue-400" size={24} />}
-                title="Task Management & Submissions"
-                desc="View assigned tasks, track status (Pending, In Progress, Completed), and submit deliverables with file attachments."
+                icon={<ClipboardList className="text-blue-400" size={20} />}
+                title="Task Management"
+                desc="View task requirements, change status (Pending, In Progress, Done), and submit deliverables with attachments."
               />
               <FeatureCard 
-                icon={<UserCheck className="text-cyan-400" size={24} />}
-                title="Attendance & Schedule Upload"
-                desc="Log clock-in / clock-out timestamps and upload study schedules with OCR schedule verification support."
+                icon={<UserCheck className="text-cyan-400" size={20} />}
+                title="Daily Attendance Logs"
+                desc="Timestamped clock-in / clock-out logging with automated calculation of rendered hours."
               />
               <FeatureCard 
-                icon={<FileSpreadsheet className="text-amber-400" size={24} />}
-                title="Document Management"
-                desc="Submit mandatory OJT requirements including Resume, MOA, Endorsement Letters, and Daily Time Records."
+                icon={<FileSpreadsheet className="text-amber-400" size={20} />}
+                title="Document Upload Hub"
+                desc="Upload mandatory OJT forms such as MOA, Endorsement Letters, Daily Time Records, and Resumes."
               />
               <FeatureCard 
-                icon={<FileText className="text-purple-400" size={24} />}
+                icon={<FileText className="text-purple-400" size={20} />}
                 title="Q&A & Leave Requests"
-                desc="Submit inquiries directly to mentors via the Ask Question portal and file leave or schedule adjustment requests."
+                desc="Ask questions directly to assigned mentors and file absence notifications with supporting files."
               />
               <FeatureCard 
-                icon={<Globe className="text-pink-400" size={24} />}
-                title="Announcements & Calendar"
-                desc="Interactive event calendar and real-time announcement feed to stay updated with institutional news."
+                icon={<Globe className="text-pink-400" size={20} />}
+                title="Calendar & Announcements"
+                desc="Visual event calendar highlighting company activities, holidays, and submission deadlines."
               />
             </div>
           </div>
 
           {/* Admin & Mentor Portal */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <Shield className="text-blue-400" size={26} /> 🛡️ Admin & Mentor Portal Features
+          <div className="space-y-4 pt-4 border-t dark:border-white/10 border-slate-200">
+            <h3 className="text-xl sm:text-2xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
+              <Shield className="text-blue-400" size={22} /> Mentor & Admin Portal
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               <FeatureCard 
-                icon={<UserCheck className="text-blue-400" size={24} />}
+                icon={<UserCheck className="text-blue-400" size={20} />}
                 title="Student Management"
-                desc="Overview of all registered interns, status controls, progress monitoring, and student profile management."
+                desc="Comprehensive roster of all interns, progress percentages, active statuses, and detailed profiles."
               />
               <FeatureCard 
-                icon={<ClipboardList className="text-[#2ecc71]" size={24} />}
-                title="Task Assignment & Review"
-                desc="Create, update, assign, and delete tasks for individual students or cohorts. Review and approve student submissions."
+                icon={<ClipboardList className="text-[#2ecc71]" size={20} />}
+                title="Task Assignment & Grading"
+                desc="Assign tasks to individual students or groups, set deadlines, and review student file submissions."
               />
               <FeatureCard 
-                icon={<Lock className="text-amber-400" size={24} />}
-                title="Attendance & Audit Log System"
-                desc="Comprehensive audit logging tracking all system actions, student sign-ins, and attendance verification history."
+                icon={<Lock className="text-amber-400" size={20} />}
+                title="Audit Action Logs"
+                desc="Detailed audit logs capturing every attendance edit, status approval, and administrative action."
               />
               <FeatureCard 
-                icon={<BarChart3 className="text-purple-400" size={24} />}
-                title="Analytics & Reporting"
-                desc="Interactive charts (Chart.js & Recharts) visualizing completion rates, attendance trends, and weekly report summaries."
+                icon={<BarChart3 className="text-purple-400" size={20} />}
+                title="Visual Analytics"
+                desc="Interactive charts visualizing student completion rates, average hours, and department distributions."
               />
               <FeatureCard 
-                icon={<KeyRound className="text-rose-400" size={24} />}
-                title="Security & Access Control"
-                desc="Admin verification codes management, password reset handler, and protected role-based routing middleware."
+                icon={<KeyRound className="text-rose-400" size={20} />}
+                title="Access Guards"
+                desc="Admin verification codes, secure password reset pipelines, and role-based endpoint protection."
               />
             </div>
           </div>
         </div>
       )}
 
-      {/* TAB CONTENT: STACK & STRUCTURE */}
+      {/* TAB 2: STACK & ARCHITECTURE */}
       {activeTab === "stack_arch" && (
-        <div className="space-y-10 animate-in fade-in duration-300">
-          {/* Tech Stack Table */}
+        <div className="space-y-8 animate-in fade-in duration-300">
           <div className="space-y-4">
             <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <Layers className="text-[#2ecc71]" size={22} /> Technology Stack Table
+              <Layers className="text-[#2ecc71]" size={20} /> Technology Stack Details
             </h3>
-            <div className="overflow-x-auto dark:bg-[#161b22] bg-white rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md">
-              <table className="w-full text-left text-sm">
-                <thead className="dark:bg-white/5 bg-slate-100 border-b dark:border-white/10 border-slate-200 font-bold dark:text-slate-200 text-slate-800">
+            <div className="overflow-x-auto rounded-2xl border dark:border-white/10 border-slate-200 dark:bg-white/[0.02] bg-white shadow-md">
+              <table className="w-full text-left text-xs sm:text-sm">
+                <thead className="dark:bg-white/[0.04] bg-slate-100 border-b dark:border-white/10 border-slate-200 font-bold dark:text-slate-200 text-slate-800">
                   <tr>
                     <th className="p-4 w-1/4">Layer</th>
-                    <th className="p-4 w-3/4">Technologies</th>
+                    <th className="p-4 w-3/4">Technologies & Libraries</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y dark:divide-white/5 divide-slate-100 dark:text-slate-300 text-slate-700">
+                <tbody className="divide-y dark:divide-white/5 divide-slate-100 dark:text-slate-300 text-slate-700 font-sans">
                   <tr>
                     <td className="p-4 font-bold text-[#2ecc71] flex items-center gap-2">
-                      <FaReact size={18} /> Frontend
+                      <FaReact size={16} /> Frontend
                     </td>
                     <td className="p-4">React 19, TypeScript, Vite, Tailwind CSS, Lucide React, Chart.js, Recharts, React Router v7, Axios</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-bold text-emerald-400 flex items-center gap-2">
-                      <FaNodeJs size={18} /> Backend
+                      <FaNodeJs size={16} /> Backend API
                     </td>
-                    <td className="p-4">Node.js, Express.js, TypeScript, MySQL2, JSON Web Tokens (JWT), Bcrypt.js, Multer (File Uploads), Nodemon</td>
+                    <td className="p-4">Node.js, Express.js, TypeScript, MySQL2, JSON Web Tokens (JWT), Bcrypt.js, Multer (File Uploads)</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-bold text-sky-400 flex items-center gap-2">
-                      <SiMysql size={18} /> Database
+                      <SiMysql size={16} /> Database
                     </td>
                     <td className="p-4">MySQL (XAMPP / Standalone server)</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-bold text-indigo-400 flex items-center gap-2">
-                      <SiPhp size={18} /> Bridge Layer
+                      <SiPhp size={16} /> Bridge Layer
                     </td>
-                    <td className="p-4">PHP (Direct MySQL endpoints for custom web service integration)</td>
+                    <td className="p-4">PHP (Direct MySQL bridge endpoints for legacy web server integration)</td>
                   </tr>
                 </tbody>
               </table>
@@ -289,170 +311,141 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
           {/* Directory Tree Structure */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <FolderTree className="text-[#2ecc71]" size={22} /> Project Structure Layout
+              <FolderTree className="text-[#2ecc71]" size={20} /> Project Structure Layout
             </h3>
-            <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md">
-              <div className="bg-[#0d1117] p-5 rounded-xl font-mono text-xs text-emerald-400 overflow-x-auto leading-relaxed border border-white/5">
+            
+            <div className="rounded-2xl dark:bg-white/[0.02] bg-white border dark:border-white/10 border-slate-200 overflow-hidden shadow-md">
+              <div className="flex items-center justify-between px-4 py-3 border-b dark:border-white/10 border-slate-200 dark:bg-white/[0.03] bg-slate-100">
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                  <span className="text-xs font-mono text-slate-400 ml-2">Project File Tree</span>
+                </div>
+              </div>
+              <div className="p-5 font-mono text-xs text-emerald-400 dark:bg-black/40 bg-slate-950 overflow-x-auto leading-relaxed">
                 <pre>{`MentorLog/
 ├── backend/                        # Node.js + Express TypeScript REST API
 │   ├── src/
-│   │   ├── app.ts                  # Server entry point & API route definitions
-│   │   ├── config/                 # Database connection pool (MySQL2)
+│   │   ├── app.ts                  # Server entry point & route initialization
+│   │   ├── config/                 # MySQL2 connection pool
 │   │   ├── controllers/            # 14 Controller modules for core services
-│   │   ├── middleware/             # JWT Authentication middleware
-│   │   ├── routes/                 # Express route definitions
-│   │   └── utils/                  # Utility functions & helpers
-│   ├── uploads/                    # File upload directory (Avatars, Submissions, OCR)
-│   ├── .env                        # Server environment configuration
+│   │   ├── middleware/             # JWT Auth & error handling
+│   │   └── routes/                 # Express REST routes
+│   ├── uploads/                    # File uploads folder (Avatars, Submissions)
+│   ├── .env                        # Server configurations
 │   ├── package.json
 │   └── tsconfig.json
 │
 ├── frontend/
-│   └── frontend/                   # React + Vite TypeScript Frontend App
+│   └── frontend/                   # React 19 + Vite TypeScript Frontend App
 │       ├── src/
-│       │   ├── App.tsx             # Main routing & application state
-│       │   ├── auth/               # Auth components (Login, Register)
-│       │   ├── components/         # Protected routes & reusable components
+│       │   ├── App.tsx             # Routing & auth state
+│       │   ├── auth/               # Login & Register views
+│       │   ├── components/         # Protected routes & UI components
 │       │   ├── pages/
-│       │   │   ├── admin/          # 20 Admin/Mentor management views
-│       │   │   ├── student/        # 11 Student portal views
+│       │   │   ├── admin/          # Admin & Mentor views (20 modules)
+│       │   │   ├── student/        # Student portal views (11 modules)
 │       │   │   └── LandingPage.tsx # Public landing page
-│       │   └── services/           # Axios API service client
+│       │   └── services/           # Axios API client
 │       ├── package.json
 │       ├── tailwind.config.js
 │       └── vite.config.ts
 │
-└── php-bridge/                     # PHP Scripts for standalone DB services
-    ├── db_connection.php           # MySQL connection setup
-    ├── get-tasks.php / assign-task.php / create-task.php
-    ├── get-students.php / update-profile.php
-    └── update-task-status.php`}</pre>
+└── php-bridge/                     # PHP MySQL Bridge Scripts
+    ├── db_connection.php           # Database connection
+    ├── get-tasks.php / assign-task.php
+    └── update-profile.php`}</pre>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* TAB CONTENT: INSTALLATION & API ENDPOINTS */}
+      {/* TAB 3: SETUP & API ENDPOINTS */}
       {activeTab === "install_api" && (
-        <div className="space-y-10 animate-in fade-in duration-300">
-          {/* Installation steps */}
-          <div className="space-y-6">
+        <div className="space-y-8 animate-in fade-in duration-300">
+          <div className="space-y-4">
             <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <Terminal className="text-[#2ecc71]" size={22} /> Developer Setup & Installation Guide
+              <Terminal className="text-[#2ecc71]" size={20} /> Developer Setup & Installation Guide
             </h3>
 
             <div className="space-y-4">
               <CodeSnippetStep 
                 step="1" 
-                title="Clone the Repository" 
-                code="git clone https://github.com/EricMomo2957/MentorLog.git&#10;cd MentorLog"
+                title="Clone Repository" 
+                code={`git clone https://github.com/EricMomo2957/MentorLog.git\ncd MentorLog`}
                 onCopy={(c) => copyToClipboard(c, "clone")}
                 copied={copiedCmd === "clone"}
               />
               <CodeSnippetStep 
                 step="2" 
-                title="Database Setup" 
-                code="# Start Apache & MySQL in XAMPP Control Panel&#10;# Open http://localhost/phpmyadmin&#10;# Create database: mentorlog_db&#10;# Import database schema tables into mentorlog_db"
-                onCopy={(c) => copyToClipboard(c, "db")}
-                copied={copiedCmd === "db"}
-              />
-              <CodeSnippetStep 
-                step="3" 
-                title="Backend Setup" 
-                code="cd backend&#10;npm install&#10;&#10;# Configure backend/.env:&#10;# PORT=5000&#10;# DB_HOST=localhost&#10;# DB_USER=root&#10;# DB_PASSWORD=&#10;# DB_NAME=mentorlog_db&#10;# JWT_SECRET=your_super_secret_jwt_key_here&#10;&#10;npm run dev"
+                title="Backend API Setup" 
+                code={`cd backend\nnpm install\n\n# Configure .env (PORT=5000, DB_NAME=mentorlog_db, JWT_SECRET=...)\nnpm run dev`}
                 onCopy={(c) => copyToClipboard(c, "backend")}
                 copied={copiedCmd === "backend"}
               />
               <CodeSnippetStep 
-                step="4" 
+                step="3" 
                 title="Frontend Setup" 
-                code="cd frontend/frontend&#10;npm install&#10;npm run dev&#10;&#10;# Access app at: http://localhost:5173"
+                code={`cd frontend/frontend\nnpm install\nnpm run dev\n\n# Web app available at http://localhost:5173`}
                 onCopy={(c) => copyToClipboard(c, "frontend")}
                 copied={copiedCmd === "frontend"}
-              />
-              <CodeSnippetStep 
-                step="5" 
-                title="PHP Bridge Setup (Optional)" 
-                code="# Ensure root is located within web server directory:&#10;# Path: c:/xampp/htdocs/MentorLog/php-bridge/&#10;# Test at: http://localhost/MentorLog/php-bridge/db_connection.php"
-                onCopy={(c) => copyToClipboard(c, "php")}
-                copied={copiedCmd === "php"}
               />
             </div>
           </div>
 
-          {/* API Endpoints Overview */}
+          {/* Endpoints Table */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <Server className="text-[#2ecc71]" size={22} /> Key API Endpoints Overview
+              <Server className="text-[#2ecc71]" size={20} /> Key API Endpoints Overview
             </h3>
-            <div className="overflow-x-auto dark:bg-[#161b22] bg-white rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md">
-              <table className="w-full text-left text-sm">
-                <thead className="dark:bg-white/5 bg-slate-100 border-b dark:border-white/10 border-slate-200 font-bold dark:text-slate-200 text-slate-800">
+            <div className="overflow-x-auto rounded-2xl border dark:border-white/10 border-slate-200 dark:bg-white/[0.02] bg-white shadow-md">
+              <table className="w-full text-left text-xs sm:text-sm">
+                <thead className="dark:bg-white/[0.04] bg-slate-100 border-b dark:border-white/10 border-slate-200 font-bold dark:text-slate-200 text-slate-800">
                   <tr>
-                    <th className="p-3">Service</th>
-                    <th className="p-3">Method</th>
-                    <th className="p-3">Endpoint</th>
-                    <th className="p-3">Description</th>
-                    <th className="p-3">Access</th>
+                    <th className="p-3.5">Service</th>
+                    <th className="p-3.5">Method</th>
+                    <th className="p-3.5">Endpoint</th>
+                    <th className="p-3.5">Description</th>
+                    <th className="p-3.5">Access Level</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y dark:divide-white/5 divide-slate-100 dark:text-slate-300 text-slate-700 font-mono text-xs">
+                <tbody className="divide-y dark:divide-white/5 divide-slate-100 dark:text-slate-300 text-slate-700 text-xs">
                   <tr>
-                    <td className="p-3 font-semibold font-sans text-blue-400">Auth</td>
-                    <td className="p-3 text-emerald-400 font-bold">POST</td>
-                    <td className="p-3 text-slate-200">/api/auth/register</td>
-                    <td className="p-3 font-sans">Register new student or mentor account</td>
-                    <td className="p-3 font-sans text-slate-400">Public</td>
+                    <td className="p-3.5 font-bold text-blue-400 font-mono">Auth</td>
+                    <td className="p-3.5 font-mono text-emerald-400 font-bold">POST</td>
+                    <td className="p-3.5 font-mono text-emerald-400">/api/auth/register</td>
+                    <td className="p-3.5">Register new student or mentor account</td>
+                    <td className="p-3.5"><span className="px-2 py-0.5 rounded bg-slate-200 dark:bg-white/10 font-mono">Public</span></td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-semibold font-sans text-blue-400">Auth</td>
-                    <td className="p-3 text-emerald-400 font-bold">POST</td>
-                    <td className="p-3 text-slate-200">/api/auth/login</td>
-                    <td className="p-3 font-sans">Authenticate user and issue JWT token</td>
-                    <td className="p-3 font-sans text-slate-400">Public</td>
+                    <td className="p-3.5 font-bold text-blue-400 font-mono">Auth</td>
+                    <td className="p-3.5 font-mono text-emerald-400 font-bold">POST</td>
+                    <td className="p-3.5 font-mono text-emerald-400">/api/auth/login</td>
+                    <td className="p-3.5">Authenticate user and issue JWT bearer token</td>
+                    <td className="p-3.5"><span className="px-2 py-0.5 rounded bg-slate-200 dark:bg-white/10 font-mono">Public</span></td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-semibold font-sans text-purple-400">Students</td>
-                    <td className="p-3 text-sky-400 font-bold">GET</td>
-                    <td className="p-3 text-slate-200">/api/admin/students</td>
-                    <td className="p-3 font-sans">Retrieve list of all registered interns</td>
-                    <td className="p-3 font-sans text-purple-400 font-bold">Admin</td>
+                    <td className="p-3.5 font-bold text-purple-400 font-mono">Students</td>
+                    <td className="p-3.5 font-mono text-sky-400 font-bold">GET</td>
+                    <td className="p-3.5 font-mono text-emerald-400">/api/admin/students</td>
+                    <td className="p-3.5">Retrieve list of registered student interns</td>
+                    <td className="p-3.5"><span className="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 font-mono font-bold">Admin</span></td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-semibold font-sans text-purple-400">Audit Logs</td>
-                    <td className="p-3 text-sky-400 font-bold">GET</td>
-                    <td className="p-3 text-slate-200">/api/admin/audit-logs</td>
-                    <td className="p-3 font-sans">Retrieve system action & audit logs</td>
-                    <td className="p-3 font-sans text-purple-400 font-bold">Admin</td>
+                    <td className="p-3.5 font-bold text-amber-400 font-mono">Tasks</td>
+                    <td className="p-3.5 font-mono text-amber-400 font-bold">GET / POST</td>
+                    <td className="p-3.5 font-mono text-emerald-400">/api/tasks</td>
+                    <td className="p-3.5">Fetch and assign OJT student task deliverables</td>
+                    <td className="p-3.5"><span className="px-2 py-0.5 rounded bg-[#2ecc71]/10 text-[#2ecc71] font-mono font-bold">Protected</span></td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-semibold font-sans text-amber-400">Tasks</td>
-                    <td className="p-3 text-amber-400 font-bold">GET / POST</td>
-                    <td className="p-3 text-slate-200">/api/tasks</td>
-                    <td className="p-3 font-sans">Fetch and assign OJT student tasks</td>
-                    <td className="p-3 font-sans text-emerald-400 font-bold">Protected</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 font-semibold font-sans text-emerald-400">Attendance</td>
-                    <td className="p-3 text-emerald-400 font-bold">POST</td>
-                    <td className="p-3 text-slate-200">/api/attendance</td>
-                    <td className="p-3 font-sans">Log clock-in / clock-out daily records</td>
-                    <td className="p-3 font-sans text-cyan-400 font-bold">Student</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 font-semibold font-sans text-cyan-400">Submissions</td>
-                    <td className="p-3 text-emerald-400 font-bold">POST</td>
-                    <td className="p-3 text-slate-200">/api/documents/upload</td>
-                    <td className="p-3 font-sans">Upload document deliverables & forms</td>
-                    <td className="p-3 font-sans text-cyan-400 font-bold">Student</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 font-semibold font-sans text-purple-400">Analytics</td>
-                    <td className="p-3 text-sky-400 font-bold">GET</td>
-                    <td className="p-3 text-slate-200">/api/analytics</td>
-                    <td className="p-3 font-sans">Fetch summary report & progress metrics</td>
-                    <td className="p-3 font-sans text-purple-400 font-bold">Admin</td>
+                    <td className="p-3.5 font-bold text-emerald-400 font-mono">Attendance</td>
+                    <td className="p-3.5 font-mono text-emerald-400 font-bold">POST</td>
+                    <td className="p-3.5 font-mono text-emerald-400">/api/attendance</td>
+                    <td className="p-3.5">Log clock-in / clock-out daily records</td>
+                    <td className="p-3.5"><span className="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 font-mono font-bold">Student</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -461,55 +454,40 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
         </div>
       )}
 
-      {/* TAB CONTENT: LICENSE & AUTHOR */}
+      {/* TAB 4: LICENSE & AUTHOR */}
       {activeTab === "license_author" && (
         <div className="space-y-8 animate-in fade-in duration-300">
-          {/* License Section */}
-          <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
-            <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <ShieldCheck className="text-[#2ecc71]" size={22} /> Open Source License
+          <div className="p-5 sm:p-6 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-3">
+            <h3 className="text-lg font-bold dark:text-white text-slate-900 flex items-center gap-2">
+              <ShieldCheck className="text-[#2ecc71]" size={20} /> Open Source License
             </h3>
-            <p className="text-sm dark:text-slate-300 text-slate-600 leading-relaxed">
-              This project is licensed under the <strong className="text-[#2ecc71]">GNU General Public License v3.0 (GPL-3.0)</strong>.
+            <p className="text-xs sm:text-sm dark:text-slate-300 text-slate-600 leading-relaxed">
+              This project is licensed under the <strong className="text-[#2ecc71]">GNU General Public License v3.0 (GPL-3.0)</strong>. You are free to modify, inspect, and distribute the software while preserving attribution.
             </p>
-            <div className="bg-[#0d1117] p-4 rounded-xl text-xs dark:text-slate-300 text-slate-400 space-y-2 border border-white/5">
-              <p className="font-semibold text-emerald-400">Under this license:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Anyone is free to use, modify, and distribute this software.</li>
-                <li>Any modified or derivative versions of this project must remain open-source under GPL-3.0.</li>
-                <li>Credit and Copyright attribution to <strong>Eric Dominic Momo</strong> must be preserved in all copies or substantial portions of the software.</li>
-              </ul>
-            </div>
           </div>
 
-          {/* Author Section */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <User className="text-[#2ecc71]" size={22} /> Project Author
-            </h3>
-            <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div>
-                <h4 className="text-xl font-bold dark:text-white text-slate-900">Eric Dominic Momo</h4>
-                <p className="text-xs text-[#2ecc71] font-semibold mt-1">Lead Full-Stack Developer & Systems Architect</p>
-              </div>
-              <div className="flex flex-wrap items-center gap-3">
-                <a 
-                  href="https://mentor-log-two.vercel.app/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-2.5 rounded-xl text-sm font-bold transition-all shadow-sm hover:scale-105 cursor-pointer"
-                >
-                  <Globe size={16} /> Live Demo <ExternalLink size={14} />
-                </a>
-                <a 
-                  href="https://github.com/EricMomo2957" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-[#161b22] hover:bg-[#21262d] text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all border border-white/10 shadow-sm hover:border-[#2ecc71]/50 cursor-pointer"
-                >
-                  <FaGithub size={18} /> @EricMomo2957 <ExternalLink size={14} />
-                </a>
-              </div>
+          <div className="p-6 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <h4 className="text-xl font-bold dark:text-white text-slate-900">Eric Dominic Momo</h4>
+              <p className="text-xs text-[#2ecc71] font-mono font-bold mt-1">Lead Full-Stack Developer & Systems Architect</p>
+            </div>
+            <div className="flex flex-wrap items-center gap-2.5">
+              <a 
+                href="https://mentor-log-two.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-md hover:scale-105 cursor-pointer"
+              >
+                <Globe size={14} /> Live Demo <ExternalLink size={12} />
+              </a>
+              <a 
+                href="https://github.com/EricMomo2957" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 dark:bg-white/5 bg-slate-100 hover:bg-slate-200 dark:hover:bg-white/10 dark:text-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-bold transition-all border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 cursor-pointer"
+              >
+                <FaGithub size={14} /> @EricMomo2957 <ExternalLink size={12} />
+              </a>
             </div>
           </div>
         </div>
@@ -518,32 +496,16 @@ export default function Mentorlog({ onBack }: { onBack: () => void }) {
   );
 }
 
-function TabButton({ id, label, active, onClick }: { id: "features" | "stack_arch" | "install_api" | "license_author", label: string, active: string, onClick: (id: "features" | "stack_arch" | "install_api" | "license_author") => void }) {
-  const isActive = active === id;
-  return (
-    <button 
-      onClick={() => onClick(id)}
-      className={`px-4 sm:px-5 py-3 text-xs md:text-sm font-bold transition-all border-b-2 whitespace-nowrap shrink-0 cursor-pointer ${
-        isActive 
-          ? "border-[#2ecc71] text-[#2ecc71]" 
-          : "border-transparent dark:text-slate-400 text-slate-500 hover:text-slate-900 dark:hover:text-slate-200"
-      }`}
-    >
-      {label}
-    </button>
-  );
-}
-
 function TechStatCard({ icon, title, detail }: { icon: React.ReactNode, title: string, detail: string }) {
   return (
-    <div className="dark:bg-[#161b22] bg-white p-5 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-2">
+    <div className="p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 transition-all shadow-sm space-y-2">
       <div className="flex items-center gap-3">
-        <div className="p-2.5 dark:bg-white/5 bg-slate-100 rounded-xl">
+        <div className="p-2.5 rounded-xl dark:bg-white/[0.05] bg-slate-100">
           {icon}
         </div>
         <div>
           <h4 className="font-bold dark:text-white text-slate-900 text-sm">{title}</h4>
-          <p className="text-xs dark:text-slate-400 text-slate-500 font-mono mt-0.5">{detail}</p>
+          <p className="text-[11px] dark:text-slate-400 text-slate-500 font-mono mt-0.5">{detail}</p>
         </div>
       </div>
     </div>
@@ -552,34 +514,36 @@ function TechStatCard({ icon, title, detail }: { icon: React.ReactNode, title: s
 
 function FeatureCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
   return (
-    <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md hover:border-[#2ecc71]/40 transition-all space-y-3">
-      <div className="p-3 dark:bg-white/5 bg-slate-100 w-fit rounded-xl">
+    <div className="p-5 sm:p-6 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 transition-all shadow-sm space-y-3">
+      <div className="p-2.5 dark:bg-white/[0.05] bg-slate-100 w-fit rounded-xl">
         {icon}
       </div>
-      <h4 className="font-bold dark:text-white text-slate-900 text-lg">{title}</h4>
-      <p className="text-sm dark:text-slate-400 text-slate-600 leading-relaxed">{desc}</p>
+      <h4 className="font-bold dark:text-white text-slate-900 text-base">{title}</h4>
+      <p className="text-xs sm:text-sm dark:text-slate-400 text-slate-600 leading-relaxed text-justify [text-align-last:left]">
+        {desc}
+      </p>
     </div>
   );
 }
 
 function CodeSnippetStep({ step, title, code, onCopy, copied }: { step: string, title: string, code: string, onCopy: (c: string) => void, copied: boolean }) {
   return (
-    <div className="dark:bg-[#161b22] bg-white p-5 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-2">
-      <div className="flex justify-between items-center">
+    <div className="rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 overflow-hidden shadow-sm">
+      <div className="flex justify-between items-center px-4 py-2.5 dark:bg-white/[0.03] bg-slate-100 border-b dark:border-white/10 border-slate-200">
         <span className="text-xs font-bold uppercase tracking-wider text-[#2ecc71] flex items-center gap-2">
-          <span className="w-5 h-5 rounded-full bg-[#2ecc71]/20 flex items-center justify-center text-xs font-bold text-[#2ecc71]">{step}</span>
+          <span className="w-5 h-5 rounded-full bg-[#2ecc71]/20 flex items-center justify-center text-[10px] font-extrabold text-[#2ecc71]">{step}</span>
           {title}
         </span>
-        <button 
-          onClick={() => onCopy(code)} 
+        <button
+          onClick={() => onCopy(code)}
           className="text-xs dark:text-slate-400 text-slate-500 hover:text-[#2ecc71] flex items-center gap-1 cursor-pointer transition-colors"
         >
-          {copied ? <Check size={14} className="text-[#2ecc71]" /> : <Copy size={14} />}
-          <span>{copied ? "Copied!" : "Copy"}</span>
+          {copied ? <Check size={13} className="text-[#2ecc71]" /> : <Copy size={13} />}
+          <span>{copied ? "Copied" : "Copy"}</span>
         </button>
       </div>
-      <div className="bg-[#0d1117] p-3 rounded-xl font-mono text-xs text-emerald-400 overflow-x-auto border border-white/5">
-        <pre>{code}</pre>
+      <div className="p-4 dark:bg-black/50 bg-slate-950 font-mono text-xs text-emerald-400 overflow-x-auto">
+        <pre className="leading-relaxed">{code}</pre>
       </div>
     </div>
   );

@@ -1,4 +1,7 @@
+"use client";
+
 import { useState } from "react";
+import Image from "next/image";
 import { 
   ChevronLeft, 
   Code2, 
@@ -13,7 +16,9 @@ import {
   Eye,
   Lock,
   Copy,
-  Check
+  Check,
+  Compass,
+  Sparkles
 } from "lucide-react";
 import { FaGithub, FaPhp } from "react-icons/fa";
 
@@ -27,172 +32,247 @@ export default function ChronoNav({ onBack }: { onBack: () => void }) {
     setTimeout(() => setCopiedCmd(null), 2000);
   };
 
+  const tabs = [
+    { id: "features", label: "Key Features" },
+    { id: "architecture", label: "Architecture & PSR-4" },
+    { id: "install", label: "Setup & .env Config" },
+    { id: "team", label: "Team & Credits" }
+  ] as const;
+
   return (
-    <div className="p-6 md:p-10 space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-6xl mx-auto">
-      {/* Header Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b dark:border-white/10 border-slate-200 pb-6">
+    <div className="p-4 sm:p-6 md:p-10 space-y-10 animate-in fade-in slide-in-from-bottom-3 duration-500 max-w-6xl mx-auto">
+      {/* Top Header Bar */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b dark:border-white/10 border-slate-200/80 pb-6">
         <button 
           onClick={onBack} 
-          className="group flex items-center gap-2 dark:text-slate-400 text-slate-600 hover:text-[#2ecc71] transition-all duration-300 cursor-pointer"
+          className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 dark:text-slate-300 text-slate-700 hover:text-[#2ecc71] hover:border-[#2ecc71]/40 transition-all cursor-pointer text-xs font-bold"
         >
-          <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> 
-          <span className="font-semibold">Back to Projects</span>
+          <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> 
+          <span>Back to Projects & Experience</span>
         </button>
 
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="px-3 py-1 rounded-full border border-[#2ecc71]/40 bg-[#2ecc71]/10 text-[#2ecc71] text-xs font-bold uppercase tracking-wider">
+        <div className="flex flex-wrap items-center gap-2.5">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl border border-[#2ecc71]/40 bg-[#2ecc71]/10 text-[#2ecc71] text-xs font-bold font-mono">
             PHP 8.0+ PSR-4
           </span>
-          <span className="px-3 py-1 rounded-full border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-100 dark:text-slate-400 text-slate-600 text-xs font-bold uppercase tracking-wider">
-            Status: Partial / Scaffolded
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-100 dark:text-slate-400 text-slate-600 text-xs font-bold font-mono">
+            Capstone Project
           </span>
           <a 
             href="https://github.com/Vinzz290034/CHRONONAV_WEB_DOSS" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#161b22] hover:bg-[#21262d] text-white px-4 py-1.5 rounded-full text-xs font-bold transition-all border border-white/10 shadow-sm hover:border-[#2ecc71]/50 cursor-pointer"
+            className="inline-flex items-center gap-1.5 dark:bg-white/[0.04] bg-slate-100 hover:bg-slate-200 dark:hover:bg-white/10 dark:text-slate-200 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 cursor-pointer"
           >
-            <FaGithub size={14} /> GitHub Repo <ExternalLink size={12} />
+            <FaGithub size={14} /> Repository <ExternalLink size={11} />
           </a>
         </div>
       </div>
 
       {/* Hero Header */}
       <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <h1 className="text-4xl md:text-5xl font-black dark:text-white text-slate-900 tracking-tight">
-            ChronoNav <span className="text-[#2ecc71]">🛰️</span>
-          </h1>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border dark:border-white/10 border-slate-300 dark:bg-white/[0.04] bg-slate-100 text-xs font-semibold uppercase tracking-wider text-[#2ecc71]">
+          <Compass size={13} />
+          University of Cebu • Capstone Project
         </div>
-        <p className="text-[#2ecc71] font-mono text-sm tracking-widest uppercase font-bold">
-          Campus Navigation & Scheduling Web App
+
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black dark:text-white text-slate-900 tracking-tight leading-tight">
+          ChronoNav
+        </h1>
+        
+        <p className="text-xs sm:text-sm text-[#2ecc71] font-mono tracking-wider uppercase font-bold">
+          Campus Navigation & Automated OCR Schedule Extraction Platform
         </p>
-        <p className="text-base md:text-lg dark:text-slate-300 text-slate-600 max-w-4xl leading-relaxed">
-          ChronoNav is a PHP-based web application designed to help students digitize their official study loads using OCR, organize schedules into a smart calendar, receive automated reminders, and navigate across campus with offline map support.
+        
+        <p className="text-sm sm:text-base dark:text-slate-300 text-slate-600 max-w-4xl leading-relaxed text-justify [text-align-last:left]">
+          ChronoNav is a web application designed to help university students digitize their study loads using OCR image processing, organize schedules into an interactive calendar, receive automated reminders, and navigate across campus buildings with offline map routing.
         </p>
+
+        {/* Tech Badges */}
+        <div className="flex flex-wrap gap-2 pt-1">
+          {["PHP 8.0+", "Tesseract OCR", "Composer PSR-4", "MySQL", "PDO Prepared", "JavaScript", "Figma", "Git/GitHub"].map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 rounded-xl text-xs font-medium dark:text-slate-300 text-slate-700 font-mono"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
 
-      {/* Stat Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* Featured Interface Image Banner */}
+      <div className="relative w-full h-64 sm:h-80 md:h-[420px] rounded-3xl overflow-hidden border dark:border-white/10 border-slate-200 shadow-2xl group dark:bg-slate-900 bg-slate-100">
+        <Image
+          src="/images/chrononav.png"
+          alt="ChronoNav Web Interface"
+          fill
+          sizes="(max-width: 1200px) 100vw, 1100px"
+          className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+        
+        <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/15 shadow-xl">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#2ecc71] animate-pulse" />
+            <div>
+              <p className="text-white font-bold text-sm">ChronoNav Campus Routing Engine</p>
+              <p className="text-xs text-slate-300 font-mono">Automated Study Load Digitization & Route Finder</p>
+            </div>
+          </div>
+          <a
+            href="https://github.com/Vinzz290034/CHRONONAV_WEB_DOSS"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 px-4 py-2 rounded-xl text-xs font-extrabold transition-all shadow-md hover:scale-105 cursor-pointer shrink-0"
+          >
+            <FaGithub size={14} /> View Repository <ExternalLink size={12} />
+          </a>
+        </div>
+      </div>
+
+      {/* Metric / Stat Bento Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         <TechStatCard 
-          icon={<FaPhp size={22} className="text-[#777BB4]" />} 
-          title="Backend Core" 
+          icon={<FaPhp size={20} className="text-[#777BB4]" />} 
+          title="Backend Architecture" 
           detail="PHP 8.0+ with PSR-4 Autoloading" 
         />
         <TechStatCard 
           icon={<Cpu size={20} className="text-[#2ecc71]" />} 
-          title="OCR Processing" 
-          detail="Tesseract OCR Wrapper" 
+          title="OCR Schedule Parser" 
+          detail="Tesseract OCR Image Extraction" 
         />
         <TechStatCard 
           icon={<Globe size={20} className="text-blue-400" />} 
-          title="Campus Maps" 
-          detail="Turn-by-Turn Offline Access" 
+          title="Campus Navigation" 
+          detail="Interactive Map Visualizer" 
         />
         <TechStatCard 
           icon={<ShieldCheck size={20} className="text-emerald-400" />} 
-          title="Security" 
-          detail="CSRF, Prepared SQL, Sanitization" 
+          title="Security Principles" 
+          detail="CSRF, PDO Queries & Sanitization" 
         />
       </div>
 
-      {/* Navigation Tabs */}
-      <div className="flex border-b dark:border-white/10 border-slate-200 overflow-x-auto gap-2">
-        <TabButton id="features" label="Key Features" active={activeTab} onClick={setActiveTab} />
-        <TabButton id="architecture" label="Architecture & Structure" active={activeTab} onClick={setActiveTab} />
-        <TabButton id="install" label="Dev Setup & .env" active={activeTab} onClick={setActiveTab} />
-        <TabButton id="team" label="Team & Credits" active={activeTab} onClick={setActiveTab} />
+      {/* Modern Minimalist Tabs */}
+      <div className="flex items-center gap-1.5 p-1 rounded-2xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 overflow-x-auto">
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            onClick={() => setActiveTab(t.id)}
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer shrink-0 whitespace-nowrap ${
+              activeTab === t.id
+                ? "bg-[#2ecc71] text-slate-950 shadow-md"
+                : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white"
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
       </div>
 
-      {/* TAB CONTENT: FEATURES */}
+      {/* TAB 1: KEY FEATURES */}
       {activeTab === "features" && (
         <div className="space-y-8 animate-in fade-in duration-300">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <FeatureCard 
-              icon={<Zap className="text-[#2ecc71]" size={24} />}
-              title="Smart Schedule Import (OCR)"
-              desc="Uses Tesseract OCR PHP wrapper (thiagoalessio/tesseract_ocr) to automatically extract course codes, room numbers, and schedules from uploaded study load images."
+              icon={<Zap className="text-[#2ecc71]" size={20} />}
+              title="Smart Study Load Import (OCR)"
+              desc="Integrates Tesseract OCR to scan student assessment forms, parsing subject codes, room locations, time slots, and instructor details."
             />
             <FeatureCard 
-              icon={<Globe className="text-blue-400" size={24} />}
+              icon={<Globe className="text-blue-400" size={20} />}
               title="Turn-by-Turn Campus Navigation"
-              desc="Provides visual direction and location routing across campus buildings to prevent students from missing class location changes."
+              desc="Provides visual route guides and classroom floor directions to assist new students and prevent late arrivals."
             />
             <FeatureCard 
-              icon={<Eye className="text-amber-400" size={24} />}
-              title="Offline Resilience"
-              desc="Ensures critical maps and schedule data remain cached and accessible even when offline or experiencing poor mobile connectivity."
+              icon={<Eye className="text-amber-400" size={20} />}
+              title="Offline Availability"
+              desc="Caches schedule rosters and building maps so students can check class rooms even with spotty cellular reception."
             />
             <FeatureCard 
-              icon={<ShieldCheck className="text-emerald-400" size={24} />}
+              icon={<ShieldCheck className="text-emerald-400" size={20} />}
               title="Accessibility & High Contrast"
-              desc="Built with inclusive design considerations, including voice guidance support, high-contrast visual modes, and screen reader compatibility."
+              desc="Designed with high contrast visual settings, clear iconography, and responsive mobile-first typography."
             />
           </div>
 
-          <div className="dark:bg-white/5 bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md">
-            <h4 className="font-bold dark:text-white text-slate-900 text-lg mb-3 flex items-center gap-2">
-              <Lock className="text-[#2ecc71]" size={20} /> Security & Data Safety Principles
+          <div className="p-5 sm:p-6 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-3">
+            <h4 className="font-bold dark:text-white text-slate-900 text-base flex items-center gap-2">
+              <Lock className="text-[#2ecc71]" size={18} /> Security & Data Safety Principles
             </h4>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm dark:text-slate-300 text-slate-600">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs sm:text-sm dark:text-slate-300 text-slate-600">
               <li className="flex items-start gap-2">
-                <span className="text-[#2ecc71] font-bold">•</span> Validates file types (images only) & enforces 5MB upload caps.
+                <span className="text-[#2ecc71] font-bold">•</span> File type validation and upload limits for security.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2ecc71] font-bold">•</span> Server-side input sanitization & CSRF token form protection.
+                <span className="text-[#2ecc71] font-bold">•</span> Server-side input sanitization and CSRF protection.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2ecc71] font-bold">•</span> Parameterized PDO queries to prevent SQL Injection vulnerabilities.
+                <span className="text-[#2ecc71] font-bold">•</span> Parameterized PDO queries to eliminate SQL injection.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2ecc71] font-bold">•</span> Secrets stored in strictly uncommitted .env environment configs.
+                <span className="text-[#2ecc71] font-bold">•</span> Environment credentials safely abstracted in uncommitted .env files.
               </li>
             </ul>
           </div>
         </div>
       )}
 
-      {/* TAB CONTENT: ARCHITECTURE */}
+      {/* TAB 2: ARCHITECTURE & STRUCTURE */}
       {activeTab === "architecture" && (
         <div className="space-y-8 animate-in fade-in duration-300">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="space-y-4">
               <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-                <FolderTree className="text-[#2ecc71]" size={22} /> Repository Directory Layout
+                <FolderTree className="text-[#2ecc71]" size={20} /> Directory Layout
               </h3>
-              <div className="bg-[#0d1117] p-4 rounded-xl font-mono text-xs text-emerald-400 overflow-x-auto leading-relaxed border border-white/5">
-                <pre>{`CHRONONAV_WEB_DOSS/
+              
+              <div className="rounded-2xl dark:bg-white/[0.02] bg-white border dark:border-white/10 border-slate-200 overflow-hidden shadow-md">
+                <div className="flex items-center px-4 py-3 border-b dark:border-white/10 border-slate-200 dark:bg-white/[0.03] bg-slate-100">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                    <span className="text-xs font-mono text-slate-400 ml-2">Project File Tree</span>
+                  </div>
+                </div>
+                <div className="p-4 font-mono text-xs text-emerald-400 dark:bg-black/40 bg-slate-950 overflow-x-auto leading-relaxed">
+                  <pre>{`CHRONONAV_WEB_DOSS/
 ├── index.php         # Main landing & front-end entrypoint
-├── composer.json     # PSR-4 Autoload: Ericdominicmomo\\ChrononavWebDoss\\ -> src/
+├── composer.json     # PSR-4 Autoload mappings -> src/
 ├── .env.example      # Sample environment variables config
-├── assets/           # Frontend static files (CSS, JS, images)
-├── auth/             # Authentication pages (login.php, register.php)
-├── api/              # REST endpoints for OCR & schedule API
+├── assets/           # Frontend CSS, JS & icons
+├── auth/             # Authentication (login.php, register.php)
+├── api/              # REST endpoints for OCR & schedules
 ├── src/              # PHP Application Logic & PSR-4 Classes
-└── uploads/          # Secure file uploads folder (5MB cap)`}</pre>
+└── uploads/          # Secure file upload storage`}</pre>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="dark:bg-white/5 bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-3">
-                <h4 className="font-bold dark:text-white text-slate-900 text-lg flex items-center gap-2">
-                  <Code2 className="text-blue-400" size={20} /> PSR-4 Namespace Mapping
+            <div className="space-y-5">
+              <div className="p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-2">
+                <h4 className="font-bold dark:text-white text-slate-900 text-sm flex items-center gap-2">
+                  <Code2 className="text-blue-400" size={18} /> PSR-4 Namespace Autoloading
                 </h4>
-                <p className="text-xs dark:text-slate-400 text-slate-600">
-                  Configured via Composer for clean class autoloading:
+                <p className="text-xs dark:text-slate-400 text-slate-500">
+                  Configured via Composer for class autoloading:
                 </p>
-                <div className="bg-slate-900 dark:bg-[#0d1117] p-3 rounded-lg font-mono text-xs text-slate-200 border border-white/5">
+                <div className="dark:bg-black/50 bg-slate-950 p-3 rounded-xl font-mono text-xs text-emerald-400 border border-white/5">
                   <code>&quot;Ericdominicmomo\\ChrononavWebDoss\\&quot;: &quot;src/&quot;</code>
                 </div>
               </div>
 
-              <div className="dark:bg-white/5 bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-3">
-                <h4 className="font-bold dark:text-white text-slate-900 text-lg flex items-center gap-2">
-                  <Terminal className="text-amber-400" size={20} /> Required PHP Extensions
+              <div className="p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-2">
+                <h4 className="font-bold dark:text-white text-slate-900 text-sm flex items-center gap-2">
+                  <Terminal className="text-amber-400" size={18} /> Required PHP Extensions
                 </h4>
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex flex-wrap gap-1.5 pt-1">
                   {["ext-fileinfo", "ext-mbstring", "ext-json", "ext-ctype", "ext-curl", "ext-dom", "pdo_mysql"].map((ext) => (
-                    <span key={ext} className="px-2.5 py-1 dark:bg-white/10 bg-slate-100 rounded-md font-mono text-xs dark:text-slate-300 text-slate-700 font-semibold border dark:border-white/5 border-slate-200">
+                    <span key={ext} className="px-2.5 py-1 dark:bg-white/[0.04] bg-slate-100 rounded-lg font-mono text-xs dark:text-slate-300 text-slate-700 border dark:border-white/5 border-slate-200">
                       {ext}
                     </span>
                   ))}
@@ -203,52 +283,51 @@ export default function ChronoNav({ onBack }: { onBack: () => void }) {
         </div>
       )}
 
-      {/* TAB CONTENT: INSTALLATION & ENV */}
+      {/* TAB 3: INSTALLATION & ENV */}
       {activeTab === "install" && (
         <div className="space-y-8 animate-in fade-in duration-300">
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <Terminal className="text-[#2ecc71]" size={22} /> Developer Command Workflow
+              <Terminal className="text-[#2ecc71]" size={20} /> Developer Command Workflow
             </h3>
 
-            {/* Steps */}
             <div className="space-y-4">
               <CodeSnippetStep 
                 step="1" 
                 title="Clone Repository" 
-                code="git clone https://github.com/Vinzz290034/CHRONONAV_WEB_DOSS.git&#10;cd CHRONONAV_WEB_DOSS"
+                code={`git clone https://github.com/Vinzz290034/CHRONONAV_WEB_DOSS.git\ncd CHRONONAV_WEB_DOSS`}
                 onCopy={(c) => copyToClipboard(c, "clone")}
                 copied={copiedCmd === "clone"}
               />
               <CodeSnippetStep 
                 step="2" 
-                title="Install Composer Dependencies" 
-                code="composer install"
+                title="Install Composer Packages" 
+                code={`composer install`}
                 onCopy={(c) => copyToClipboard(c, "composer")}
                 copied={copiedCmd === "composer"}
               />
               <CodeSnippetStep 
                 step="3" 
-                title="Install Tesseract OCR (System Binary)" 
-                code="# Ubuntu / Debian:&#10;sudo apt update && sudo apt install -y tesseract-ocr&#10;&#10;# MacOS:&#10;brew install tesseract"
+                title="Install Tesseract OCR" 
+                code={`# Ubuntu / Debian:\nsudo apt update && sudo apt install -y tesseract-ocr\n\n# macOS:\nbrew install tesseract`}
                 onCopy={(c) => copyToClipboard(c, "tesseract")}
                 copied={copiedCmd === "tesseract"}
               />
               <CodeSnippetStep 
                 step="4" 
-                title="Start Local Development Server" 
-                code="php -S 127.0.0.1:8000 -t ."
+                title="Start Local Server" 
+                code={`php -S 127.0.0.1:8000 -t .`}
                 onCopy={(c) => copyToClipboard(c, "serve")}
                 copied={copiedCmd === "serve"}
               />
             </div>
           </div>
 
-          <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-4">
-            <h4 className="font-bold dark:text-white text-slate-900 text-lg flex items-center gap-2">
-              <Globe className="text-[#2ecc71]" size={20} /> Sample Environment File (.env)
+          <div className="p-5 sm:p-6 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 space-y-3">
+            <h4 className="font-bold dark:text-white text-slate-900 text-base flex items-center gap-2">
+              <Globe className="text-[#2ecc71]" size={18} /> Sample Environment File (.env)
             </h4>
-            <div className="bg-[#0d1117] p-4 rounded-xl font-mono text-xs text-slate-300 overflow-x-auto leading-relaxed border border-white/5">
+            <div className="dark:bg-black/50 bg-slate-950 p-4 rounded-xl font-mono text-xs text-slate-300 overflow-x-auto leading-relaxed border border-white/5">
               <pre>{`APP_ENV=development
 APP_DEBUG=true
 APP_URL=http://localhost:8000
@@ -268,19 +347,19 @@ TESSERACT_BINARY=/usr/bin/tesseract`}</pre>
         </div>
       )}
 
-      {/* TAB CONTENT: TEAM & CREDITS */}
+      {/* TAB 4: TEAM & CREDITS */}
       {activeTab === "team" && (
         <div className="space-y-8 animate-in fade-in duration-300">
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-              <Users className="text-[#2ecc71]" size={24} /> Project Contributors & Roles
+            <h3 className="text-xl sm:text-2xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
+              <Users className="text-[#2ecc71]" size={22} /> Capstone Engineering Team
             </h3>
-            <p className="dark:text-slate-400 text-slate-600 text-sm">
-              Meet the core engineering and design team behind ChronoNav:
+            <p className="dark:text-slate-400 text-slate-600 text-xs sm:text-sm">
+              Core contributors to the ChronoNav campus navigation capstone system:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <TeamMemberCard 
               name="Vince Andrew Santoya"
               role="Project Lead & Repo Owner"
@@ -290,7 +369,7 @@ TESSERACT_BINARY=/usr/bin/tesseract`}</pre>
             />
             <TeamMemberCard 
               name="Eric Dominic Momo"
-              role="Head Developer"
+              role="Head Developer & Git Lead"
               link="https://github.com/EricMomo2957"
               email="Momoe2957@gmail.com"
               handle="EricMomo2957"
@@ -307,86 +386,60 @@ TESSERACT_BINARY=/usr/bin/tesseract`}</pre>
               handle="Tester/DB"
             />
           </div>
-
-          <div className="p-6 dark:bg-white/5 bg-slate-100 rounded-2xl border dark:border-white/10 border-slate-200 text-center space-y-3">
-            <h4 className="font-bold dark:text-white text-slate-900 text-base">Open for Contributions</h4>
-            <p className="text-xs dark:text-slate-400 text-slate-600 max-w-xl mx-auto">
-              Contributions are welcome under the MIT License. Create feature branches from main, follow PSR-12 coding standards, and submit pull requests to the repository.
-            </p>
-            <a 
-              href="https://github.com/Vinzz290034/CHRONONAV_WEB_DOSS" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#2ecc71] hover:bg-[#27ae60] text-white px-6 py-2.5 rounded-xl font-bold text-xs transition-all shadow-md shadow-[#2ecc71]/20 cursor-pointer"
-            >
-              <FaGithub size={16} /> Open GitHub Repository <ExternalLink size={14} />
-            </a>
-          </div>
         </div>
       )}
     </div>
   );
 }
 
-// Subcomponents
 function TechStatCard({ icon, title, detail }: { icon: React.ReactNode, title: string, detail: string }) {
   return (
-    <div className="group dark:bg-[#161b22] bg-white p-5 rounded-2xl border dark:border-white/10 border-slate-200/80 hover:border-[#2ecc71]/40 transition-all duration-300 shadow-sm hover:shadow-lg">
-      <div className="mb-3 p-2.5 dark:bg-white/5 bg-slate-100 w-fit rounded-xl group-hover:scale-110 transition-transform">
-        {icon}
+    <div className="p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 transition-all shadow-sm space-y-2">
+      <div className="flex items-center gap-3">
+        <div className="p-2.5 rounded-xl dark:bg-white/[0.05] bg-slate-100">
+          {icon}
+        </div>
+        <div>
+          <h4 className="font-bold dark:text-white text-slate-900 text-sm">{title}</h4>
+          <p className="text-[11px] dark:text-slate-400 text-slate-500 font-mono mt-0.5">{detail}</p>
+        </div>
       </div>
-      <h4 className="dark:text-white text-slate-900 font-bold text-sm mb-1">{title}</h4>
-      <p className="text-xs dark:text-slate-400 text-slate-600 leading-relaxed font-medium">{detail}</p>
     </div>
-  );
-}
-
-function TabButton({ id, label, active, onClick }: { id: "features" | "architecture" | "install" | "team", label: string, active: string, onClick: (id: "features" | "architecture" | "install" | "team") => void }) {
-  const isActive = active === id;
-  return (
-    <button 
-      onClick={() => onClick(id)}
-      className={`px-4 sm:px-5 py-3 text-xs md:text-sm font-bold transition-all border-b-2 whitespace-nowrap shrink-0 cursor-pointer ${
-        isActive 
-          ? "border-[#2ecc71] text-[#2ecc71]" 
-          : "border-transparent dark:text-slate-400 text-slate-500 hover:text-slate-900 dark:hover:text-slate-200"
-      }`}
-    >
-      {label}
-    </button>
   );
 }
 
 function FeatureCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
   return (
-    <div className="dark:bg-[#161b22] bg-white p-6 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md hover:border-[#2ecc71]/40 transition-all space-y-3">
-      <div className="p-3 dark:bg-white/5 bg-slate-100 w-fit rounded-xl">
+    <div className="p-5 sm:p-6 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 transition-all shadow-sm space-y-3">
+      <div className="p-2.5 dark:bg-white/[0.05] bg-slate-100 w-fit rounded-xl">
         {icon}
       </div>
-      <h4 className="font-bold dark:text-white text-slate-900 text-lg">{title}</h4>
-      <p className="text-sm dark:text-slate-400 text-slate-600 leading-relaxed">{desc}</p>
+      <h4 className="font-bold dark:text-white text-slate-900 text-base">{title}</h4>
+      <p className="text-xs sm:text-sm dark:text-slate-400 text-slate-600 leading-relaxed text-justify [text-align-last:left]">
+        {desc}
+      </p>
     </div>
   );
 }
 
 function CodeSnippetStep({ step, title, code, onCopy, copied }: { step: string, title: string, code: string, onCopy: (c: string) => void, copied: boolean }) {
   return (
-    <div className="dark:bg-[#161b22] bg-white p-5 rounded-2xl border dark:border-white/10 border-slate-200/80 shadow-md space-y-2">
-      <div className="flex justify-between items-center">
+    <div className="rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 overflow-hidden shadow-sm">
+      <div className="flex justify-between items-center px-4 py-2.5 dark:bg-white/[0.03] bg-slate-100 border-b dark:border-white/10 border-slate-200">
         <span className="text-xs font-bold uppercase tracking-wider text-[#2ecc71] flex items-center gap-2">
-          <span className="w-5 h-5 rounded-full bg-[#2ecc71]/20 flex items-center justify-center text-xs font-bold text-[#2ecc71]">{step}</span>
+          <span className="w-5 h-5 rounded-full bg-[#2ecc71]/20 flex items-center justify-center text-[10px] font-extrabold text-[#2ecc71]">{step}</span>
           {title}
         </span>
         <button 
           onClick={() => onCopy(code)} 
           className="text-xs dark:text-slate-400 text-slate-500 hover:text-[#2ecc71] flex items-center gap-1 cursor-pointer transition-colors"
         >
-          {copied ? <Check size={14} className="text-[#2ecc71]" /> : <Copy size={14} />}
-          <span>{copied ? "Copied!" : "Copy"}</span>
+          {copied ? <Check size={13} className="text-[#2ecc71]" /> : <Copy size={13} />}
+          <span>{copied ? "Copied" : "Copy"}</span>
         </button>
       </div>
-      <div className="bg-[#0d1117] p-3 rounded-xl font-mono text-xs text-emerald-400 overflow-x-auto border border-white/5">
-        <pre>{code}</pre>
+      <div className="p-4 dark:bg-black/50 bg-slate-950 font-mono text-xs text-emerald-400 overflow-x-auto">
+        <pre className="leading-relaxed">{code}</pre>
       </div>
     </div>
   );
@@ -394,28 +447,28 @@ function CodeSnippetStep({ step, title, code, onCopy, copied }: { step: string, 
 
 function TeamMemberCard({ name, role, link, email, handle, isLead }: { name: string, role: string, link?: string, email?: string, handle: string, isLead?: boolean }) {
   return (
-    <div className={`p-6 rounded-2xl border transition-all shadow-md ${
+    <div className={`p-5 sm:p-6 rounded-2xl border transition-all shadow-sm ${
       isLead 
         ? "dark:bg-emerald-500/10 bg-emerald-50 border-[#2ecc71]/40" 
-        : "dark:bg-[#161b22] bg-white dark:border-white/10 border-slate-200/80"
+        : "dark:bg-white/[0.03] bg-slate-900/[0.02] dark:border-white/10 border-slate-200"
     }`}>
-      <div className="flex justify-between items-start mb-2">
-        <h4 className="font-bold dark:text-white text-slate-900 text-lg">{name}</h4>
+      <div className="flex justify-between items-start mb-1.5">
+        <h4 className="font-bold dark:text-white text-slate-900 text-base">{name}</h4>
         {isLead && (
-          <span className="px-2 py-0.5 rounded-full bg-[#2ecc71] text-white text-[10px] font-extrabold uppercase tracking-wider">
+          <span className="px-2 py-0.5 rounded-full bg-[#2ecc71] text-slate-950 text-[10px] font-extrabold uppercase tracking-wider font-mono">
             Lead
           </span>
         )}
       </div>
-      <p className="text-xs text-[#2ecc71] font-semibold mb-3">{role}</p>
-      <div className="flex items-center gap-3 text-xs dark:text-slate-400 text-slate-500">
+      <p className="text-xs text-[#2ecc71] font-mono font-semibold mb-3">{role}</p>
+      <div className="flex flex-wrap items-center gap-3 text-xs dark:text-slate-400 text-slate-500">
         {link && (
-          <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#2ecc71] transition-colors">
-            <FaGithub size={14} /> @{handle} <ExternalLink size={10} />
+          <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-[#2ecc71] transition-colors">
+            <FaGithub size={13} /> @{handle} <ExternalLink size={10} />
           </a>
         )}
         {email && (
-          <a href={`mailto:${email}`} className="flex items-center gap-1 hover:text-[#2ecc71] transition-colors font-mono">
+          <a href={`mailto:${email}`} className="inline-flex items-center gap-1 hover:text-[#2ecc71] transition-colors font-mono">
             {email}
           </a>
         )}
