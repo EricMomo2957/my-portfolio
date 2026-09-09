@@ -436,7 +436,7 @@ export default function AboutMe() {
                 <p className="text-[11px] font-mono text-slate-400 mt-0.5">Interface Architecture &amp; Wireframing</p>
               </div>
               <span className="px-2.5 py-0.5 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[10px] font-mono font-bold dark:text-slate-300 text-slate-700">
-                3 Tools
+                2 Tools
               </span>
             </div>
 
@@ -458,16 +458,6 @@ export default function AboutMe() {
                 <div className="min-w-0">
                   <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Canva UI</div>
                   <div className="text-[10px] text-slate-400 font-mono truncate">Layouts &amp; Mockups</div>
-                </div>
-              </div>
-
-              <div className="p-2.5 rounded-2xl dark:bg-[#040a07] bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center gap-3 hover:border-[#2ecc71]/40 transition-all sm:col-span-2">
-                <div className="w-9 h-9 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center shrink-0">
-                  <Palette size={18} className="text-blue-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs font-bold dark:text-white text-slate-900 truncate">Wireframing &amp; Flows</div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">Component Systems &amp; UX Specs</div>
                 </div>
               </div>
             </div>
