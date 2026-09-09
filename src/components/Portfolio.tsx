@@ -38,38 +38,66 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
   const projects = [
     {
       id: "uccoop",
-      title: "UC Coop Loan Monitoring System",
+      title: "Cooperative Loan Management System",
       role: "Full-Stack & Backend Engineer",
-      company: "KATD Solutions (UC METC Campus)",
+      company: "KATD Solutions · UC METC Cooperative",
       date: "June 2026 – August 2026",
       isLatest: true,
       category: "Full-Stack & Backend",
-      tags: ["Node.js", "Express", "PostgreSQL", "Financial Math"],
-      desc: "Cooperative loan application, approval & financial amortization management system with PostgreSQL ledger engines.",
+      tags: ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Postman", "Figma"],
+      desc: "A custom cooperative loan management system built by a 4-member development team to digitize loan applications, approvals, member records, and financial amortization processes.",
+      highlightLabel: "My Role",
+      highlight: "Backend API · PostgreSQL · Loan Calculations · System Integration",
+      team: "KATD Solutions — 4-Member Development Team",
+      client: "UC METC Cooperative",
+      projectType: "Custom Cooperative Loan Management System",
+      overview: "Designed and developed a custom cooperative loan management system to digitize loan applications, approval workflows, member records, and financial amortization processes. The system uses PostgreSQL to centralize cooperative data and backend financial logic to calculate loan payments and maintain accurate loan records and transaction information.",
       details: [
-        "Worked with another developer to build the backend API from scratch using Node.js and Express to handle math formulas for monthly payments, making loan processing and tracking much faster.",
-        "Focused on using automation to improve daily operations, making it easy for the client to get accurate, up-to-date financial information and transaction reports whenever they need them.",
-        "Co-designed and built the database using PostgreSQL to centralize member records, move loan processes online, and cut down on manual paperwork and errors."
+        "Collaborated with another developer to design and develop the backend API",
+        "Built backend services using Node.js and Express.js",
+        "Implemented loan-related calculations and monthly amortization formulas",
+        "Developed API endpoints for loan processing, tracking, and financial data",
+        "Co-designed and implemented the PostgreSQL database structure",
+        "Helped centralize member, loan, and transaction records",
+        "Improved manual workflows by moving loan processes into a centralized online system",
+        "Implemented automation to reduce repetitive tasks and improve data accuracy",
+        "Tested, debugged, and refined backend functionality",
+        "Collaborated with the KATD Solutions team throughout development and deployment"
       ],
+      technologies: "Frontend: Next.js · Backend: Node.js, Express.js · Database: PostgreSQL · Tools: Git, GitHub, VS Code, Postman, Figma, AI-assisted development tools",
+      outcome: "Delivered a centralized loan management solution that helps the cooperative manage member information, loan applications, approvals, amortization calculations, and transaction records more efficiently. This project demonstrates my experience working as part of a 4-member freelance software development team on a real-world business system.",
       image: "/images/uccoop.png",
       githubUrl: "https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System",
       liveUrl: "https://uc-coop-loan-monitoring.up.railway.app/"
     },
     {
       id: "mentor",
-      title: "Mentor Log",
+      title: "IT Administration & Web Development Internship",
       role: "IT Admin Assistant & Web Developer Trainee",
       company: "CoreLogic Consulting & System, Inc.",
       date: "February 2026 – May 2026",
       isLatest: false,
       category: "OJT & Systems",
-      tags: ["React 19", "Node.js", "MySQL", "OJT Tracking"],
-      desc: "Digital OJT attendance logging, task assignments & mentorship tracking system built to replace manual sign-in sheets.",
+      tags: ["WordPress", "Elementor", "Mentor Log", "PHP/MySQL", "Canva", "Photoshop"],
+      desc: "Completed an IT internship involving WordPress development, client web-page updates, digital content creation, IT administration, and data management. Independently developed Mentor Log, a locally hosted OJT attendance and mentorship tracking system used to replace manual trainee records.",
+      highlightLabel: "Key Project",
+      highlight: "Mentor Log · Web Development · Automation · Data Management",
+      team: "CoreLogic Consulting & System, Inc.",
+      project: "Mentor Log — OJT Attendance & Mentorship Tracking System",
+      projectType: "Internship / OJT",
+      overview: "Completed an IT internship combining technical support, web development, digital documentation, and administrative responsibilities. During the internship, I worked with WordPress and Elementor to design, edit, and maintain web pages for real clients while also developing Mentor Log, a local-based system designed to replace manual attendance sheets and automate trainee attendance, task assignments, and mentorship tracking.",
       details: [
-        "Handled daily office paperwork and digital documentation and used WordPress with Elementor to design, edit, and update different web pages for real clients.",
-        "Used Canva and Photoshop to create graphic assets, including video editing, logos, and pictures, while independently building Mentor Log—a local-base system the company actively uses to automate trainee logs and mentorship tracking.",
-        "Managed local data safety by regularly backing up client files and organizing company digital records to prevent data loss."
+        "Assisted with daily IT administration, office paperwork, and digital documentation",
+        "Used WordPress and Elementor to create, edit, and update web pages for real clients",
+        "Designed digital assets using Canva and Photoshop, including graphics, logos, images, and video content",
+        "Independently designed and developed Mentor Log, a local-based OJT management system",
+        "Implemented digital attendance logging, task assignment, and mentorship tracking features",
+        "Helped automate trainee record management and reduce reliance on manual sign-in sheets",
+        "Regularly backed up client files and maintained organized digital records",
+        "Supported local data management and file organization to help prevent data loss"
       ],
+      technologies: "Web: WordPress, Elementor · Development: HTML, CSS, JavaScript, PHP/MySQL · Design: Canva, Photoshop · Tools: WinSCP, XAMPP, VS Code",
+      outcome: "Developed Mentor Log, a locally hosted OJT management system that was actively used within the company to organize trainee attendance and mentorship records. This internship provided hands-on experience in web development, IT administration, client-oriented work, digital content creation, data management, and building a real-world internal system.",
       image: "/images/mentorlog.png",
       githubUrl: "https://github.com/EricMomo2957/MentorLog",
       liveUrl: "https://mentor-log-two.vercel.app/"
@@ -79,15 +107,23 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
       title: "ChronoNav",
       role: "Capstone Lead Developer",
       company: "University of Cebu – Main Campus",
-      date: "Aug 2025 – Dec 2025",
+      date: "August 2025 – December 2025",
       isLatest: false,
       category: "Capstone & AI",
       tags: ["PHP", "OCR Schedule Extraction", "Figma", "Git/GitHub"],
       desc: "Campus navigation platform featuring automated OCR schedule extraction to convert printed student study loads into interactive route maps.",
+      highlightLabel: "Lead Role",
+      highlight: "Lead Developer · OCR Integration · System Architecture · Presentation",
+      team: "Capstone Project Team",
+      client: "University of Cebu",
+      projectType: "Academic Capstone Project",
+      overview: "Campus navigation platform featuring automated OCR schedule extraction to convert printed student study loads into interactive route maps.",
       details: [
         "Served as the Lead Developer, managing the code using Git/GitHub and ensuring a stable backend to connect campus and navigation data.",
         "Integrated OCR technology to turn scanned student study loads into digital schedules, while helping write the project documentation and presenting during the defense."
       ],
+      technologies: "Frontend: HTML, CSS, JavaScript · Backend: PHP · Database: MySQL · Tools: Figma, Git, GitHub",
+      outcome: "Successfully developed and defended ChronoNav as an innovative OCR-powered campus navigation system for University of Cebu students.",
       image: "/images/chrononav.png",
       githubUrl: "https://github.com/Vinzz290034/CHRONONAV_WEB_DOSS"
     }
@@ -232,7 +268,7 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                   {/* Title & Metadata */}
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between gap-2">
-                      <h3 className="text-lg font-bold dark:text-white text-slate-900 group-hover:text-[#2ecc71] transition-colors line-clamp-1">
+                      <h3 className="text-base sm:text-lg font-bold dark:text-white text-slate-900 group-hover:text-[#2ecc71] transition-colors line-clamp-1">
                         {p.title}
                       </h3>
                       <div className="flex items-center gap-2 text-slate-400 shrink-0" onClick={(e) => e.stopPropagation()}>
@@ -258,9 +294,18 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                   </div>
 
                   {/* Summary Description */}
-                  <p className="text-xs dark:text-slate-300 text-slate-600 leading-relaxed line-clamp-2">
+                  <p className="text-xs dark:text-slate-300 text-slate-600 leading-relaxed line-clamp-3">
                     {p.desc}
                   </p>
+
+                  {/* Role Highlight Pill */}
+                  {p.highlight && (
+                    <div className="p-2 rounded-xl dark:bg-white/[0.03] bg-slate-50 border dark:border-white/5 border-slate-200">
+                      <p className="text-[11px] font-mono dark:text-slate-300 text-slate-700 leading-snug">
+                        <strong className="text-[#2ecc71]">{p.highlightLabel}:</strong> {p.highlight}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 {/* Tech Pills & Deep-Dive Link */}
@@ -319,22 +364,31 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                 />
 
                 <div className="flex flex-col lg:flex-row gap-6 justify-between items-start">
-                  <div className="space-y-3.5 flex-1">
+                  <div className="space-y-4 flex-1">
                     {/* Header Row */}
-                    <div className="space-y-1">
+                    <div className="space-y-1.5">
                       <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="text-lg sm:text-xl font-bold dark:text-white text-slate-900">
-                          {exp.role}
+                        <h3 className="text-lg sm:text-xl font-extrabold dark:text-white text-slate-900">
+                          {exp.title}
                         </h3>
                         {exp.isLatest && (
                           <span className="px-2.5 py-0.5 rounded-full text-[10px] bg-[#2ecc71]/10 text-[#2ecc71] font-bold uppercase tracking-wider border border-[#2ecc71]/20">
                             Latest Project
                           </span>
                         )}
+                        {exp.projectType && (
+                          <span className="px-2.5 py-0.5 rounded-full text-[10px] dark:bg-white/[0.04] bg-slate-100 text-slate-400 font-mono border dark:border-white/5 border-slate-200">
+                            {exp.projectType}
+                          </span>
+                        )}
                       </div>
 
                       <div className="flex flex-wrap items-center gap-2 text-xs font-mono dark:text-slate-400 text-slate-600">
-                        <span className="font-bold text-[#2ecc71] flex items-center gap-1">
+                        <span className="font-bold text-[#2ecc71]">
+                          {exp.role}
+                        </span>
+                        <span>•</span>
+                        <span className="font-semibold flex items-center gap-1 dark:text-slate-300 text-slate-700">
                           <Building2 size={13} /> {exp.company}
                         </span>
                         <span>•</span>
@@ -344,25 +398,47 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                       </div>
                     </div>
 
-                    <p className="text-xs sm:text-sm dark:text-slate-300 text-slate-600 leading-relaxed">
-                      {exp.desc}
+                    {/* Role Highlight / Key Focus */}
+                    {exp.highlight && (
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-xl dark:bg-[#2ecc71]/10 bg-emerald-50 border border-[#2ecc71]/30 text-xs font-mono">
+                        <span className="font-bold text-[#2ecc71]">{exp.highlightLabel}:</span>
+                        <span className="dark:text-slate-200 text-slate-800 font-semibold">{exp.highlight}</span>
+                      </div>
+                    )}
+
+                    {/* Overview Paragraph */}
+                    <p className="text-xs sm:text-sm dark:text-slate-300 text-slate-600 leading-relaxed text-justify [text-align-last:left]">
+                      {exp.overview || exp.desc}
                     </p>
 
                     {/* Detailed Achievement Bullets */}
-                    <ul className="space-y-2 pt-1">
-                      {exp.details.map((detail, dIdx) => (
-                        <li key={dIdx} className="flex items-start gap-2.5 text-xs sm:text-sm dark:text-slate-400 text-slate-600">
-                          <CheckCircle2 size={15} className="text-[#2ecc71] shrink-0 mt-0.5" />
-                          <span className="leading-relaxed">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="space-y-2 pt-1">
+                      <p className="text-[11px] font-mono uppercase tracking-wider font-bold dark:text-slate-300 text-slate-700">
+                        Key Responsibilities &amp; Implementation:
+                      </p>
+                      <ul className="space-y-2">
+                        {exp.details.map((detail, dIdx) => (
+                          <li key={dIdx} className="flex items-start gap-2.5 text-xs sm:text-sm dark:text-slate-400 text-slate-600">
+                            <CheckCircle2 size={15} className="text-[#2ecc71] shrink-0 mt-0.5" />
+                            <span className="leading-relaxed">{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Project Outcome Box */}
+                    {exp.outcome && (
+                      <div className="p-3.5 rounded-2xl dark:bg-emerald-950/20 bg-emerald-50/80 border dark:border-emerald-500/20 border-emerald-500/30 text-xs dark:text-emerald-200/90 text-emerald-950 leading-relaxed">
+                        <strong className="text-[#2ecc71] font-bold block mb-1">Project Outcome:</strong>
+                        <span>{exp.outcome}</span>
+                      </div>
+                    )}
 
                     {/* Action Links */}
-                    <div className="flex flex-wrap items-center gap-2.5 pt-3">
+                    <div className="flex flex-wrap items-center gap-2.5 pt-2">
                       <button
                         onClick={() => setSelectedProject(exp.id)}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 text-xs font-bold transition-all cursor-pointer shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 text-xs font-bold transition-all cursor-pointer shadow-sm hover:scale-105"
                       >
                         Inspect Architecture <ArrowRight size={13} />
                       </button>
