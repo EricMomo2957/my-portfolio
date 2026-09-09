@@ -76,7 +76,7 @@ def generate_resume_word():
     
     # Project 1
     p_p1 = doc.add_paragraph()
-    r_p1_t = p_p1.add_run("Loan Monitoring and Financial Management System | May 2026 – Sept 2026\n")
+    r_p1_t = p_p1.add_run("Loan Monitoring and Financial Management System | June 2026 – August 2026\n")
     r_p1_t.bold = True
     r_p1_t.font.name = 'Times New Roman'
     r_p1_t.font.size = Pt(11)
@@ -101,7 +101,7 @@ def generate_resume_word():
         
     # Project 2
     p_p2 = doc.add_paragraph()
-    r_p2_t = p_p2.add_run("On-the-Job Trainee (IT Admin Assistant & Web Development) | Feb 2026 – April 2026\n")
+    r_p2_t = p_p2.add_run("On-the-Job Trainee (IT Admin Assistant & Web Development) | February 2026 – May 2026\n")
     r_p2_t.bold = True
     r_p2_t.font.name = 'Times New Roman'
     r_p2_t.font.size = Pt(11)
@@ -280,7 +280,7 @@ def generate_resume_pdf():
     # Professional Projects & Experience
     story.append(Paragraph("PROFESSIONAL PROJECTS & EXPERIENCE", heading_style))
     
-    story.append(Paragraph("<b>Loan Monitoring and Financial Management System</b> | May 2026 – Sept 2026", body_left))
+    story.append(Paragraph("<b>Loan Monitoring and Financial Management System</b> | June 2026 – August 2026", body_left))
     story.append(Paragraph("<i>KATD SOLUTIONS (4-Member Freelance Team) | Client: UC METC Campus, Cebu City</i>", body_left))
     bullets1 = [
         "• Worked with another developer to build the backend API from scratch using Node.js and Express to handle math formulas for monthly payments, making loan processing and tracking much faster.",
@@ -291,7 +291,7 @@ def generate_resume_pdf():
         story.append(Paragraph(b, body_justify))
     story.append(Spacer(1, 4))
 
-    story.append(Paragraph("<b>On-the-Job Trainee (IT Admin Assistant & Web Development)</b> | Feb 2026 – April 2026", body_left))
+    story.append(Paragraph("<b>On-the-Job Trainee (IT Admin Assistant & Web Development)</b> | February 2026 – May 2026", body_left))
     story.append(Paragraph("<i>CoreLogic Consulting & System, Inc. | Gov. M. Cuenco Avenue, Cebu City</i>", body_left))
     bullets2 = [
         "• Handled daily office paperwork and digital documentation and used WordPress with Elementor to design, edit, and update different web pages for real clients.",

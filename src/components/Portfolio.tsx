@@ -41,7 +41,7 @@ export default function Portfolio({ initialTab = "all" }: PortfolioProps) {
       title: "UC Coop Loan Monitoring System",
       role: "Full-Stack & Backend Engineer",
       company: "KATD Solutions (UC METC Campus)",
-      date: "May 2026 – Sept 2026",
+      date: "June 2026 – August 2026",
       isLatest: true,
       category: "Full-Stack & Backend",
       tags: ["Node.js", "Express", "PostgreSQL", "Financial Math"],
@@ -60,7 +60,7 @@ export default function Portfolio({ initialTab = "all" }: PortfolioProps) {
       title: "Mentor Log",
       role: "IT Admin Assistant & Web Developer Trainee",
       company: "CoreLogic Consulting & System, Inc.",
-      date: "Feb 2026 – April 2026",
+      date: "February 2026 – May 2026",
       isLatest: false,
       category: "OJT & Systems",
       tags: ["React 19", "Node.js", "MySQL", "OJT Tracking"],
@@ -319,7 +319,7 @@ export default function Portfolio({ initialTab = "all" }: PortfolioProps) {
               </h2>
             </div>
             <span className="text-xs font-mono dark:text-slate-400 text-slate-500">
-              May 2026 – Aug 2025 Career History
+              August 2026 – Aug 2025 Career History
             </span>
           </div>
 

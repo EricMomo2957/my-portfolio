@@ -178,7 +178,7 @@ export default function AboutMe() {
                     <span className="flex items-center gap-1.5 text-emerald-400 font-mono">
                       <Terminal size={14} /> KATD Solutions &amp; Loan System Backend
                     </span>
-                    <span className="text-[10px] font-mono text-slate-400">May – Sept 2026</span>
+                    <span className="text-[10px] font-mono text-slate-400">June – August 2026</span>
                   </div>
                   <p className="text-[11px] sm:text-xs leading-relaxed dark:text-slate-400 text-slate-600">
                     Co-founded KATD Solutions; architected the backend API in <strong className="text-emerald-400">Node.js, Express &amp; PostgreSQL</strong> for the UC METC Campus loan monitoring system, automating Flat-Rate and Diminishing Balance interest schedules.
@@ -191,7 +191,7 @@ export default function AboutMe() {
                     <span className="flex items-center gap-1.5 text-blue-400 font-mono">
                       <Wrench size={14} /> CoreLogic Internship &amp; MentorLog
                     </span>
-                    <span className="text-[10px] font-mono text-slate-400">Feb – Apr 2026</span>
+                    <span className="text-[10px] font-mono text-slate-400">February – May 2026</span>
                   </div>
                   <p className="text-[11px] sm:text-xs leading-relaxed dark:text-slate-400 text-slate-600">
                     Maintained client websites in <strong className="text-blue-400">WordPress &amp; Elementor</strong> and designed graphic assets in Canva/Photoshop, while independently developing <strong className="text-blue-400">MentorLog</strong> (React 19/MySQL) to automate OJT attendance tracking.
