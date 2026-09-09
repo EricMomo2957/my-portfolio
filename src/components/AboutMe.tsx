@@ -39,43 +39,31 @@ export default function AboutMe() {
       title: "Full-Stack Web Development",
       category: "Core Expertise",
       desc: "Dynamic, production-ready web applications built with Node.js, Next.js, and relational databases.",
-      icon: <Code2 size={20} className="text-cyan-400" />,
-      tags: ["Next.js Apps", "REST APIs", "PostgreSQL / Supabase", "Secure Auth"]
+      icon: <Code2 size={20} className="text-cyan-400" />
     },
     {
       title: "UI/UX & Frontend Engineering",
       category: "Design First",
       desc: "High-contrast, responsive interfaces engineered with Tailwind CSS, glassmorphism, and fluid animations.",
-      icon: <Palette size={20} className="text-purple-400" />,
-      tags: ["Figma Prototypes", "Tailwind Systems", "Mobile-First", "WCAG a11y"]
+      icon: <Palette size={20} className="text-purple-400" />
     },
     {
       title: "AI & Chatbot Integrations",
       category: "Emerging Tech",
       desc: "Supercharge web workflows with Retrieval-Augmented Generation (RAG) and Gemini LLM integrations.",
-      icon: <Bot size={20} className="text-amber-400" />,
-      tags: ["RAG Pipelines", "AI Chatbots", "Multimodal APIs", "Prompt Design"]
-    },
-    {
-      title: "IoT & Microcontroller Systems",
-      category: "Hardware & IoT",
-      desc: "Hardware firmware development and real-time sensor telemetry dashboards using ESP32 and Arduino.",
-      icon: <Cpu size={20} className="text-emerald-400" />,
-      tags: ["ESP32 Firmware", "Sensor Telemetry", "Circuit Design", "Tinkercad"]
+      icon: <Bot size={20} className="text-amber-400" />
     },
     {
       title: "QA & Technical Documentation",
       category: "Quality Assurance",
       desc: "Structured software testing, comprehensive API documentation, and clear system architecture guides.",
-      icon: <FileText size={20} className="text-sky-400" />,
-      tags: ["Test Matrices", "API Docs", "System SRS", "User Manuals"]
+      icon: <FileText size={20} className="text-sky-400" />
     },
     {
       title: "Deployment & Network Setup",
       category: "Infrastructure",
       desc: "Automated CI/CD deployment to Vercel/Railway with secure routing based on Cisco CCNAv7 principles.",
-      icon: <Network size={20} className="text-rose-400" />,
-      tags: ["Vercel / Railway", "Custom Domains & SSL", "Packet Tracer", "VLAN Config"]
+      icon: <Network size={20} className="text-rose-400" />
     }
   ];
 
@@ -894,42 +882,29 @@ export default function AboutMe() {
           </p>
         </div>
 
-        {/* 6 Services Bento Cards Grid Matching Reference */}
+        {/* Services Bento Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesData.map((service) => (
             <div
               key={service.title}
-              className="p-6 sm:p-7 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-6 hover:border-[#2ecc71]/40 transition-all duration-300 group"
+              className="p-6 sm:p-7 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl space-y-4 hover:border-[#2ecc71]/40 transition-all duration-300 group"
             >
-              <div className="space-y-4">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="w-10 h-10 rounded-2xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                    {service.icon}
-                  </div>
-                  <span className="px-3 py-1 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[11px] font-mono font-semibold dark:text-slate-300 text-slate-700">
-                    {service.category}
-                  </span>
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-10 h-10 rounded-2xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  {service.icon}
                 </div>
-
-                <div>
-                  <h3 className="text-lg sm:text-xl font-extrabold dark:text-white text-slate-900 group-hover:text-[#2ecc71] transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm dark:text-slate-400 text-slate-600 leading-relaxed mt-2">
-                    {service.desc}
-                  </p>
-                </div>
+                <span className="px-3 py-1 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[11px] font-mono font-semibold dark:text-slate-300 text-slate-700">
+                  {service.category}
+                </span>
               </div>
 
-              <div className="pt-4 border-t dark:border-white/5 border-slate-100 flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 rounded-lg dark:bg-white/[0.03] bg-slate-50 border dark:border-white/5 border-slate-200 text-[11px] font-mono font-medium dark:text-slate-300 text-slate-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div>
+                <h3 className="text-lg sm:text-xl font-extrabold dark:text-white text-slate-900 group-hover:text-[#2ecc71] transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-xs sm:text-sm dark:text-slate-400 text-slate-600 leading-relaxed mt-2">
+                  {service.desc}
+                </p>
               </div>
             </div>
           ))}
