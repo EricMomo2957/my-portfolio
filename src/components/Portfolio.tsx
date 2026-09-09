@@ -104,7 +104,7 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
 
   return (
     <section className="p-4 sm:p-6 md:p-10 space-y-10 max-w-6xl mx-auto">
-      
+
       {/* Top Header & Action Row */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b dark:border-white/10 border-slate-200/80">
         <div className="space-y-3">
@@ -113,7 +113,7 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
             Projects & Professional Experience
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black dark:text-white text-slate-900 tracking-tight leading-tight">
-            Engineering Portfolio & Career Timeline
+            Portfolio & Career Timeline
           </h1>
           <p className="dark:text-slate-400 text-slate-600 text-sm sm:text-base max-w-2xl leading-relaxed">
             Production systems, freelance client platforms, and software milestones built with modern full-stack architectures and clean engineering practices.
@@ -145,21 +145,19 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
         <div className="flex items-center gap-1.5 p-1 rounded-2xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 self-start">
           <button
             onClick={() => setActiveTab("projects")}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "projects"
-                ? "bg-[#2ecc71] text-slate-950 shadow-md"
-                : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white"
-            }`}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === "projects"
+              ? "bg-[#2ecc71] text-slate-950 shadow-md"
+              : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white"
+              }`}
           >
             Project Cards
           </button>
           <button
             onClick={() => setActiveTab("timeline")}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "timeline"
-                ? "bg-[#2ecc71] text-slate-950 shadow-md"
-                : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white"
-            }`}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === "timeline"
+              ? "bg-[#2ecc71] text-slate-950 shadow-md"
+              : "dark:text-slate-300 text-slate-600 hover:text-slate-900 dark:hover:text-white"
+              }`}
           >
             Experience Timeline
           </button>
@@ -172,11 +170,10 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1.5 rounded-xl text-[11px] font-semibold transition-all cursor-pointer shrink-0 ${
-                  activeCategory === cat
-                    ? "border border-[#2ecc71] bg-[#2ecc71]/10 text-[#2ecc71] font-bold"
-                    : "dark:bg-white/[0.02] bg-slate-100 dark:text-slate-400 text-slate-600 border dark:border-white/5 border-slate-200 hover:border-[#2ecc71]/30"
-                }`}
+                className={`px-3 py-1.5 rounded-xl text-[11px] font-semibold transition-all cursor-pointer shrink-0 ${activeCategory === cat
+                  ? "border border-[#2ecc71] bg-[#2ecc71]/10 text-[#2ecc71] font-bold"
+                  : "dark:bg-white/[0.02] bg-slate-100 dark:text-slate-400 text-slate-600 border dark:border-white/5 border-slate-200 hover:border-[#2ecc71]/30"
+                  }`}
               >
                 {cat}
               </button>
@@ -206,7 +203,7 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                    
+
                     {/* Live Demo Status Pill */}
                     {p.liveUrl && (
                       <div className="absolute top-3 right-3 z-10">
@@ -308,19 +305,17 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
             {projects.map((exp) => (
               <div
                 key={exp.id}
-                className={`relative p-5 sm:p-7 rounded-3xl transition-all duration-300 border ${
-                  exp.isLatest
-                    ? "dark:bg-white/[0.03] bg-white border-[#2ecc71]/40 shadow-lg"
-                    : "dark:bg-white/[0.02] bg-white/70 dark:border-white/5 border-slate-200 hover:border-[#2ecc71]/30 shadow-sm"
-                }`}
+                className={`relative p-5 sm:p-7 rounded-3xl transition-all duration-300 border ${exp.isLatest
+                  ? "dark:bg-white/[0.03] bg-white border-[#2ecc71]/40 shadow-lg"
+                  : "dark:bg-white/[0.02] bg-white/70 dark:border-white/5 border-slate-200 hover:border-[#2ecc71]/30 shadow-sm"
+                  }`}
               >
                 {/* Glowing Timeline Dot */}
                 <div
-                  className={`absolute left-[-31px] sm:left-[-41px] top-7 w-3.5 h-3.5 rounded-full border transition-all ${
-                    exp.isLatest
-                      ? "bg-[#2ecc71] border-[#2ecc71] shadow-[0_0_12px_#2ecc71]"
-                      : "dark:bg-slate-900 bg-slate-300 dark:border-white/20 border-slate-400"
-                  }`}
+                  className={`absolute left-[-31px] sm:left-[-41px] top-7 w-3.5 h-3.5 rounded-full border transition-all ${exp.isLatest
+                    ? "bg-[#2ecc71] border-[#2ecc71] shadow-[0_0_12px_#2ecc71]"
+                    : "dark:bg-slate-900 bg-slate-300 dark:border-white/20 border-slate-400"
+                    }`}
                 />
 
                 <div className="flex flex-col lg:flex-row gap-6 justify-between items-start">
