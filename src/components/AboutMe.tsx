@@ -26,13 +26,59 @@ import {
   Building2,
   Briefcase,
   ChevronRight,
-  Globe
+  Globe,
+  Network
 } from "lucide-react";
 import { FaReact, FaNodeJs, FaPython, FaPhp, FaJava, FaGitAlt, FaFigma, FaWordpress, FaGithub, FaCss3Alt } from "react-icons/fa";
 import { SiTypescript, SiPostgresql, SiMysql, SiCanva, SiBootstrap, SiTailwindcss, SiJavascript, SiHtml5, SiFlutter, SiSqlite } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 
 export default function AboutMe() {
+  const servicesData = [
+    {
+      title: "Full-Stack Web Development",
+      category: "Core Expertise",
+      desc: "Dynamic, production-ready web applications built with Node.js, Next.js, and relational databases.",
+      icon: <Code2 size={20} className="text-cyan-400" />,
+      tags: ["Next.js Apps", "REST APIs", "PostgreSQL / Supabase", "Secure Auth"]
+    },
+    {
+      title: "UI/UX & Frontend Engineering",
+      category: "Design First",
+      desc: "High-contrast, responsive interfaces engineered with Tailwind CSS, glassmorphism, and fluid animations.",
+      icon: <Palette size={20} className="text-purple-400" />,
+      tags: ["Figma Prototypes", "Tailwind Systems", "Mobile-First", "WCAG a11y"]
+    },
+    {
+      title: "AI & Chatbot Integrations",
+      category: "Emerging Tech",
+      desc: "Supercharge web workflows with Retrieval-Augmented Generation (RAG) and Gemini LLM integrations.",
+      icon: <Bot size={20} className="text-amber-400" />,
+      tags: ["RAG Pipelines", "AI Chatbots", "Multimodal APIs", "Prompt Design"]
+    },
+    {
+      title: "IoT & Microcontroller Systems",
+      category: "Hardware & IoT",
+      desc: "Hardware firmware development and real-time sensor telemetry dashboards using ESP32 and Arduino.",
+      icon: <Cpu size={20} className="text-emerald-400" />,
+      tags: ["ESP32 Firmware", "Sensor Telemetry", "Circuit Design", "Tinkercad"]
+    },
+    {
+      title: "QA & Technical Documentation",
+      category: "Quality Assurance",
+      desc: "Structured software testing, comprehensive API documentation, and clear system architecture guides.",
+      icon: <FileText size={20} className="text-sky-400" />,
+      tags: ["Test Matrices", "API Docs", "System SRS", "User Manuals"]
+    },
+    {
+      title: "Deployment & Network Setup",
+      category: "Infrastructure",
+      desc: "Automated CI/CD deployment to Vercel/Railway with secure routing based on Cisco CCNAv7 principles.",
+      icon: <Network size={20} className="text-rose-400" />,
+      tags: ["Vercel / Railway", "Custom Domains & SSL", "Packet Tracer", "VLAN Config"]
+    }
+  ];
+
   const technicalSkills = {
     languages: [
       { name: "TypeScript", icon: <SiTypescript size={14} className="text-blue-400" /> },
@@ -72,29 +118,6 @@ export default function AboutMe() {
       "SEO Optimization"
     ]
   };
-
-  const softSkills = [
-    {
-      title: "Full-Lifecycle Execution",
-      desc: "From Figma wireframes and schema design to automated REST APIs and production deployment.",
-      icon: <Layers size={18} className="text-[#2ecc71]" />
-    },
-    {
-      title: "Analytical Problem Solving",
-      desc: "Translating complex cooperative financial formulas and bottlenecks into automated calculation routines.",
-      icon: <Lightbulb size={18} className="text-amber-400" />
-    },
-    {
-      title: "Design & Dev Synergy",
-      desc: "Bridging the gap between aesthetic visual assets and robust backend architecture.",
-      icon: <Palette size={18} className="text-rose-400" />
-    },
-    {
-      title: "Team Collaboration & Git Lead",
-      desc: "Leading code reviews, maintaining repository standards, and facilitating clear cross-functional communication.",
-      icon: <HeartHandshake size={18} className="text-blue-400" />
-    }
-  ];
 
   return (
     <section className="p-4 sm:p-6 md:p-10 max-w-6xl mx-auto space-y-10 relative">
@@ -856,32 +879,58 @@ export default function AboutMe() {
         </div>
       </div>
 
-      {/* CORE STRENGTHS & WORK PHILOSOPHY */}
-      <div className="space-y-6 pt-6 border-t dark:border-white/10 border-slate-200/80">
-        <div>
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#2ecc71] font-bold mb-1">
-            <Sparkles size={14} /> Competencies
+      {/* SERVICES & EXPERTISE SECTION */}
+      <div className="space-y-8 pt-8 border-t dark:border-white/10 border-slate-200/80">
+        <div className="text-center space-y-3 max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border dark:border-purple-500/30 border-purple-200 dark:bg-purple-950/40 bg-purple-50 text-xs font-mono font-bold uppercase tracking-wider text-purple-400 shadow-sm">
+            <Layers size={13} />
+            Capabilities
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black dark:text-white text-slate-900 tracking-tight">
-            How I Create Value
+          <h2 className="text-3xl sm:text-4xl font-black dark:text-white text-slate-900 tracking-tight">
+            Services &amp; Expertise
           </h2>
+          <p className="text-xs sm:text-sm dark:text-slate-400 text-slate-600 leading-relaxed">
+            Specialized engineering across modern full-stack web applications, user interfaces, AI integrations, and cloud infrastructure.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-          {softSkills.map((soft) => (
+        {/* 6 Services Bento Cards Grid Matching Reference */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {servicesData.map((service) => (
             <div
-              key={soft.title}
-              className="p-5 rounded-2xl dark:bg-white/[0.03] bg-slate-900/[0.02] border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 transition-all space-y-2.5"
+              key={service.title}
+              className="p-6 sm:p-7 rounded-3xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-xl flex flex-col justify-between space-y-6 hover:border-[#2ecc71]/40 transition-all duration-300 group"
             >
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl dark:bg-white/[0.05] bg-slate-100">
-                  {soft.icon}
+              <div className="space-y-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="w-10 h-10 rounded-2xl dark:bg-white/[0.04] bg-slate-100 border dark:border-white/10 border-slate-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    {service.icon}
+                  </div>
+                  <span className="px-3 py-1 rounded-full dark:bg-white/[0.04] bg-slate-100 border dark:border-white/5 border-slate-200 text-[11px] font-mono font-semibold dark:text-slate-300 text-slate-700">
+                    {service.category}
+                  </span>
                 </div>
-                <h4 className="font-bold dark:text-white text-slate-900 text-base">{soft.title}</h4>
+
+                <div>
+                  <h3 className="text-lg sm:text-xl font-extrabold dark:text-white text-slate-900 group-hover:text-[#2ecc71] transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm dark:text-slate-400 text-slate-600 leading-relaxed mt-2">
+                    {service.desc}
+                  </p>
+                </div>
               </div>
-              <p className="text-xs sm:text-sm dark:text-slate-400 text-slate-600 leading-relaxed pl-1">
-                {soft.desc}
-              </p>
+
+              <div className="pt-4 border-t dark:border-white/5 border-slate-100 flex flex-wrap gap-2">
+                {service.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-1 rounded-lg dark:bg-white/[0.03] bg-slate-50 border dark:border-white/5 border-slate-200 text-[11px] font-mono font-medium dark:text-slate-300 text-slate-700"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
