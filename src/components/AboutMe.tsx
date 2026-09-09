@@ -32,21 +32,6 @@ import { FaReact, FaNodeJs, FaPython, FaPhp, FaJava, FaGitAlt, FaFigma, FaWordpr
 import { SiTypescript, SiPostgresql, SiMysql, SiCanva, SiBootstrap, SiTailwindcss, SiJavascript, SiHtml5, SiFlutter, SiSqlite } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 
-  const techStackBadges = [
-    { name: "C#", icon: <TbBrandCSharp size={14} />, bg: "bg-[#239120]", text: "text-white" },
-    { name: "CSS3", icon: <FaCss3Alt size={14} />, bg: "bg-[#1572B6]", text: "text-white" },
-    { name: "JAVASCRIPT", icon: <SiJavascript size={14} />, bg: "bg-[#F7DF1E]", text: "text-black font-extrabold" },
-    { name: "JAVA", icon: <FaJava size={14} />, bg: "bg-[#ED8B00]", text: "text-white" },
-    { name: "HTML5", icon: <SiHtml5 size={14} />, bg: "bg-[#E34F26]", text: "text-white" },
-    { name: "PHP", icon: <FaPhp size={14} />, bg: "bg-[#777BB4]", text: "text-white" },
-    { name: "PYTHON", icon: <FaPython size={14} />, bg: "bg-[#3776AB]", text: "text-white" },
-    { name: "NODE.JS", icon: <FaNodeJs size={14} />, bg: "bg-[#339933]", text: "text-white" },
-    { name: "BOOTSTRAP", icon: <SiBootstrap size={14} />, bg: "bg-[#7952B3]", text: "text-white" },
-    { name: "FLUTTER", icon: <SiFlutter size={14} />, bg: "bg-[#02569B]", text: "text-white" },
-    { name: "MYSQL", icon: <SiMysql size={14} />, bg: "bg-[#4479A1]", text: "text-white" },
-    { name: "SQLITE", icon: <SiSqlite size={14} />, bg: "bg-[#003B57]", text: "text-white" }
-  ];
-
 export default function AboutMe() {
   const technicalSkills = {
     languages: [
@@ -433,25 +418,6 @@ export default function AboutMe() {
           <p className="text-xs dark:text-slate-400 text-slate-500 max-w-sm">
             Curated engineering toolkits, design suites, and backend datastores verified in production.
           </p>
-        </div>
-
-        {/* Core Tech Stack Badges Strip Matching Reference */}
-        <div className="p-4 sm:p-5 rounded-2xl dark:bg-[#07130e]/90 bg-white border dark:border-white/10 border-slate-200 shadow-lg space-y-3">
-          <div className="flex items-center gap-2 text-sm sm:text-base font-extrabold dark:text-white text-slate-900 tracking-tight">
-            <span className="text-base sm:text-lg">💻</span>
-            <span>Tech Stack:</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-            {techStackBadges.map((badge) => (
-              <div
-                key={badge.name}
-                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded font-mono text-xs sm:text-sm font-bold shadow-sm transition-all duration-200 hover:scale-105 hover:brightness-110 cursor-default select-none ${badge.bg} ${badge.text}`}
-              >
-                {badge.icon}
-                <span className="tracking-wider uppercase">{badge.name}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* 6-Card Grid Layout matching reference image */}
