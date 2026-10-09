@@ -19,17 +19,11 @@ import {
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
-// Import project detail components
-import ChronoNav from "./ChronoNav";
-import Mentorlog from "./Mentorlog";
-import UCCoopLoanMonitoringSystem from "./UC_Coop_Loan-Monitoring-System";
-
 interface PortfolioProps {
   initialTab?: "projects" | "timeline";
 }
 
 export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
-  const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"projects" | "timeline">(initialTab === "timeline" ? "timeline" : "projects");
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
@@ -133,11 +127,6 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
     ? projects
     : projects.filter(p => p.category === activeCategory || (activeCategory === "Full-Stack & Backend" && p.id === "mentor"));
 
-  // Open Project Architecture / Detail Sub-views
-  if (selectedProject === "chrono") return <ChronoNav onBack={() => setSelectedProject(null)} />;
-  if (selectedProject === "mentor") return <Mentorlog onBack={() => setSelectedProject(null)} />;
-  if (selectedProject === "uccoop") return <UCCoopLoanMonitoringSystem onBack={() => setSelectedProject(null)} />;
-
   return (
     <section className="p-4 sm:p-6 md:p-10 space-y-10 max-w-6xl mx-auto">
 
@@ -146,10 +135,10 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
         <div className="space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border dark:border-white/10 border-slate-300 dark:bg-white/[0.04] bg-slate-100 text-xs font-semibold uppercase tracking-wider text-[#2ecc71]">
             <Briefcase size={13} />
-            Projects & Professional Experience
+            Projects &amp; Professional Experience
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black dark:text-white text-slate-900 tracking-tight leading-tight">
-            Portfolio & Career Timeline
+            Portfolio &amp; Career Timeline
           </h1>
           <p className="dark:text-slate-400 text-slate-600 text-sm sm:text-base max-w-2xl leading-relaxed">
             Production systems, freelance client platforms, and software milestones built with modern full-stack architectures and clean engineering practices.
@@ -225,8 +214,7 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
             {filteredProjects.map((p) => (
               <div
                 key={p.id}
-                onClick={() => setSelectedProject(p.id)}
-                className="group p-5 rounded-3xl dark:bg-white/[0.03] bg-white border dark:border-white/10 border-slate-200/90 hover:border-[#2ecc71]/40 transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 cursor-pointer flex flex-col justify-between"
+                className="group p-5 rounded-3xl dark:bg-white/[0.03] bg-white border dark:border-white/10 border-slate-200/90 hover:border-[#2ecc71]/40 transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   {/* Thumbnail Container */}
@@ -247,7 +235,6 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                           href={p.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#2ecc71] text-slate-950 text-[11px] font-extrabold rounded-full shadow-lg hover:bg-[#27ae60] hover:scale-105 transition-all"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-slate-950 animate-ping" />
@@ -271,7 +258,7 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                       <h3 className="text-base sm:text-lg font-bold dark:text-white text-slate-900 group-hover:text-[#2ecc71] transition-colors line-clamp-1">
                         {p.title}
                       </h3>
-                      <div className="flex items-center gap-2 text-slate-400 shrink-0" onClick={(e) => e.stopPropagation()}>
+                      <div className="flex items-center gap-2 text-slate-400 shrink-0">
                         {p.githubUrl && (
                           <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" title="GitHub Repository">
                             <FaGithub size={16} className="hover:text-[#2ecc71] transition-colors" />
@@ -308,7 +295,7 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                   )}
                 </div>
 
-                {/* Tech Pills & Deep-Dive Link */}
+                {/* Tech Pills & Direct Links */}
                 <div className="pt-4 mt-4 border-t dark:border-white/5 border-slate-100 flex items-center justify-between">
                   <div className="flex flex-wrap gap-1">
                     {p.tags.slice(0, 3).map((tag) => (
@@ -321,9 +308,25 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1 text-xs font-bold text-[#2ecc71] group-hover:translate-x-1 transition-transform shrink-0 ml-2">
-                    Case Study <ChevronRight size={14} />
-                  </span>
+                  {p.liveUrl ? (
+                    <a
+                      href={p.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-[#2ecc71] hover:underline group-hover:translate-x-1 transition-transform shrink-0 ml-2"
+                    >
+                      Live Demo <ExternalLink size={13} />
+                    </a>
+                  ) : p.githubUrl ? (
+                    <a
+                      href={p.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-[#2ecc71] hover:underline group-hover:translate-x-1 transition-transform shrink-0 ml-2"
+                    >
+                      Source Code <ExternalLink size={13} />
+                    </a>
+                  ) : null}
                 </div>
               </div>
             ))}
@@ -436,21 +439,14 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
 
                     {/* Action Links */}
                     <div className="flex flex-wrap items-center gap-2.5 pt-2">
-                      <button
-                        onClick={() => setSelectedProject(exp.id)}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 text-xs font-bold transition-all cursor-pointer shadow-sm hover:scale-105"
-                      >
-                        Inspect Architecture <ArrowRight size={13} />
-                      </button>
-
                       {exp.liveUrl && (
                         <a
                           href={exp.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl dark:bg-white/5 bg-slate-100 dark:text-slate-200 text-slate-700 text-xs font-semibold border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 hover:text-[#2ecc71] transition-all"
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#2ecc71] hover:bg-[#27ae60] text-slate-950 text-xs font-bold transition-all shadow-md shadow-[#2ecc71]/20 hover:scale-105"
                         >
-                          <Globe size={13} /> Live Demo <ExternalLink size={11} />
+                          <Globe size={14} /> Live Demo <ExternalLink size={12} />
                         </a>
                       )}
 
@@ -459,32 +455,46 @@ export default function Portfolio({ initialTab = "projects" }: PortfolioProps) {
                           href={exp.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl dark:bg-white/5 bg-slate-100 dark:text-slate-200 text-slate-700 text-xs font-semibold border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 hover:text-[#2ecc71] transition-all"
+                          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl dark:bg-white/5 bg-slate-100 dark:text-slate-200 text-slate-700 text-xs font-semibold border dark:border-white/10 border-slate-200 hover:border-[#2ecc71]/40 hover:text-[#2ecc71] transition-all"
                         >
-                          <FaGithub size={13} /> Source Code
+                          <FaGithub size={14} /> Source Code
                         </a>
                       )}
                     </div>
                   </div>
 
                   {/* Mini Screenshot Preview on Large Screens */}
-                  <div
-                    onClick={() => setSelectedProject(exp.id)}
-                    className="relative w-full sm:w-64 h-36 rounded-2xl overflow-hidden border dark:border-white/10 border-slate-200 shrink-0 cursor-pointer group/thumb shadow-md"
-                  >
-                    <Image
-                      src={exp.image}
-                      alt={exp.title}
-                      fill
-                      sizes="256px"
-                      className="object-cover group-hover/thumb:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[#2ecc71] text-[11px] font-bold border border-[#2ecc71]/40">
-                        View Details
-                      </span>
+                  {exp.liveUrl || exp.githubUrl ? (
+                    <a
+                      href={exp.liveUrl || exp.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative w-full sm:w-64 h-36 rounded-2xl overflow-hidden border dark:border-white/10 border-slate-200 shrink-0 group/thumb shadow-md block"
+                    >
+                      <Image
+                        src={exp.image}
+                        alt={exp.title}
+                        fill
+                        sizes="256px"
+                        className="object-cover group-hover/thumb:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[#2ecc71] text-[11px] font-bold border border-[#2ecc71]/40 flex items-center gap-1.5">
+                          {exp.liveUrl ? "Open Live App" : "View Code"} <ExternalLink size={11} />
+                        </span>
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="relative w-full sm:w-64 h-36 rounded-2xl overflow-hidden border dark:border-white/10 border-slate-200 shrink-0 shadow-md">
+                      <Image
+                        src={exp.image}
+                        alt={exp.title}
+                        fill
+                        sizes="256px"
+                        className="object-cover"
+                      />
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             ))}
