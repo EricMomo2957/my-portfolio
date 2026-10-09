@@ -59,11 +59,11 @@ export default function HomeView({ setActiveView }: HomeProps) {
           </div>
         </div>
 
-        {/* Right Column: Organic Blob Masked Portrait */}
+        {/* Right Column: Circular Portrait */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end">
           <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
-            {/* Custom Organic Mask Container */}
-            <div className="w-full h-full rounded-[45%_55%_65%_35%/50%_60%_40%_50%] overflow-hidden border-4 border-[#2ecc71]/40 shadow-2xl relative dark:bg-slate-900 bg-slate-100 hover:border-[#2ecc71] transition-colors duration-500">
+            {/* Circular Image Container */}
+            <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#2ecc71]/40 shadow-2xl relative dark:bg-slate-900 bg-slate-100 hover:border-[#2ecc71] transition-colors duration-500">
               <Image 
                 src="/images/daddy_manhwa.jpg" 
                 alt="Eric Dominic Momo" 
